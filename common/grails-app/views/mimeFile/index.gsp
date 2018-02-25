@@ -211,11 +211,11 @@
                             </g:if>
                             <g:else>
                                 <g:link action="preview" id="${mimeFile.id}" params="[browser:'EX']" target="_blank"><span class="glyphicon glyphicon-fullscreen" title="预览（最大化）"></span></g:link>
+								&nbsp;
+								<g:render template="download" model="[instance:mimeFile]"/>
                             </g:else>
                         &nbsp;
                             <g:if test="${!vip.onlyView(params)}">
-                                <g:render template="download" model="[instance:mimeFile]"/>
-                                &nbsp;
                                 <g:render template="moveTo" model="[instance:mimeFile]"/>
                                 &nbsp;
                                 <g:render template="edit" model="[instance:mimeFile]"/>
