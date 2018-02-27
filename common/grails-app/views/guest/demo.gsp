@@ -4,15 +4,6 @@
         <meta name="layout" content="main"/>
         <title>项目样例</title>
         <style>
-            .layout-center {
-                padding:50px 0 20px 0 !important;
-            }
-            .dashboard-header {
-                border:none !important;
-            }
-            .dashboard-header .container-fluid {
-                background-color: #202e57 !important;
-            }
             table {
                 border: none !important;
                 font-size:14px;

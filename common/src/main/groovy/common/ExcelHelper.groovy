@@ -30,7 +30,7 @@ class ExcelHelper {
      * @param unique
      * @return
      */
-    static def readExcel(File file, def nFirstRowIdx, def nLastRowIdx, def nFirstCellIdx, def nLastCellIdx, boolean unique = false) {
+    static def readExcel(File file, def nFirstRowIdx = null, def nLastRowIdx = null, def nFirstCellIdx = null, def nLastCellIdx = null, boolean unique = false) {
         def fileName = file.getName()
         def fileType = this.getFileType(fileName)
 

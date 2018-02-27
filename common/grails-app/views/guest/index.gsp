@@ -2,14 +2,6 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <style>
-            .dashboard-header {
-                border:none !important;
-            }
-            .dashboard-header .container-fluid {
-                background-color: #202e57 !important;
-            }
-        </style>
     </head>
     <body>
         <g:if test="${params.q}">

@@ -4,7 +4,7 @@ package common
 class AuthInterceptor {
 
     AuthInterceptor() {
-        matchAll().excludes(controller:"guest").excludes(action:"image").excludes(action:"download")
+        matchAll().excludes(controller:"guest").excludes(action:"image").excludes(action:"download").excludes(uri:"/js/**")
     }
 
     boolean before() {

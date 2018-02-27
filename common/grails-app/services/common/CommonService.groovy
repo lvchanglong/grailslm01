@@ -27,6 +27,7 @@ class CommonService {
                 array.add(new HashMap(["name":"账号管理", "controllerName":"user", "actionName":"index", "zIndex":110]))
                 array.add(new HashMap(["name":"角色管理", "controllerName":"role", "actionName":"index", "zIndex":120]))
                 array.add(new HashMap(["name":"文件管理", "controllerName":"mimeFile", "actionName":"index", "zIndex":130]))
+                array.add(new HashMap(["name":"文章管理", "controllerName":"article", "actionName":"index", "zIndex":135]))
                 array.add(new HashMap(["name":"幻灯片管理", "controllerName":"slide", "actionName":"index", "zIndex":140]))
                 array.add(new HashMap(["name":"用户反馈", "controllerName":"feedback", "actionName":"index", "zIndex":150]))
                 array.add(new HashMap(["name":"登录日志", "controllerName":"loginLog", "actionName":"index", "zIndex":160]))
@@ -41,7 +42,7 @@ class CommonService {
         def funGroup = FunGroup.first()
         if(!funGroup) {
             def funGroup1 = new FunGroup([name:"资源管理", "zIndex":10])
-            Function.findAllByNameInList(["文件管理"]).each {fun->
+            Function.findAllByNameInList(["文件管理", "文章管理"]).each {fun->
                 funGroup1.addToFunctions(fun)
             }
             funGroup1.save()

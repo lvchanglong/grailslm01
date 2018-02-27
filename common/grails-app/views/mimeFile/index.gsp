@@ -208,6 +208,8 @@
                         <td>
                             <g:if test="${mimeFile.isDir()}">
                                 <span class="glyphicon glyphicon-minus"></span>
+                                &nbsp;
+                                <span class="glyphicon glyphicon-minus"></span>
                             </g:if>
                             <g:else>
                                 <g:link action="preview" id="${mimeFile.id}" params="[browser:'EX']" target="_blank"><span class="glyphicon glyphicon-fullscreen" title="预览（最大化）"></span></g:link>

@@ -29,6 +29,8 @@
 
         <asset:javascript src="application.js"/>
 
+        <ckeditor:resources/>
+
         <g:layoutHead/>
     </head>
     <body onload="${pageProperty(name:"body.onload")}" class="${pageProperty(name:"body.class")}">

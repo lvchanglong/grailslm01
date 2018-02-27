@@ -48,6 +48,13 @@ if (typeof jQuery !== 'undefined') {
             */
 
             $(".ajaxForm").ajaxForm({
+                beforeSerialize: function ($form, options) {
+                    /*为jquery.form添加CKEDITOR支持*/
+                    for(instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                    return true;
+                },
                 success: function (data) {
                     Messenger().post({
                         message: "操作成功",

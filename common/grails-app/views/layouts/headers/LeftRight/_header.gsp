@@ -2,7 +2,7 @@
 
 <g:set var="vip" value="${User.get(session.uid)}"/>
 
-<nav class="navbar navbar-inverse navbar-fixed-top dashboard-header">
+<nav class="navbar navbar-layout-header navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

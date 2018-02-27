@@ -24,8 +24,8 @@ class Platform {
 
         name column:"name"
         state column:"state"
-        layout column:"layout", sqlType: "VarChar(255)"
-        css column:"css", sqlType: "VarChar(255)"
+        layout column:"layout", sqlType:"VarChar(255)"
+        css column:"css", sqlType:"VarChar(255)"
         dateCreated column:"date_created"
         lastUpdated column:"last_updated"
 

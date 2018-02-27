@@ -17,7 +17,7 @@
 *= require jstree-3.3.5/dist/themes/default/style
 *= require_self
 */
-.dashboard-header {
+.navbar-layout-header {
     z-index:10000;
 }
 .modal {
@@ -62,7 +62,7 @@
 /* slide */
 .carousel.slide {
     position:relative;
-    height: 568px;
+    height: 600px;
     width: 100%;
     padding-top: 115px;
     background-color:#202e57;
@@ -152,9 +152,6 @@
 }
 
 /* else */
-.dashboard-header a {
-     font-weight:bold;
-}
 .ie7 .navbar-form, .ie8 .navbar-form {
     margin-top:9px;
 }
