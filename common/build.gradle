@@ -103,6 +103,8 @@ tasks.withType(Test) {
 }
 
 assets {
+	developmentRuntime = false
+	excludes = ['**/*.msi', '**/*.exe']
     minifyJs = true
     minifyCss = true
 }
