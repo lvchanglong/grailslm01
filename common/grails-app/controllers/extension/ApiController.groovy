@@ -45,7 +45,7 @@ class ApiController {
             ret.put('新增', "${nFinished}")
             def errors = new ArrayList()
             ret.put('异常', errors)
-            def rows = ExcelHelper.readExcel(serverFile, 0, 30)
+            def rows = ExcelHelper.readExcel(serverFile)
             rows.eachWithIndex {cells, i ->
                 params.companyId = cells[0]
                 params.name = cells[1]
