@@ -37,14 +37,14 @@ class Company {
     Date lastUpdated //更新时间
 
     static constraints = {
-        companyId(nullable: false, blank: false, unique: true)
-        name(nullable: false, blank: false, unique: true)
+        companyId(nullable: false, blank: false)
+        name(nullable: false, blank: false)
         legalPerson(nullable: false, blank: false)
 		capital(nullable: true, blank: true)   // 分公司没有注册资金
 		industry(nullable: true, blank: true)
         code(nullable: true, blank: true) // 有部分企业没有统一信用代码证
         registerAddr(nullable: false, blank: false)
-		actualAddr(nullable: false, blank: false)
+		actualAddr(nullable: true, blank: true)
 		registerDate(nullable: false, blank: false)
         approvalDate(nullable: false, blank: false)
         businessTerm(nullable: true, blank: true) // 营业期限分有期限和无期限
@@ -91,7 +91,7 @@ class Company {
         businessScope column: "businessScope, sqlType:"Text"
         patent column: "patent"
         certificate column: "certificate"
-		honour column: "honour"
+		honour column: "honour", sqlType:"Text"
         introduction column: "introduction", sqlType:"Text"
 		
         dateCreated column: "dateCreated"

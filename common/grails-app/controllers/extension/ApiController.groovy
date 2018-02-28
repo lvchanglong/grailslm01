@@ -24,12 +24,12 @@ class ApiController {
     }
 
     def getCompanyInfo(String name) {
-        def company = Company.findByName(name)
-        if(!company) {
+        def companyList = Company.findAllByName(name)
+        if(!companyList) {
             render new HashMap() as JSON
             return
         }
-        render company.getProperties() as JSON
+        render companyList as JSON
     }
 
     def importData() {
@@ -82,12 +82,9 @@ class ApiController {
                 params.honour = cells[29]
                 params.introduction = cells[30]
 
-                if (params.name) {
-                    println params.name
-                    println params.companyId
-
+                if (params.companyId && params.name) {
                     def company = Company.where {
-                        name == params.name
+                        companyId == params.companyId.trim() && name == params.name.trim()
                     }.find()
                     if(company) {
                         ret.put('描述', "公司名字重复")
@@ -123,9 +120,6 @@ class ApiController {
                     errors.add('第 ' + (i + 1) + '行' + params)
                 }
             }
-
-            String strRet = ret as JSON
-            println strRet
         }
         render "导入完成"
     }
