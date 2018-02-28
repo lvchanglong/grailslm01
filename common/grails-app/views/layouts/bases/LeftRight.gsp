@@ -12,9 +12,9 @@
 </div>
 
 <content tag="header">
-    <g:render template="/layouts/headers/LeftRight/header"/>
+    <g:pageProperty name="page.header" default="${ render(template:"/layouts/headers/LeftRight/header") }"/>
 </content>
 
 <content tag="footer">
-    <g:render template="/layouts/footers/LeftRight/footer"/>
+    <g:pageProperty name="page.footer" default="${ render(template:"/layouts/footers/LeftRight/footer") }"/>
 </content>

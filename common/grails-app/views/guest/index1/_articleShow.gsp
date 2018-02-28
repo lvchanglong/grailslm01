@@ -1,5 +1,5 @@
-<a href="#fakelink" data-toggle="modal" data-target="#showArticleModal${instance.id}">
-    <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="查看"></span>
+<a href="#fakelink" data-toggle="modal" data-target="#showArticleModal${instance.id}" style="font-size:12px;">
+    <span class="glyphicon glyphicon-menu-right"></span>&nbsp;${instance.title}
 </a>
 
 <div class="modal fade" id="showArticleModal${instance.id}" tabindex="-1" role="dialog" aria-labelledby="showArticleModal${instance.id}Title" aria-hidden="true">
@@ -15,7 +15,6 @@
                     ${instance.content}
                 </p>
                 <p style="text-align:right;color:#848383;font-size:12px;">
-                    文章类型：${instance.type}
                     发布时间：<g:formatDate format="yyyy-MM-dd hh:mm:ss" date="${instance.dateCreated}"/>
                 </p>
             </div>

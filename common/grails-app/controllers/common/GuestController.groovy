@@ -13,7 +13,7 @@ class GuestController {
     def userService
     def loginLogService
     def searchLogService
-    ExcelHtmlService excelHtmlService
+    def excelHtmlService
 
     def index(String q) {
         def query = MimeFile.where {
@@ -30,52 +30,25 @@ class GuestController {
         respond query.list(params), model:[mimeFileCount: mimeFileCount]
     }
 
-    /**
-     * 用户登录
-     */
-    def login(String username, String password) {
-        if (username && password) {
-            def user = User.findByUsernameAndPassword(username, password.encodeAsMD5())
-            if (user) {
-                if(!user.getStateToBoolean()) {
-                    render status: UNAUTHORIZED, text: '已冻结'
-                    return
-                }
-                session.uid = user.id
-                session.setMaxInactiveInterval(43200) //失效时间12小时
-
-                if(!user.isSuperman()) {
-                    try {
-                        loginLogService.save(new LoginLog([username:user.username, nickname:user.nickname, rolename:user.role?.name, ip:CommonHelper.getRealIp(request)]))
-                    } catch (ValidationException e) {
-                        e.printStackTrace()
-                    }
-                }
-                render status: OK, text: '操作成功，初始化...'
-                return
-            } else {
-                render status: UNAUTHORIZED, text: '认证失败'
-                return
+    def index1(String type, String q) {
+        def query = Article.where {
+            if(type) {
+                type == type
+            }
+            if(q) {
+                title ==~ "%${q?q.trim():""}%"
             }
         }
-        render status: BAD_REQUEST, text: '参数异常'
-    }
-
-    /**
-     * 用户注册
-     */
-    def register(User user) {
+        def articleCount = query.count()
         try {
-            user.role = Role.getVip()
-            userService.save(user)
+            if(q) {
+                searchLogService.save(new SearchLog([platform:"网站", type:"文章检索", q:q, cnt:articleCount, ip:CommonHelper.getRealIp(request)]))
+            }
         } catch (ValidationException e) {
-            render status: INTERNAL_SERVER_ERROR
-            return
+            e.printStackTrace()
         }
-        render status: CREATED, text: "注册成功"
+        respond query.list(params), model:[articleCount: articleCount]
     }
-
-//-------------------------------------------------------------------------------------------------------------------------------------------
 
     def demo(String con) {
         def query = ExcelHtml.where {
@@ -164,6 +137,53 @@ class GuestController {
             }
         }
         render true
+    }
+
+//-------------------------------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * 用户登录
+     */
+    def login(String username, String password) {
+        if (username && password) {
+            def user = User.findByUsernameAndPassword(username, password.encodeAsMD5())
+            if (user) {
+                if(!user.getStateToBoolean()) {
+                    render status: UNAUTHORIZED, text: '已冻结'
+                    return
+                }
+                session.uid = user.id
+                session.setMaxInactiveInterval(43200) //失效时间12小时
+
+                if(!user.isSuperman()) {
+                    try {
+                        loginLogService.save(new LoginLog([username:user.username, nickname:user.nickname, rolename:user.role?.name, ip:CommonHelper.getRealIp(request)]))
+                    } catch (ValidationException e) {
+                        e.printStackTrace()
+                    }
+                }
+                render status: OK, text: '操作成功，初始化...'
+                return
+            } else {
+                render status: UNAUTHORIZED, text: '认证失败'
+                return
+            }
+        }
+        render status: BAD_REQUEST, text: '参数异常'
+    }
+
+    /**
+     * 用户注册
+     */
+    def register(User user) {
+        try {
+            user.role = Role.getVip()
+            userService.save(user)
+        } catch (ValidationException e) {
+            render status: INTERNAL_SERVER_ERROR
+            return
+        }
+        render status: CREATED, text: "注册成功"
     }
 
 }

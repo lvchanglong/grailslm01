@@ -10,7 +10,7 @@
 //= require jquery-placeholder-2.3.1/jquery.placeholder
 //= require echarts/echarts.min
 //= require bootstrap-3.3.7-dist/js/bootstrap
-//= jquery-ui-1.12.1.Autocomplete/jquery-ui
+//= require jquery-ui-1.12.1.Autocomplete/jquery-ui
 //= require messenger-1.5.0/build/js/messenger
 //= require messenger-1.5.0/build/js/messenger-theme-future
 //= require jqcloud/jqcloud-1.0.4

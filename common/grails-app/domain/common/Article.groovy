@@ -1,12 +1,14 @@
 package common
 
+import grails.converters.JSON
+
 /**
  * 文章管理
  */
 class Article {
     String title //标题
     String content //内容
-    String type = "关于我们"//类型
+    String type //类型
 
     Date dateCreated //创建时间
     Date lastUpdated //更新时间
@@ -28,10 +30,19 @@ class Article {
     static constraints = {
         title(blank:false, nullable:false)
         content(blank:true, nullable:true)
-        type(blank:false, nullable:false, inList: ["关于我们", "信用评估政策", "新闻中文", "信用研究", "信用评级", "信用公示", "诚信示范企业", "失信黑名单"])
+        type(blank:false, nullable:false)
     }
 
     String toString() {
         this.title
     }
+
+    static def listTypes() {
+        return Article.withCriteria {
+            projections {
+                distinct "type"
+            }
+        }
+    }
+
 }

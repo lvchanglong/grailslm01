@@ -1,4 +1,4 @@
-<%@ page import="common.Article;" %>
+<%@ page import="grails.converters.JSON; common.Article;" %>
 
 <a href="#fakelink" class="btn btn-lg btn-info" data-toggle="modal" data-target="#createArticleModal">
     <span class="glyphicon glyphicon-plus"></span>&nbsp;信息添加
@@ -18,7 +18,15 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:select from="${Article.constrainedProperties.type.inList}" name="type" value="${instance.type}" valueMessagePrefix="article.type" class="form-control"/>
+                                <g:textField name="type" id="articleType" value="${instance.type}" required="required" class="form-control"/>
+                                <script>
+                                    jQuery("#articleType").autocomplete({
+                                        minLength:0,
+                                        source:${Article.listTypes() as grails.converters.JSON}
+                                    }).focus(function () {
+                                        $(this).autocomplete("search", "");
+                                    });
+                                </script>
                             </div>
                         </div>
                         <div class="form-group">

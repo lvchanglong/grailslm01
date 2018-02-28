@@ -46,7 +46,7 @@
                 </ul>
             </g:else>
 
-            <div class="navbar-form navbar-right">
+            %{--<div class="navbar-form navbar-right">
                 <g:form controller="guest" action="index">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="" name="q" value="${params.q}"/>
@@ -55,7 +55,7 @@
                         </span>
                     </div>
                 </g:form>
-            </div>
+            </div>--}%
         </div>
     </div>
 </nav>

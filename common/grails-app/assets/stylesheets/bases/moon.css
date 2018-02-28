@@ -1,4 +1,9 @@
-.navbar-layout-header, .carousel.slide {
+.carousel.slide {
+    background-color: #202e57 !important;
+    box-shadow: 0 1px 13px rgba(0,0,0,0.24);
+    border-color: transparent;
+}
+.navbar-layout-header{
     background-color: #202e57 !important;
     box-shadow: 0 1px 13px rgba(0,0,0,0.24);
     border-color: transparent;

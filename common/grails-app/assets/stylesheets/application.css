@@ -62,14 +62,13 @@
 /* slide */
 .carousel.slide {
     position:relative;
-    height: 600px;
+    height: 530px;
     width: 100%;
-    padding-top: 115px;
     background-color:#202e57;
     overflow:hidden;
 }
 .carousel-inner {
-    width: 1150px;
+    width: 60%;
     height:100%;
     margin-right: auto;
     margin-left: auto;
@@ -81,7 +80,7 @@
 .slide-image {
     position: absolute;
     right: 0;
-    top: 0;
+    bottom: 0;
     max-width: 526px;
     max-height: 370px;
     -webkit-animation: banner-slide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0s 1;

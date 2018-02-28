@@ -45,7 +45,7 @@ class ApiController {
             ret.put('新增', "${nFinished}")
             def errors = new ArrayList()
             ret.put('异常', errors)
-            def rows = ExcelHelper.readExcel(serverFile)
+            def rows = ExcelHelper.readExcel(serverFile, 0, 30)
             rows.eachWithIndex {cells, i ->
                 params.companyId = cells[0]
                 params.name = cells[1]
@@ -127,7 +127,6 @@ class ApiController {
             String strRet = ret as JSON
             println strRet
         }
-
         render "导入完成"
     }
 

@@ -1,4 +1,4 @@
-<%@ page import="common.Article;" %>
+<%@ page import="grails.converters.JSON; common.Article;" %>
 
 <a href="#fakelink" data-toggle="modal" data-target="#editArticleModal${instance.id}">
     <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="修改"></span>
@@ -19,7 +19,15 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:select from="${Article.constrainedProperties.type.inList}" name="type" value="${instance.type}" valueMessagePrefix="article.type" class="form-control"/>
+                                <g:textField name="type" id="articleType${instance.id}" value="${instance.type}" required="required" class="form-control"/>
+                                <script>
+                                    jQuery("#articleType${instance.id}").autocomplete({
+                                        minLength:0,
+                                        source:${Article.listTypes() as grails.converters.JSON}
+                                    }).focus(function () {
+                                        $(this).autocomplete("search", "");
+                                    });
+                                </script>
                             </div>
                         </div>
                         <div class="form-group">

@@ -6,7 +6,7 @@
     }
 </style>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:${height};">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:130px;background-color: #94b4c5 !important;">
     <g:set var="slides" value="${Slide.list()}"/>
 
     <ol class="carousel-indicators">

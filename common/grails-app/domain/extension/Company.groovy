@@ -88,11 +88,11 @@ class Company {
         blacklist column: "blacklist"
         bankName column: "bankName"
 		businessForm column: "businessForm"
-        businessScope column: "businessScope"
+        businessScope column: "businessScope, sqlType:"Text"
         patent column: "patent"
         certificate column: "certificate"
 		honour column: "honour"
-        introduction column: "introduction"
+        introduction column: "introduction", sqlType:"Text"
 		
         dateCreated column: "dateCreated"
         lastUpdated column: "lastUpdated"
