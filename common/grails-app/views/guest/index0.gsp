@@ -87,17 +87,17 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div style="padding:0 20px;">
+                    <div style="padding:0 20px;color:black;">
                         <div style="font-weight:bold;">
                             <div class="glyphicon glyphicon-phone-alt" style="font-size:50px;display:inline-block;vertical-align: middle;"></div>
                             <div style="font-size:22px;display:inline-block;vertical-align: middle;margin-left:9px;">联系方式</div>
                         </div>
                         <div style="font-size:18px;margin-top:10px;font-weight:bold;">
-                            <span style="color:gray;">Ｑ群:</span>
-                            <span style="color:black;margin-left:8px;">101150634</span>
+                            <span>Ｑ群:</span>
+                            <span style="margin-left:8px;">101150634</span>
                             <br/>
-                            <span style="color:gray;">ＱＱ:</span>
-                            <span style="color:black;margin-left:8px;">417891235</span>
+                            <span>ＱＱ:</span>
+                            <span style="margin-left:8px;">417891235</span>
                         </div>
                     </div>
                 </div>

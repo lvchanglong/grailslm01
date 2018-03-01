@@ -21,7 +21,7 @@
             <g:each in="${slides}" var="slide" status="i">
                 <div class="item ${i == 0?"active":""}">
                     <div class="carousel-caption">
-                        <h1>
+                        <h1 style="margin-top:0;">
                             <g:link url="${slide.url}">${slide.title}</g:link>
                         </h1>
                         <p class="subheading">
@@ -35,7 +35,7 @@
         <g:else>
             <div class="item active">
                 <div class="carousel-caption">
-                    <h1>默认标题</h1>
+                    <h1 style="margin-top:0;">默认标题</h1>
                     <p class="subheading">
                         默认内容
                     </p>
