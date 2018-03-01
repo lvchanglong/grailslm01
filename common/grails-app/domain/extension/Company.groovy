@@ -88,7 +88,7 @@ class Company {
         blacklist column: "blacklist"
         bankName column: "bankName"
 		businessForm column: "businessForm"
-        businessScope column: "businessScope, sqlType:"Text"
+        businessScope column: "businessScope", sqlType:"Text"
         patent column: "patent"
         certificate column: "certificate"
 		honour column: "honour", sqlType:"Text"

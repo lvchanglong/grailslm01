@@ -30,6 +30,26 @@ class GuestController {
         respond query.list(params), model:[mimeFileCount: mimeFileCount]
     }
 
+    def index0(String type, String q) {
+        def query = Article.where {
+            if(type) {
+                type == type
+            }
+            if(q) {
+                title ==~ "%${q?q.trim():""}%"
+            }
+        }
+        def articleCount = query.count()
+        try {
+            if(q) {
+                searchLogService.save(new SearchLog([platform:"网站", type:"文章检索", q:q, cnt:articleCount, ip:CommonHelper.getRealIp(request)]))
+            }
+        } catch (ValidationException e) {
+            e.printStackTrace()
+        }
+        respond query.list(params), model:[articleCount: articleCount]
+    }
+
     def index1(String type, String q) {
         def query = Article.where {
             if(type) {
