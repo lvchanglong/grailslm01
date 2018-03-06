@@ -6,7 +6,7 @@
     }
 </style>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:130px;background-color: #94b4c5 !important;">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:130px;background-color: #063e68 !important;">
     <g:set var="slides" value="${Slide.list()}"/>
 
     <ol class="carousel-indicators">
@@ -28,7 +28,7 @@
                             ${slide.content}
                         </p>
                     </div>
-                    <img src="${createLink(controller:'slide', action:"image", params:["id": slide.id])}" class="slide-image"/>
+                    <img src="${createLink(controller:'slide', action:"image", params:["id": slide.id])}" class="slide-image" style="height:100%;"/>
                 </div>
             </g:each>
         </g:if>

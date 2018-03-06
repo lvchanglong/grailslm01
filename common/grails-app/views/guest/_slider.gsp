@@ -20,7 +20,7 @@
         <g:if test="${slides}">
             <g:each in="${slides}" var="slide" status="i">
                 <div class="item ${i == 0?"active":""}">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="top:130px;">
                         <h1>
                             <g:link url="${slide.url}">${slide.title}</g:link>
                         </h1>

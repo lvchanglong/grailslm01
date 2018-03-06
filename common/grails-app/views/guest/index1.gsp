@@ -86,22 +86,22 @@
                     </g:else>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 sidebar-right">
                     <div style="padding:0 20px;color:black;">
                         <div style="font-weight:bold;">
-                            <div class="glyphicon glyphicon-phone-alt" style="font-size:50px;display:inline-block;vertical-align: middle;"></div>
-                            <div style="font-size:22px;display:inline-block;vertical-align: middle;margin-left:5px;">申报资讯热线</div>
+                            <div class="glyphicon glyphicon-phone-alt" style="font-size:44px;display:inline-block;vertical-align: middle;"></div>
+                            <div style="font-size:20px;display:inline-block;vertical-align: middle;margin-left:5px;">申报资讯热线</div>
                         </div>
                         <div style="font-size:18px;margin-top:10px;font-weight:bold;">
                             <span>TEL:</span>
-                            <span style="margin-left:17px;">024-23181588</span>
+                            <span style="margin-left:9px;">024-23181588</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <content tag="sidebar">
-                <g:render template="index1/sidebar"/>
+            <content tag="sidebarLeft">
+                <g:render template="index1/sidebarLeft"/>
             </content>
 
             <content tag="header">

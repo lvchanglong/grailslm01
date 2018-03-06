@@ -2,8 +2,8 @@
 
 <div class="container-fluid layout-left-right">
     <div class="row">
-        <div class="col-md-2 sidebar">
-            <g:pageProperty name="page.sidebar" default="${ render(template:"/layouts/bars/LeftRight/sidebar") }"/>
+        <div class="col-md-2 sidebar-left">
+            <g:pageProperty name="page.sidebarLeft" default="${ render(template:"/layouts/bars/LeftRight/sidebarLeft") }"/>
         </div>
         <div class="col-md-offset-2 col-md-10 main">
             <g:layoutBody/>

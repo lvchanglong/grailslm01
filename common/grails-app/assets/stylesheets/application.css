@@ -61,7 +61,7 @@
     overflow:hidden;
 }
 .carousel-inner {
-    width: 60%;
+    width: 70%;
     height:100%;
     margin-right: auto;
     margin-left: auto;
@@ -84,23 +84,26 @@
 .carousel-caption {
     position:absolute;
     left:0;
-    top:0;
+    top:17px;
     text-align: left;
     color:white;
 }
 .carousel-caption h1 {
-    font-weight: normal;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 24px;
 }
 .carousel-caption a {
     color:white !important;
 }
 .carousel-caption .subheading {
-    font-size: 18px;
+    font-size: 12px;
     margin: 0 0 10px;
 }
 .carousel-control {
     background-image: none !important;
+}
+.carousel-indicators {
+    bottom:1px;
 }
 
 /* pagination */

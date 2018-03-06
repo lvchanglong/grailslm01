@@ -86,7 +86,7 @@
                     </g:else>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 sidebar-right">
                     <div style="padding:0 20px;color:black;">
                         <div style="font-weight:bold;">
                             <div class="glyphicon glyphicon-phone-alt" style="font-size:50px;display:inline-block;vertical-align: middle;"></div>
