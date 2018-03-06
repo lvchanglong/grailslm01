@@ -181,7 +181,6 @@
                     <th>文件名称</th>
                     <th>类型</th>
                     <th>密级</th>
-                    <th>备注</th>
                     <g:sortableColumn property="dateCreated" title="创建时间"/>
                     <th>操作</th>
                 </tr>
@@ -195,28 +194,25 @@
                         <td>${offset.toInteger() + i + 1}</td>
                         <td>
                             <g:if test="${mimeFile.isDir()}">
-                                <g:link action="index" params="[pid:mimeFile.id]">${mimeFile.filename}</g:link>
+                                <g:link action="index" params="[pid:mimeFile.id]" title="${mimeFile.remark}">${mimeFile.filename}</g:link>
                             </g:if>
                             <g:else>
-                                <g:link action="preview" id="${mimeFile.id}" target="_blank">${mimeFile.filename}</g:link>
+                                <g:link action="preview" id="${mimeFile.id}" target="_blank" title="${mimeFile.remark}">${mimeFile.filename}</g:link>
                             </g:else>
                         </td>
                         <td>${mimeFile.type}</td>
                         <td>${mimeFile.classification}</td>
-                        <td><pre>${mimeFile.remark}</pre></td>
                         <td><g:formatDate format="yyyy-MM-dd" date="${mimeFile.dateCreated}"/></td>
                         <td>
                             <g:if test="${mimeFile.isDir()}">
                                 <span class="glyphicon glyphicon-minus"></span>
-                                &nbsp;
-                                <span class="glyphicon glyphicon-minus"></span>
                             </g:if>
                             <g:else>
                                 <g:link action="preview" id="${mimeFile.id}" params="[size:'MAX']" target="_blank"><span class="glyphicon glyphicon-fullscreen" title="预览（最大化）"></span></g:link>
-								&nbsp;
-								<g:render template="download" model="[instance:mimeFile]"/>
                             </g:else>
-                        &nbsp;
+                            &nbsp;
+                            <g:render template="download" model="[instance:mimeFile]"/>
+                            &nbsp;
                             <g:if test="${!vip.onlyView(params)}">
                                 <g:render template="moveTo" model="[instance:mimeFile]"/>
                                 &nbsp;

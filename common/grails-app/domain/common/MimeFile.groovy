@@ -12,6 +12,7 @@ class MimeFile {
 
     MimeFileData data //文件数据
     String filename //文件名称
+    String cloud //云盘地址
     String remark //备注
 
     String type = "文件"//类型（文件|文件夹）
@@ -25,6 +26,7 @@ class MimeFile {
         version column: "version"
 
         filename column:"filename"
+        cloud column:"cloud", sqlType:"Text"
         remark column:"remark", sqlType:"Text"
         type column:"type"
         classification column:"classification"
@@ -39,6 +41,7 @@ class MimeFile {
     static constraints = {
         filename(blank:false, nullable:false)
         remark(blank:true, nullable:true)
+        cloud(blank:true, nullable:true)
         type(blank:false, nullable:false, inList:["文件", "文件夹"])
         classification(blank:false, nullable:false, inList:["公开", "私有"])
         parent(nullable:true)

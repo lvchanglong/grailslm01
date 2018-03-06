@@ -14,7 +14,7 @@
 .layout-left-right .sidebar-right {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .layout-left-right .sidebar-left {
     position: fixed;
     top: 51px;

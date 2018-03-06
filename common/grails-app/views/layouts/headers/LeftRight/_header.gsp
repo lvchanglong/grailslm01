@@ -45,17 +45,6 @@
                     </li>
                 </ul>
             </g:else>
-
-            <div class="navbar-form navbar-right">
-                <g:form controller="guest" action="index">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="" name="q" value="${params.q}"/>
-                        <span class="input-group-btn">
-                            <g:submitButton name="submit" class="btn btn-default" value="Go!"/>
-                        </span>
-                    </div>
-                </g:form>
-            </div>
         </div>
     </div>
 </nav>

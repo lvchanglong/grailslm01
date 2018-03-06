@@ -31,6 +31,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="cloud" class="col-sm-2">云盘地址
+                            </label>
+                            <div class="col-sm-10">
+                                <g:textArea name="cloud" value="${instance.cloud}" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="remark" class="col-sm-2">备注
                             </label>
                             <div class="col-sm-10">

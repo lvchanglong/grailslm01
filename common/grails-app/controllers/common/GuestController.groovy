@@ -15,21 +15,14 @@ class GuestController {
     def searchLogService
     def excelHtmlService
 
-    def index(String q) {
-        def query = MimeFile.where {
-            classification == "公开" && type == "文件" && filename ==~ "%${q?q.trim():""}%"
-        }
-        def mimeFileCount = query.count()
-        try {
-            if(q) {
-                searchLogService.save(new SearchLog([platform:"网站", type:"文件检索", q:q, cnt:mimeFileCount, ip:CommonHelper.getRealIp(request)]))
-            }
-        } catch (ValidationException e) {
-            e.printStackTrace()
-        }
-        respond query.list(params), model:[mimeFileCount: mimeFileCount]
-    }
+    /**
+     * 系统后台
+     */
+    def index() {}
 
+    /**
+     * 系统前台0
+     */
     def index0(String type, String q) {
         def query = Article.where {
             if(type) {
@@ -50,6 +43,9 @@ class GuestController {
         respond query.list(params), model:[articleCount: articleCount]
     }
 
+    /**
+     * 系统前台1
+     */
     def index1(String type, String q) {
         def query = Article.where {
             if(type) {
@@ -70,6 +66,9 @@ class GuestController {
         respond query.list(params), model:[articleCount: articleCount]
     }
 
+    /**
+     * 系统前台-demo
+     */
     def demo(String con) {
         def query = ExcelHtml.where {
             content ==~ "%${con?con.split("#").join("%").trim():""}%"
