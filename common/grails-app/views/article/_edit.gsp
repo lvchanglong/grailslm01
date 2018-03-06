@@ -19,13 +19,12 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="type" id="articleType${instance.id}" value="${instance.type}" required="required" class="form-control"/>
+                                <g:textField name="type" id="articleType${instance.id}" value="${instance.type}" required="required" class="form-control" autocomplete="off"/>
                                 <script>
-                                    jQuery("#articleType${instance.id}").autocomplete({
+                                    jQuery("#articleType${instance.id}").typeahead({
                                         minLength:0,
+                                        showHintOnFocus:true,
                                         source:${Article.listTypes() as grails.converters.JSON}
-                                    }).focus(function () {
-                                        $(this).autocomplete("search", "");
                                     });
                                 </script>
                             </div>

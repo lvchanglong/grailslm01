@@ -5,7 +5,7 @@
 // You're free to add application-wide JavaScript to this file, but it's generally better
 // to create separate JavaScript files as needed.
 //
-//= require jquery-ui-1.12.1.Autocomplete/jquery-ui.min.js
+//= require media.js/jquery.media.min.js
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
