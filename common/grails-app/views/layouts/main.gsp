@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://cdn.bootcss.com/jstree/3.3.5/themes/default/style.min.css">
         <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="${application.platform.css}"/>
-        
+
         <!--[if lt IE 9]>
             <script type="text/javascript" src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
             <script type="text/javascript" src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
