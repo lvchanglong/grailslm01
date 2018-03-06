@@ -28,7 +28,6 @@
             <script type="text/javascript" src="https://cdn.bootcss.com/es6-shim/0.35.3/es6-sham.min.js"></script>
             <script type="text/javascript" src="https://cdn.bootcss.com/es7-shim/6.0.0/es7-shim.min.js"></script>
             <script type="text/javascript" src="https://cdn.bootcss.com/console-polyfill/0.3.0/index.min.js"></script>
-            <script type="text/javascript" src="https://cdn.bootcss.com/jquery-placeholder/2.3.1/jquery.placeholder.min.js"></script>
             <asset:javascript src="media.js/jquery.media.js"/>
         <![endif]-->
         <script type="text/javascript" src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.min.js"></script>
@@ -38,8 +37,12 @@
         <script type="text/javascript" src="https://cdn.bootcss.com/jstree/3.3.5/jstree.min.js"></script>
         <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
         <script type="text/javascript" src="https://cdn.bootcss.com/pdfobject/2.0.201604172/pdfobject.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bootcss.com/jquery-placeholder/2.3.1/jquery.placeholder.min.js"></script>
+
+        %{--<ckeditor:resources/>--}%
+        <script type="text/javascript" src="https://cdn.bootcss.com/ckeditor/4.5.9/ckeditor.js"></script>
+
         <asset:javascript src="application.js"/>
-        <ckeditor:resources/>
 
         <g:layoutHead/>
     </head>
