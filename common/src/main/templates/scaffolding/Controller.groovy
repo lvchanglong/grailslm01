@@ -270,7 +270,7 @@ class ${className}Controller {
         }
 
         if(serverFileType.equalsIgnoreCase("pdf")) {
-            return [path: "/static/\${keyPath}/\${serverFileName}"]
+            return [path: "/static/\${keyPath}/\${serverFileName}"] //Grails3中，static默认存在
         }
         def targetFile = FileHelper.getFile(dirpath, serverFileName + ".pdf")
         if(FileConverter.convertTo(serverFile, targetFile)) {

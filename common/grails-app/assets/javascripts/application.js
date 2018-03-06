@@ -5,18 +5,7 @@
 // You're free to add application-wide JavaScript to this file, but it's generally better
 // to create separate JavaScript files as needed.
 //
-//= require jquery/jquery-1.12.4.min
-//= require form-4.2.2/dist/jquery.form.min
-//= require jquery-placeholder-2.3.1/jquery.placeholder
-//= require echarts/echarts.min
-//= require bootstrap-3.3.7-dist/js/bootstrap
-//= require jquery-ui-1.12.1.Autocomplete/jquery-ui
-//= require messenger-1.5.0/build/js/messenger
-//= require messenger-1.5.0/build/js/messenger-theme-future
-//= require jqcloud/jqcloud-1.0.4
-//= require jstree-3.3.5/dist/jstree
-//= require pdf/media.js/jquery.media
-//= require pdf/PDFObject/pdfobject.min
+//= require jquery-ui-1.12.1.Autocomplete/jquery-ui.min.js
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
@@ -29,23 +18,6 @@ if (typeof jQuery !== 'undefined') {
         });
 
         $(document).ready( function() {
-
-            /*
-                 //= require bootstrap-datetimepicker-4.17.47/build/js/moment-with-locales
-                 //= require bootstrap-datetimepicker-4.17.47/build/js/bootstrap-datetimepicker.min
-
-                $('.datetimepicker').datetimepicker({
-                    language:  'zh-cn',
-                    weekStart: 1,
-                    todayBtn:  1,
-                    autoclose: 1,
-                    todayHighlight: 1,
-                    startView: 2,
-                    minView: 2,
-                    forceParse: 0,
-                    format:"yyyy-mm-dd hh:ii:ss"
-                });
-            */
 
             $(".ajaxForm").ajaxForm({
                 beforeSerialize: function ($form, options) {

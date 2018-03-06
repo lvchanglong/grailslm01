@@ -212,7 +212,7 @@
                                 <span class="glyphicon glyphicon-minus"></span>
                             </g:if>
                             <g:else>
-                                <g:link action="preview" id="${mimeFile.id}" params="[browser:'EX']" target="_blank"><span class="glyphicon glyphicon-fullscreen" title="预览（最大化）"></span></g:link>
+                                <g:link action="preview" id="${mimeFile.id}" params="[size:'MAX']" target="_blank"><span class="glyphicon glyphicon-fullscreen" title="预览（最大化）"></span></g:link>
 								&nbsp;
 								<g:render template="download" model="[instance:mimeFile]"/>
                             </g:else>

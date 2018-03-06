@@ -2,6 +2,39 @@ package common
 
 class CommonHelper {
 
+    /**
+     * url 是否可达
+     * @param spec
+     */
+    static Boolean isURLReachable(String spec = "https://www.baidu.com") {
+        try {
+            def url = new URL(spec)
+            url.openStream()
+            return true
+        } catch (Exception e) {
+
+        }
+        return false
+    }
+
+    /**
+     * host 是否可达
+     * @param host
+     */
+    static Boolean isHostReachable(String host = "www.baidu.com") {
+        try {
+            InetAddress inetAddress = InetAddress.getByName(host)
+            return inetAddress.isReachable(5000)
+        } catch (Exception e) {
+
+        }
+        return false
+    }
+
+    /**
+     * 获得真实ip
+     * @param request
+     */
     static String getRealIp(def request) {
         def realIp = request.getHeader("X-Real-Ip")
         if (realIp == null) {

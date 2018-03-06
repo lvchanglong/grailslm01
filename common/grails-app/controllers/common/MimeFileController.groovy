@@ -283,15 +283,15 @@ class MimeFileController {
         }
 
         if(serverFileType.equalsIgnoreCase("pdf")) {
-            render(view: "preview${params.browser?:""}", model: [path: "/static/${keyPath}/${serverFileName}"])
+            render(view: "preview${params.size?:""}", model: [path: "/${keyPath}/${serverFileName}"])
             return
         }
         def targetFile = FileHelper.getFile(dirpath, serverFileName + ".pdf")
         if(FileConverter.convertTo(serverFile, targetFile)) {
-            render(view: "preview${params.browser?:""}", model: [path: "/static/${keyPath}/${targetFile.getName()}"])
+            render(view: "preview${params.size?:""}", model: [path: "/${keyPath}/${targetFile.getName()}"])
             return
         }
-        redirect(uri:"/static/${keyPath}/${serverFileName}") //处理未支持格式
+        redirect(uri:"/${keyPath}/${serverFileName}") //处理未支持格式
     }
 
 }

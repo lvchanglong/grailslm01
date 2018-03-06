@@ -7,14 +7,8 @@
 * You're free to add application-wide styles to this file and they'll appear at the top of the
 * compiled file, but it's generally better to create a new file per style scope.
 *
-*= require mobile
-*= require bootstrap-3.3.7-dist/css/bootstrap
-*= require bootstrap-datetimepicker-4.17.47/build/css/bootstrap-datetimepicker.min
-*= require jquery-ui-1.12.1.Autocomplete/jquery-ui
-*= require messenger-1.5.0/build/css/messenger
-*= require messenger-1.5.0/build/css/messenger-theme-future
-*= require jqcloud/jqcloud
-*= require jstree-3.3.5/dist/themes/default/style
+*= require mobile.css
+*= require jquery-ui-1.12.1.Autocomplete/jquery-ui.min.css
 *= require_self
 */
 .navbar-layout-header {

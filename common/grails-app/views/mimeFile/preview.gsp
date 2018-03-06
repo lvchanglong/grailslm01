@@ -22,11 +22,11 @@
                 <div class="col-md-12">
                     <div id="preview-pdf" class="media"></div>
                     <p class="preview-backings">
-                        预览存在问题？请下载并安装以下软件后重试。安装前最好卸载其他PDF阅读工具，推荐使用右键“目标另存为(A)...”方式进行下载，安装成功后需手动按F5键刷新页面，特殊情况下需重启浏览器。<br/>
-                    <div class="download">
-                        <g:link uri="${assetPath(src: "AcroRdrDC/AcroRdrDC1500720033_zh_CN.msi")}">Windows-Adobe Acrobat Reader DC</g:link>
-                    </div>
-                </p>
+                            预览存在问题？请下载并安装以下软件后重试。安装前最好卸载其他PDF阅读工具，推荐使用右键“目标另存为(A)...”方式进行下载，安装成功后需手动按F5键刷新页面，特殊情况下需重启浏览器。<br/>
+                        <div class="download">
+                            <g:link uri="${assetPath(src: "AcroRdrDC/AcroRdrDC1500720033_zh_CN.msi")}">Windows-Adobe Acrobat Reader DC</g:link>
+                        </div>
+                    </p>
                     <script>
                         if(PDFObject.supportsPDFs) {
                             console.log("PDFObject");
