@@ -3,6 +3,7 @@
 
 import common.FileConverter
 import common.FileHelper
+import common.ExcelHelper
 import grails.converters.JSON
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
@@ -120,6 +121,53 @@ class ${className}Controller {
         if(file.exists()) {
             file.delete()
         }
+    }
+
+    /**
+     * 批量导入
+     */
+    def importData() {
+        ArrayList errors = new ArrayList()
+        try {
+            def multipartFile = request.getFile("file")
+            if(!multipartFile.empty) {
+                def dirpath = servletContext.getRealPath("/") + "temp"
+                def filename = multipartFile.getOriginalFilename()
+                def file = FileHelper.getFile(dirpath, filename)
+                multipartFile.transferTo(file)
+
+                def rows = ExcelHelper.readExcel(file)
+                rows.eachWithIndex {cells, i ->
+                    params.name = cells[0]
+
+                    if (params.name) {
+                        def instance = ${className}.where {
+                            name == params.name.trim()
+                        }.find()
+                        if(instance) {
+                            errors.add("\${params.name}（名称重复）")
+                        } else {
+                            instance = new ${className}(params)
+                            if(!instance.save(flush: true)) {
+                                println instance.errors
+                                errors.add("\${params.name}（保存失败）")
+                            }
+                        }
+                    } else {
+                        errors.add("\${filename}（名称为空）")
+                    }
+                }
+
+                if(file.exists()) {
+                    file.delete()
+                }
+                render status: OK, text: "导入成功 \${errors}"
+                return
+            }
+        } catch (MissingMethodException e) {
+
+        }
+        render status: BAD_REQUEST, text: "导入失败 \${errors}"
     }
 
     /**

@@ -113,7 +113,7 @@ class ExcelHelper {
             Sheet sheet = workbook.getSheetAt(i)
             if(sheet) {
                 String sheetName = sheet.getSheetName()
-//              println "sheetName:"+sheet.getSheetName()
+                //println "sheetName:"+sheet.getSheetName()
                 def firstRowIdx = sheet.getFirstRowNum()
                 def lastRowIdx = sheet.getLastRowNum()
 
@@ -138,8 +138,6 @@ class ExcelHelper {
                         for(int z=firstCellIdx;z<=lastCellIdx;z++) { //列
                             def cell = row.getCell(z)
                             if(cell != null) {
-                                //cell.setCellType(org.apache.poi.ss.usermodel.Cell.CELL_TYPE_STRING)
-                                //println cell.getCellType()
                                 def cellValue = ExcelHelper.getValue(cell)
                                 arrayCell.add(cellValue)
                             } else {
@@ -164,37 +162,42 @@ class ExcelHelper {
     static def getValue(def cell) {
         def data = ""
         try{
-            Integer cellType = cell.getCellType()
+            cell.setCellType(org.apache.poi.ss.usermodel.CellType.STRING)
+
+            def cellType = cell.getCellTypeEnum()
             switch(cellType) {
-                case org.apache.poi.ss.usermodel.Cell.CELL_TYPE_NUMERIC :
+                case org.apache.poi.ss.usermodel.CellType._NONE:
+                    data = cell.getStringCellValue()
+                    break;
+                case org.apache.poi.ss.usermodel.CellType.NUMERIC:
                     // 数字
                     data = cell.getNumericCellValue() + ""
                     if(-1 != data.lastIndexOf(".0")) {
                         data = cell.getNumericCellValue().toDouble().toInteger() + ""
                     }
                     break;
-                case org.apache.poi.ss.usermodel.Cell.CELL_TYPE_STRING :
+                case org.apache.poi.ss.usermodel.CellType.STRING:
                     // 字串
                     data = cell.getStringCellValue()
                     break;
-                case org.apache.poi.ss.usermodel.Cell.CELL_TYPE_FORMULA :
+                case org.apache.poi.ss.usermodel.CellType.FORMULA:
                     // 公式
                     data = cell.getNumericCellValue() + ""
                     break;
-                case org.apache.poi.ss.usermodel.Cell.CELL_TYPE_BLANK :
+                case org.apache.poi.ss.usermodel.CellType.BLANK:
                     // 空白
                     data = ""
                     break;
-                case org.apache.poi.ss.usermodel.Cell.CELL_TYPE_BOOLEAN :
+                case org.apache.poi.ss.usermodel.CellType.BOOLEAN:
                     // 步林
                     data = cell.getBooleanCellValue() + ""
                     break;
-                case org.apache.poi.ss.usermodel.Cell.CELL_TYPE_ERROR :
+                case org.apache.poi.ss.usermodel.CellType.ERROR:
                     // Error
                     data = ""
                     break;
             }
-        } catch( Exception err2 ) {
+        } catch( Exception err ) {
             data = ""
         }
         return data

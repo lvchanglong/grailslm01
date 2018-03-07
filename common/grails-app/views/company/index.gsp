@@ -13,6 +13,7 @@
             </h1>
             <g:if test="${!vip.onlyView(params)}">
                 <g:render template="create" model="[instance: new Company()]"/>
+                <g:render template="import"/>
 
                 <a href="#fakelink" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#batchDeleteCompanyModal">
                     <span class="glyphicon glyphicon-remove"></span>&nbsp;批量删除
@@ -94,8 +95,8 @@
                     <th>序号</th>
                     <th>企业名称</th>
                     <th>法定代表人</th>
+                    <th>注册资本</th>
                     <th>行业划分</th>
-                    <th>企业类型</th>
                     <th>操作</th>
                 </tr>
                 <g:each in="${companyList}" status="i" var="company">
@@ -108,8 +109,8 @@
                         <td>${offset.toInteger() + i + 1}</td>
                         <td>${company.name}</td>
                         <td>${company.legalPerson}</td>
+                        <td>${company.capital}</td>
                         <td>${company.industry}</td>
-                        <td>${company.businessForm}</td>
                         <td>
                             <g:render template="show" model="[instance:company]"/>
                         &nbsp;

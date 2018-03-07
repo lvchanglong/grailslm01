@@ -13,6 +13,7 @@ ${'<%'}@ page import="common.User; common.${className};" %>
             </h1>
             <g:if test="\${!vip.onlyView(params)}">
                 <g:render template="create" model="[instance: new ${className}()]"/>
+                <g:render template="import"/>
 
                 <a href="#fakelink" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#batchDelete${className}Modal">
                     <span class="glyphicon glyphicon-remove"></span>&nbsp;批量删除
