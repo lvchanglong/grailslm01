@@ -6,7 +6,7 @@ package extension
 class Contact {
 
     static hasMany = [companies:Company, otherCompanies:Company]
-    static mappedBy = [companies: "actualContact", otherCompanies: "contactor"]
+    static mappedBy = [companies: "actualContact", otherCompanies: "contact"]
 
     String name //姓名
     String duty //职务

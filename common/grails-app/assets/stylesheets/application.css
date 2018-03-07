@@ -51,6 +51,11 @@
 .black-screen {
     background-color: black;
 }
+.link-to-top {
+    display:block;
+    margin-top:17px;
+    font-size:12px;
+}
 
 /* slide */
 .carousel.slide {

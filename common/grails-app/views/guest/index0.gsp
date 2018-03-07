@@ -25,83 +25,99 @@
         </style>
     </head>
     <body>
-        <g:applyLayout name="/bases/LeftRight">
-            <div class="row">
-                <div class="col-md-9">
-                    <g:if test="${params.type}">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mhead">${params.type}</div>
-                                <div class="linedark"></div>
-                                <div class="linelight"></div>
+        <g:applyLayout name="/bases/LeftCenterRight">
+            <g:if test="${params.type}">
+                %{--进入“类别”模式--}%
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mhead">${params.type}</div>
+                        <div class="linedark"></div>
+                        <div class="linelight"></div>
+                    </div>
+                    <g:each in="${articleList}" status="i" var="article">
+                        <div class="col-md-12">
+                            <div style="padding-bottom:5px;">
+                                <g:render template="index0/articleShow" model="[instance:article]"/>
+                                <span style="float:right;color:gray;">
+                                    <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
+                                </span>
                             </div>
-                            <g:each in="${articleList}" status="i" var="article">
-                                <div class="col-md-12">
-                                    <div style="padding-bottom:5px;">
-                                        <g:render template="index1/articleShow" model="[instance:article]"/>
-                                        <span style="float:right;color:gray;">
-                                            <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
-                                        </span>
-                                    </div>
-                                </div>
-                            </g:each>
+                        </div>
+                    </g:each>
+                    <div class="col-md-12">
+                        <div style="text-align: center;">
+                            <div class="pagination">
+                                <g:paginate total="${articleCount ?: 0}" params="[type:params.type]"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </g:if>
+            <g:else>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="margin-bottom:15px;">
+                            <g:render template="index0/slider"/>
+                        </div>
+                    </div>
+                    <g:if test="${params.q}">
+                        %{--进入“检索”模式--}%
+                        <g:each in="${articleList}" status="i" var="article">
                             <div class="col-md-12">
-                                <div style="text-align: center;">
-                                    <div class="pagination">
-                                        <g:paginate total="${articleCount ?: 0}" />
-                                    </div>
+                                <div style="padding-bottom:5px;">
+                                    <g:render template="index0/articleShow" model="[instance:article]"/>
+                                    <span style="float:right;color:gray;">
+                                        <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </g:each>
+                        <div class="col-md-12">
+                            <div style="text-align: center;">
+                                <div class="pagination">
+                                    <g:paginate total="${articleCount ?: 0}" params="[q:params.q]"/>
                                 </div>
                             </div>
                         </div>
                     </g:if>
                     <g:else>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div style="margin-bottom:15px;">
-                                    <g:render template="index1/slider"/>
+                        %{--进入“首页”模式--}%
+                        <g:each in="${Article.listTypes()}" status="i" var="type">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mhead">${type}</div>
+                                        <div class="linedark"></div>
+                                        <div class="linelight"></div>
+                                    </div>
+                                    <g:each in="${Article.findAllByType(type, [max:10])}" status="j" var="article">
+                                        <div class="col-md-12">
+                                            <div style="padding-bottom:5px;">
+                                                <g:render template="index0/articleShow" model="[instance:article]"/>
+                                                <span style="float:right;color:gray;">
+                                                    <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </g:each>
                                 </div>
                             </div>
-                            <g:each in="${Article.listTypes()}" status="i" var="type">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="mhead">${type}</div>
-                                            <div class="linedark"></div>
-                                            <div class="linelight"></div>
-                                        </div>
-                                        <g:each in="${Article.findAllByType(type, [max:10])}" status="j" var="article">
-                                            <div class="col-md-12">
-                                                <div style="padding-bottom:5px;">
-                                                    <g:render template="index1/articleShow" model="[instance:article]"/>
-                                                    <span style="float:right;color:gray;">
-                                                        <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </g:each>
-                                    </div>
-                                </div>
-                            </g:each>
-                        </div>
+                        </g:each>
                     </g:else>
                 </div>
+            </g:else>
 
-                <div class="col-md-3 sidebar-right">
-                    <div style="padding:0 20px;color:black;">
-                        <div style="font-weight:bold;">
-                            <div class="glyphicon glyphicon-phone-alt" style="font-size:50px;display:inline-block;vertical-align: middle;"></div>
-                            <div style="font-size:22px;display:inline-block;vertical-align: middle;margin-left:9px;">联系方式</div>
-                        </div>
-                        <div style="font-size:18px;margin-top:10px;font-weight:bold;">
-                            <span>Ｑ群:</span>
-                            <span style="margin-left:8px;">101150634</span>
-                            <br/>
-                            <span>ＱＱ:</span>
-                            <span style="margin-left:8px;">417891235</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <content tag="sidebarLeft">
+                <g:render template="index0/sidebarLeft"/>
+            </content>
+
+            <content tag="sidebarRight">
+                <g:render template="index0/sidebarRight"/>
+            </content>
+
+            <content tag="header">
+                <g:render template="index0/header"/>
+            </content>
 
             <content tag="footer">
                 <g:render template="index0/footer"/>

@@ -10,6 +10,7 @@ import static org.springframework.http.HttpStatus.*
 class VipController {
 
     def userService
+    def feedbackService
 
     def index() {
 
@@ -43,6 +44,21 @@ class VipController {
             return
         }
         render status: OK, text: "修改成功"
+    }
+
+    /**
+     * 反馈及留言
+     */
+    def feedback(Feedback instance) {
+        try {
+            instance.username = User.get(session.uid).username
+            instance.ip = CommonHelper.getRealIp(request)
+            feedbackService.save(instance)
+        } catch (ValidationException e) {
+            render status: INTERNAL_SERVER_ERROR, text: "发送失败"
+            return
+        }
+        render status: CREATED, text: "发送成功"
     }
 
 }

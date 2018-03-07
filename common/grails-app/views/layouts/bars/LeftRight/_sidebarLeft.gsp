@@ -2,7 +2,7 @@
 
 <g:set var="vip" value="${User.get(session.uid)}"/>
 
-<div id="sidebarLeft" style="font-size:12px;">
+<div id="sidebarLeft">
 	<g:if test="${vip}">
 		<g:if test="${vip.isSuperman()}">
 			<g:set var="groups" value="${Function.listToGroup()}"/>

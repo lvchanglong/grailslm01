@@ -7,8 +7,8 @@
         <title><g:layoutTitle default="${application.platform.name}"/></title>
         <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 
-        <meta name="Keywords" content="grails联盟,Grails联盟,GRAILS联盟"/>
-        <meta name="Description" content="grails,grails教程,grails视频教程,网站开发,深思君"/>
+        <meta name="Keywords" content="${application.platform.name}"/>
+        <meta name="Description" content="${application.platform.name}"/>
 
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.bootcss.com/messenger/1.5.0/css/messenger.min.css">

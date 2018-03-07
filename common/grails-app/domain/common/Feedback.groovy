@@ -29,7 +29,9 @@ class Feedback {
 
     static constraints = {
         username(blank:false, nullable:false)
-        content(blank:false, nullable:false)
+        content(blank:false, nullable:false, validator: { val, obj ->
+            !val.contains("href")
+        })
         type(blank:false, nullable:false, inList: ["网站", "客户端"])
         ip(blank:true, nullable:true)
     }

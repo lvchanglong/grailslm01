@@ -139,7 +139,7 @@ class ExcelHelper {
                             def cell = row.getCell(z)
                             if(cell != null) {
                                 //cell.setCellType(org.apache.poi.ss.usermodel.Cell.CELL_TYPE_STRING)
-                                println cell.getCellType()
+                                //println cell.getCellType()
                                 def cellValue = ExcelHelper.getValue(cell)
                                 arrayCell.add(cellValue)
                             } else {

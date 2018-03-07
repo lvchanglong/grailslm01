@@ -1,12 +1,12 @@
 package extension
 
 /**
- * 公司管理
+ * 企业(客户)管理
  */
 class Company {
 
-    String companyId //企业编号
     String name //企业名称
+    String companyId //企业编号
     String legalPerson //法定代表人
     String capital //注册资本
 	String industry //行业划分
@@ -20,7 +20,7 @@ class Company {
 	String businessState //经营状况
     String employeeNum //企业职工人数
 	
-    Contact contactor //联系人
+    Contact contact //联系人
     Contact actualContact //实际负责人
 	
 	String rank //信用等级
@@ -37,39 +37,39 @@ class Company {
     Date lastUpdated //更新时间
 
     static constraints = {
-        companyId(nullable: false, blank: false)
-        name(nullable: false, blank: false)
+        name(nullable: false, blank: false, unique: true)
+        companyId(nullable: true, blank: true)
         legalPerson(nullable: false, blank: false)
 		capital(nullable: true, blank: true)   // 分公司没有注册资金
 		industry(nullable: true, blank: true)
         code(nullable: true, blank: true) // 有部分企业没有统一信用代码证
-        registerAddr(nullable: false, blank: false)
+        registerAddr(nullable: true, blank: true)
 		actualAddr(nullable: true, blank: true)
-		registerDate(nullable: false, blank: false)
-        approvalDate(nullable: false, blank: false)
+		registerDate(nullable: true, blank: true)
+        approvalDate(nullable: true, blank: true)
         businessTerm(nullable: true, blank: true) // 营业期限分有期限和无期限
-		registerDept(nullable: false, blank: false)
-		businessState(nullable: false, blank: false)
+		registerDept(nullable: true, blank: true)
+		businessState(nullable: true, blank: true)
         employeeNum(nullable: true, blank: true)
-        contactor(nullable: true, blank: true)
-		actualContact(nullable: true, blank: true)
+        contact(nullable: true, blank: true)
+        actualContact(nullable: true, blank: true)
 		rank(nullable: true, blank: true)
-		blacklist(nullable: false, blank: false)
+		blacklist(nullable: true, blank: true)
         bankName(nullable: true, blank: true)
 		businessForm(nullable: true, blank: true)
-		businessScope(nullable: false, blank: false)
+		businessScope(nullable: true, blank: true)
         patent(nullable: true, blank: true)
         certificate(nullable: true, blank: true)
 		honour(nullable: true, blank: true)
-        introduction(nullable: false, blank: false)
+        introduction(nullable: true, blank: true)
     }
 
     static mapping = {
         table "extension_company"
 
         id column: "id"
-        companyId column: "companyId"
         name column: "name"
+        companyId column: "companyId"
         legalPerson column: "legalPerson"
         capital column: "capital"
 		industry column: "industry"
@@ -82,7 +82,7 @@ class Company {
         registerDept column: "registerDept"
 		businessState column: "businessState"
         employeeNum column: "employeeNum"
-        contactor column: "contactor"
+        contact column: "contact"
         actualContact column: "actualContact"
 		rank column: "rank"
         blacklist column: "blacklist"

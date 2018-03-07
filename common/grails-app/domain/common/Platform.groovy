@@ -40,7 +40,7 @@ class Platform {
     static constraints = {
         name(blank:false, nullable:false, unique: true)
         state(blank:false, nullable:false, inList: ["关闭", "开启"])
-        layout(blank:false, nullable:false, inList: ["bases/Center", "bases/LeftRight"])
+        layout(blank:false, nullable:false, inList: ["bases/Center", "bases/LeftRight", "bases/LeftCenterRight"])
         css(blank:false, nullable:false, inList: ["bases/moon.css", "bases/sun.css"])
         data(nullable:true)
         filename(nullable:true)

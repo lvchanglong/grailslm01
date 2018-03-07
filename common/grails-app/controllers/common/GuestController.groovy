@@ -13,6 +13,7 @@ class GuestController {
     def userService
     def loginLogService
     def searchLogService
+
     def excelHtmlService
 
     /**
