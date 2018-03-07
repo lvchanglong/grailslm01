@@ -10,7 +10,7 @@ class Contact {
 
     String name //姓名
     String duty //职务
-    String phone //联系方式
+    String phone //电话
     String email //邮箱
     Date dateCreated //创建时间
     Date lastUpdated //更新时间
@@ -37,7 +37,11 @@ class Contact {
     }
 
     String toString() {
-        return name
+        return this.name + "#" + this.phone
+    }
+
+    String getUniqueKey() {
+        return "${this.id}#${this.name}#${this.phone?:"未知"}#${this.email?:"未知"}"
     }
 
 }

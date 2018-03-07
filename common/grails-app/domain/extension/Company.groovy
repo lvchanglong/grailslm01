@@ -27,11 +27,11 @@ class Company {
     String blacklist = "N"//是否被列入企业黑名单(Y,N)
     String bankName //基本账户所在行
     String businessForm //企业类型
-	String businessScope //经营范围（主营产品）
+	String businessScope //经营范围（主营产品）-Text
     String patent //专利技术	
     String certificate //资质/认证/经营/许可情况
-    String honour //企业荣誉
-	String introduction //企业简介	
+    String honour //企业荣誉-Text
+	String introduction //企业简介-Text
 	
     Date dateCreated //创建时间
     Date lastUpdated //更新时间
