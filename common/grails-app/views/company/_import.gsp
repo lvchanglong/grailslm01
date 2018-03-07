@@ -13,13 +13,13 @@
                     <fieldset class="modal-fieldset">
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <ol style="list-style-type:none;padding-left:0;line-height:24px;;">
+                                <input type="file" id="file" name="file" class="form-control"/>
+                            </div>
+                            <div class="col-sm-12">
+                                <ol style="list-style-type:none;padding-left:0;line-height:24px;margin-top:15px;">
                                     <li>1.应选择<strong>excel</strong>文件（后缀名为<strong>xls</strong>或<strong>xlsx</strong>）</li>
                                     <li>2.最好<strong>在导入前</strong>将文件中<strong>所有单元格的格式</strong>设置为“<strong>文本类型</strong>”</li>
                                 </ol>
-                            </div>
-                            <div class="col-sm-12">
-                                <input type="file" id="file" name="file" class="form-control"/>
                             </div>
                             <div class="col-sm-12">
                                 <span id="importCompanyInfo"></span>
