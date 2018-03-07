@@ -27,11 +27,11 @@ class CommonService {
                 array.add(new HashMap(["name":"账号管理", "controllerName":"user", "actionName":"index", "zIndex":110]))
                 array.add(new HashMap(["name":"角色管理", "controllerName":"role", "actionName":"index", "zIndex":120]))
                 array.add(new HashMap(["name":"文件管理", "controllerName":"mimeFile", "actionName":"index", "zIndex":130]))
-                array.add(new HashMap(["name":"文章管理", "controllerName":"article", "actionName":"index", "zIndex":135]))
-                array.add(new HashMap(["name":"幻灯片管理", "controllerName":"slide", "actionName":"index", "zIndex":140]))
-                array.add(new HashMap(["name":"用户反馈", "controllerName":"feedback", "actionName":"index", "zIndex":150]))
-                array.add(new HashMap(["name":"登录日志", "controllerName":"loginLog", "actionName":"index", "zIndex":160]))
-                array.add(new HashMap(["name":"检索日志", "controllerName":"searchLog", "actionName":"index", "zIndex":170]))
+                array.add(new HashMap(["name":"文章管理", "controllerName":"article", "actionName":"index", "zIndex":140]))
+                array.add(new HashMap(["name":"幻灯片管理", "controllerName":"slide", "actionName":"index", "zIndex":150]))
+                array.add(new HashMap(["name":"用户反馈", "controllerName":"feedback", "actionName":"index", "zIndex":160]))
+                array.add(new HashMap(["name":"登录日志", "controllerName":"loginLog", "actionName":"index", "zIndex":170]))
+                array.add(new HashMap(["name":"检索日志", "controllerName":"searchLog", "actionName":"index", "zIndex":180]))
                 array.each {params->
                     platform.addToFunctions(new Function(params))
                 }
