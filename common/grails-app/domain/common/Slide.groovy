@@ -19,11 +19,12 @@ class Slide {
         id column: "id"
         version column: "version"
 
+		filename column:"filename"
+		data column:"data_id"
         title column:"title"
         url column:"url"
         content column:"content", sqlType:"Text"
-        data column:"data_id"
-        filename column:"filename"
+		
         dateCreated column:"date_created"
         lastUpdated column:"last_updated"
 
@@ -31,11 +32,11 @@ class Slide {
     }
 
     static constraints = {
-        title(blank:true, nullable:true)
+        filename(blank:false, nullable:false)
+        data(nullable:false)
+		title(blank:true, nullable:true)
         url(blank:false, nullable:false)
         content(blank:true, nullable:true)
-        data(nullable:false)
-        filename(blank:false, nullable:false)
     }
 
     String toString() {
