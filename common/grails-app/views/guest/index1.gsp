@@ -37,7 +37,10 @@
                     <g:each in="${articleList}" status="i" var="article">
                         <div class="col-md-12">
                             <div style="padding-bottom:5px;">
-                                <g:render template="index0/articleShow" model="[instance:article]"/>
+                                <g:render template="index1/articleShow" model="[instance:article]"/>
+                                <span style="float:right;color:gray;">
+                                    <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
+                                </span>
                             </div>
                         </div>
                     </g:each>
@@ -54,7 +57,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div style="margin-bottom:15px;">
-                            <g:render template="index0/slider"/>
+                            <g:render template="index1/slider"/>
                         </div>
                     </div>
                     <g:if test="${params.q}">
@@ -62,7 +65,7 @@
                         <g:each in="${articleList}" status="i" var="article">
                             <div class="col-md-12">
                                 <div style="padding-bottom:5px;">
-                                    <g:render template="index0/articleShow" model="[instance:article]"/>
+                                    <g:render template="index1/articleShow" model="[instance:article]"/>
                                     <span style="float:right;color:gray;">
                                         <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
                                     </span>
@@ -90,10 +93,7 @@
                                     <g:each in="${Article.findAllByType(type, [max:10])}" status="j" var="article">
                                         <div class="col-md-12">
                                             <div style="padding-bottom:5px;">
-                                                <g:render template="index0/articleShow" model="[instance:article]"/>
-                                                <span style="float:right;color:gray;">
-                                                    <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
-                                                </span>
+                                                <g:render template="index1/articleShow" model="[instance:article]"/>
                                             </div>
                                         </div>
                                     </g:each>
