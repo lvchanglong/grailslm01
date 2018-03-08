@@ -15,7 +15,7 @@
                     ${instance.content}
                 </p>
                 <p style="text-align:right;color:#848383;font-size:12px;">
-                    文章类型：${instance.type}
+                    文章类型：${instance.type}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     发布时间：<g:formatDate format="yyyy-MM-dd hh:mm:ss" date="${instance.dateCreated}"/>
                 </p>
             </div>
