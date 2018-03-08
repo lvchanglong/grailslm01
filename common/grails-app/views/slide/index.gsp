@@ -110,7 +110,7 @@
                         <td>${slide.url}</td>
                         <td>${slide.content}</td>
                         <td>${slide.filename}</td>
-                        <td><img id="image" src="${createLink(controller:params.controller, action:'image', params:[id: slide.id])}" style="width:30px;height:30px;"/></td>
+                        <td><img id="image" src="${createLink(controller:params.controller, action:'image', params:[id: slide.id])}" style="width:30px;height:30px;" class="black-screen"/></td>
                         <td><g:formatDate format="yyyy-MM-dd" date="${slide.dateCreated}"/></td>
                         <td>
                             <g:if test="${!vip.onlyView(params)}">

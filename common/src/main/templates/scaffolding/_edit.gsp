@@ -50,7 +50,7 @@ ${'<%'}@ page import="common.${className};" %>
                             <label for="image" class="col-sm-2">预览
                             </label>
                             <div class="col-sm-10">
-                                <img id="image" src="\${createLink(controller:params.controller, action:'image', params:[id:instance.id])}" style="width:100px;height:100px;"/>
+                                <img id="image" src="\${createLink(controller:params.controller, action:'image', params:[id:instance.id])}" style="width:100px;height:100px;" class="black-screen"/>
                             </div>
                         </div>
                         <div class="form-group">

@@ -11,10 +11,10 @@
 *= require_self
 */
 .navbar-layout-header {
-    z-index:10000;
+    z-index:7000;
 }
 .modal {
-    z-index:10001;
+    z-index:9000;
 }
 .modal-title {
     font-size: 24px !important;
@@ -55,6 +55,13 @@
     display:block;
     margin-top:17px;
     font-size:12px;
+}
+.line-ellipsis {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    width:100%;
+    display:block;
 }
 
 /* slide */

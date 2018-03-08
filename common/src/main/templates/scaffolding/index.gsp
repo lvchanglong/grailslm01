@@ -111,7 +111,7 @@ ${'<%'}@ page import="common.User; common.${className};" %>
                         </g:if>
                         <td>\${offset.toInteger() + i + 1}</td>
                         <td>\${${propertyName}.name}</td>
-                        <td><img id="image" src="\${createLink(controller:params.controller, action:'image', params:[id: ${propertyName}.id])}" style="width:30px;height:30px;"/></td>
+                        <td><img id="image" src="\${createLink(controller:params.controller, action:'image', params:[id: ${propertyName}.id])}" style="width:30px;height:30px;" class="black-screen"/></td>
                         <td><g:formatDate format="yyyy-MM-dd" date="\${${propertyName}.dateCreated}"/></td>
                         <td>
                             <g:render template="show" model="[instance:${propertyName}]"/>

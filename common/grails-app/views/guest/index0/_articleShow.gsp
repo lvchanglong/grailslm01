@@ -1,4 +1,4 @@
-<a href="#fakelink" data-toggle="modal" data-target="#showArticleModal${instance.id}" style="font-size:12px;">
+<a href="#fakelink" data-toggle="modal" data-target="#showArticleModal${instance.id}" style="font-size:12px;" class="line-ellipsis">
     <span class="glyphicon glyphicon-menu-right"></span>&nbsp;${instance.title}
 </a>
 
