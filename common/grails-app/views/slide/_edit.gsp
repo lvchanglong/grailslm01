@@ -15,29 +15,6 @@
                 <div class="modal-body">
                     <fieldset class="modal-fieldset">
                         <div class="form-group">
-                            <label for="title" class="col-sm-2">标题
-                                <span class="required-indicator">*</span>
-                            </label>
-                            <div class="col-sm-10">
-                                <g:textField name="title" value="${instance.title}" required="required" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="url" class="col-sm-2">url
-                                <span class="required-indicator">*</span>
-                            </label>
-                            <div class="col-sm-10">
-                                <g:textField name="url" value="${instance.url}" required="required" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="content" class="col-sm-2">内容
-                            </label>
-                            <div class="col-sm-10">
-                                <g:textField name="content" value="${instance.content}" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="image" class="col-sm-2">预览
                             </label>
                             <div class="col-sm-10">
@@ -50,6 +27,28 @@
                             </label>
                             <div class="col-sm-10">
                                 <input type="file" id="file" name="file" value="" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="url" class="col-sm-2">url
+                                <span class="required-indicator">*</span>
+                            </label>
+                            <div class="col-sm-10">
+                                <g:textField name="url" value="${instance.url}" required="required" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2">标题
+                            </label>
+                            <div class="col-sm-10">
+                                <g:textField name="title" value="${instance.title}" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="content" class="col-sm-2">内容
+                            </label>
+                            <div class="col-sm-10">
+                                <g:textField name="content" value="${instance.content}" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>

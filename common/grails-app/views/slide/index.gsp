@@ -90,11 +90,11 @@
                         </th>
                     </g:if>
                     <th>序号</th>
-                    <th>标题</th>
-                    <th>url</th>
-                    <th>内容</th>
                     <th>图片名称</th>
                     <th>图片预览</th>
+                    <th>url</th>
+                    <th>标题</th>
+                    <th>内容</th>
                     <g:sortableColumn property="dateCreated" title="创建时间"/>
                     <th>操作</th>
                 </tr>
@@ -106,11 +106,11 @@
                             </td>
                         </g:if>
                         <td>${offset.toInteger() + i + 1}</td>
-                        <td>${slide.title}</td>
-                        <td>${slide.url}</td>
-                        <td>${slide.content}</td>
                         <td>${slide.filename}</td>
                         <td><img id="image" src="${createLink(controller:params.controller, action:'image', params:[id: slide.id])}" style="width:30px;height:30px;" class="black-screen"/></td>
+                        <td>${slide.url}</td>
+                        <td>${slide.title}</td>
+                        <td>${slide.content}</td>
                         <td><g:formatDate format="yyyy-MM-dd" date="${slide.dateCreated}"/></td>
                         <td>
                             <g:if test="${!vip.onlyView(params)}">

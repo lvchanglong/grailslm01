@@ -10,6 +10,10 @@
 *= require mobile.css
 *= require_self
 */
+html, body {
+    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+    height:100%;
+}
 .navbar-layout-header {
     z-index:7000;
 }
@@ -67,13 +71,13 @@
 /* slide */
 .carousel.slide {
     position:relative;
-    height: 530px;
+    height: 470px;
     width: 100%;
     background-color:#202e57;
     overflow:hidden;
 }
 .carousel-inner {
-    width: 75%;
+    width: 100%;
     height:100%;
     margin-right: auto;
     margin-left: auto;
@@ -81,13 +85,14 @@
 .carousel-inner .item{
     width: 100%;
     height:100%;
+    margin:0 auto;
 }
 .slide-image {
     position: absolute;
     right: 0;
     bottom: 0;
-    max-width: 526px;
-    max-height: 370px;
+    width:100%;
+    height:100% !important;
     -webkit-animation: banner-slide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0s 1;
     -moz-animation: banner-slide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0s 1;
     -o-animation: banner-slide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0s 1;
@@ -97,8 +102,9 @@
     position:absolute;
     left:0;
     top:17px;
-    text-align: left;
     color:white;
+    text-align:center;
+    width:100%;
 }
 .carousel-caption h1 {
     font-weight: bold;
@@ -174,9 +180,6 @@
 .ui-autocomplete {
     z-index:99999;
     font-size:14px;
-}
-html, body {
-    height:100%;
 }
 .form-control {
     margin-bottom:5px;

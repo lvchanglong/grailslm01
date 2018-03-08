@@ -31,7 +31,7 @@ class Slide {
     }
 
     static constraints = {
-        title(blank:false, nullable:false)
+        title(blank:true, nullable:true)
         url(blank:false, nullable:false)
         content(blank:true, nullable:true)
         data(nullable:false)

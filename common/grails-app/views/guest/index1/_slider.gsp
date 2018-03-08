@@ -6,7 +6,7 @@
     }
 </style>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:130px;background-color: #063e68 !important;">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:210px;background-color: #063e68 !important;">
     <g:set var="slides" value="${Slide.list()}"/>
 
     <ol class="carousel-indicators">
@@ -20,15 +20,17 @@
         <g:if test="${slides}">
             <g:each in="${slides}" var="slide" status="i">
                 <div class="item ${i == 0?"active":""}">
-                    <div class="carousel-caption">
-                        <h1 style="margin-top:0;">
-                            <g:link url="${slide.url}">${slide.title}</g:link>
-                        </h1>
-                        <p class="subheading">
-                            ${slide.content}
-                        </p>
-                    </div>
-                    <img src="${createLink(controller:'slide', action:"image", params:["id": slide.id])}" class="slide-image" style="height:100%;"/>
+                    <g:link url="${slide.url}">
+                        <div class="carousel-caption">
+                            <h1 style="margin-top:0;">
+                                ${slide.title}
+                            </h1>
+                            <p class="subheading">
+                                ${slide.content}
+                            </p>
+                        </div>
+                        <img src="${createLink(controller:'slide', action:"image", params:["id": slide.id])}" class="slide-image"/>
+                    </g:link>
                 </div>
             </g:each>
         </g:if>

@@ -14,11 +14,11 @@
                 <div class="modal-body">
                     <fieldset class="modal-fieldset">
                         <div class="form-group">
-                            <label for="title" class="col-sm-2">标题
+                            <label for="file" class="col-sm-2">上传
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="title" value="${instance.title}" required="required" class="form-control"/>
+                                <input type="file" id="file" name="file" value="" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -30,18 +30,17 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="title" class="col-sm-2">标题
+                            </label>
+                            <div class="col-sm-10">
+                                <g:textField name="title" value="${instance.title}" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="content" class="col-sm-2">内容
                             </label>
                             <div class="col-sm-10">
                                 <g:textField name="content" value="${instance.content}" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="file" class="col-sm-2">上传
-                                <span class="required-indicator">*</span>
-                            </label>
-                            <div class="col-sm-10">
-                                <input type="file" id="file" name="file" value="" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>
