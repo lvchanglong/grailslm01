@@ -88,7 +88,11 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="mhead">${type}</div>
+                                    <div class="mhead">
+                                        <g:link controller="${params.controller}" action="${params.action}" params="[type:type]" style="color:#333;">
+                                            ${type}
+                                        </g:link>
+                                    </div>
                                     <div class="linedark"></div>
                                     <div class="linelight"></div>
                                 </div>
