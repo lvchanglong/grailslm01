@@ -24,7 +24,7 @@ class Company {
     Contact actualContact //实际负责人
 	
 	String rank //信用等级
-    String blacklist = "N"//是否被列入企业黑名单(Y,N)
+    String blacklist //是否被列入企业黑名单
     String bankName //基本账户所在行
     String businessForm //企业类型
 	String businessScope //经营范围（主营产品）-Text

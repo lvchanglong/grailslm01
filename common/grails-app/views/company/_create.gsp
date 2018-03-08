@@ -149,7 +149,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="blacklist" class="col-sm-2">是否被列入企业黑名单(Y,N)
+                            <label for="blacklist" class="col-sm-2">是否被列入企业黑名单
                             </label>
                             <div class="col-sm-10">
                                 <g:textField name="blacklist" value="${instance.blacklist}" class="form-control"/>

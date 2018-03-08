@@ -28,7 +28,7 @@
                     <li>联系人：<strong>${instance.contact?:"未知"}</strong></li>
                     <li>实际负责人：<strong>${instance.actualContact?:"未知"}</strong></li>
                     <li>信用等级：<strong>${instance.rank?:"未知"}</strong></li>
-                    <li>是否被列入企业黑名单(Y,N)：<strong>${instance.blacklist?:"未知"}</strong></li>
+                    <li>是否被列入企业黑名单：<strong>${instance.blacklist?:"未知"}</strong></li>
                     <li>基本账户所在行：<strong>${instance.bankName?:"未知"}</strong></li>
                     <li>企业类型：<strong>${instance.businessForm?:"未知"}</strong></li>
                     <li>经营范围（主营产品）：<strong>${instance.businessScope?:"未知"}</strong></li>
