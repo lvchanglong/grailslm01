@@ -38,9 +38,6 @@
                         <div class="col-md-12">
                             <div style="padding-bottom:5px;">
                                 <g:render template="index0/articleShow" model="[instance:article]"/>
-                                <span style="float:right;color:gray;">
-                                    <g:formatDate format="yyyy-MM-dd" date="${article.dateCreated}"/>
-                                </span>
                             </div>
                         </div>
                     </g:each>

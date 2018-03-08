@@ -4,7 +4,7 @@
     <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="修改"></span>
 </a>
 
-<div class="modal fade" id="editArticleModal${instance.id}" tabindex="-1" role="dialog" aria-labelledby="editArticleModal${instance.id}Title" aria-hidden="true">
+<div class="modal fade" id="editArticleModal${instance.id}" role="dialog" aria-labelledby="editArticleModal${instance.id}Title" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <g:form name="editArticleForm${instance.id}" url="[controller:params.controller, action: 'update', id:instance.id]" class="form-horizontal ajaxForm">
@@ -41,7 +41,7 @@
                             <label for="content" class="col-sm-2">内容
                             </label>
                             <div class="col-sm-10">
-                                <ckeditor:editor name="content" id="articleContent${instance.id}" width="100%" height="370px">
+                                <ckeditor:editor name="content" id="editArticle${instance.id}" width="100%" height="370px">
                                     ${instance.content}
                                 </ckeditor:editor>
                             </div>

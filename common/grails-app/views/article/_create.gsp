@@ -3,7 +3,7 @@
 <a href="#fakelink" class="btn btn-lg btn-info" data-toggle="modal" data-target="#createArticleModal">
     <span class="glyphicon glyphicon-plus"></span>&nbsp;信息添加
 </a>
-<div class="modal fade" id="createArticleModal" tabindex="-1" role="dialog" aria-labelledby="createArticleModalTitle" aria-hidden="true">
+<div class="modal fade" id="createArticleModal" role="dialog" aria-labelledby="createArticleModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <g:form name="createArticleForm" url="[controller:params.controller, action: 'save']" class="form-horizontal ajaxForm">
@@ -40,7 +40,7 @@
                             <label for="content" class="col-sm-2">内容
                             </label>
                             <div class="col-sm-10">
-                                <ckeditor:editor name="content" id="articleContent" width="100%" height="370px">
+                                <ckeditor:editor name="content" id="createArticle" width="100%" height="370px">
                                     ${instance.content}
                                 </ckeditor:editor>
                             </div>

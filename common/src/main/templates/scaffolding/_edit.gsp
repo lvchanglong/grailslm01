@@ -4,7 +4,7 @@ ${'<%'}@ page import="common.${className};" %>
     <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="修改"></span>
 </a>
 
-<div class="modal fade" id="edit${className}Modal\${instance.id}" tabindex="-1" role="dialog" aria-labelledby="edit${className}Modal\${instance.id}Title" aria-hidden="true">
+<div class="modal fade" id="edit${className}Modal\${instance.id}" role="dialog" aria-labelledby="edit${className}Modal\${instance.id}Title" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <g:form name="edit${className}Form\${instance.id}" url="[controller:params.controller, action: 'update', id:instance.id]" class="form-horizontal ajaxForm">
@@ -27,6 +27,15 @@ ${'<%'}@ page import="common.${className};" %>
                             </label>
                             <div class="col-sm-10">
                                 <g:textField name="content" value="\${instance.content}" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="remark" class="col-sm-2">备注
+                            </label>
+                            <div class="col-sm-10">
+                                <ckeditor:editor name="remark" id="edit${className}\${instance.id}" width="100%" height="370px">
+                                    \${instance.remark}
+                                </ckeditor:editor>
                             </div>
                         </div>
                         <div class="form-group">

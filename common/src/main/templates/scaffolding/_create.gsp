@@ -3,7 +3,7 @@ ${'<%'}@ page import="common.${className};" %>
 <a href="#fakelink" class="btn btn-lg btn-info" data-toggle="modal" data-target="#create${className}Modal">
     <span class="glyphicon glyphicon-plus"></span>&nbsp;信息添加
 </a>
-<div class="modal fade" id="create${className}Modal" tabindex="-1" role="dialog" aria-labelledby="create${className}ModalTitle" aria-hidden="true">
+<div class="modal fade" id="create${className}Modal" role="dialog" aria-labelledby="create${className}ModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <g:form name="create${className}Form" url="[controller:params.controller, action: 'save']" class="form-horizontal ajaxForm">
@@ -26,6 +26,15 @@ ${'<%'}@ page import="common.${className};" %>
                             </label>
                             <div class="col-sm-10">
                                 <g:textField name="content" value="\${instance.content}" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="remark" class="col-sm-2">备注
+                            </label>
+                            <div class="col-sm-10">
+                                <ckeditor:editor name="remark" id="create${className}" width="100%" height="370px">
+                                    \${instance.remark}
+                                </ckeditor:editor>
                             </div>
                         </div>
                         <div class="form-group">
