@@ -112,14 +112,14 @@
                         <td>${company.capital}</td>
                         <td>${company.industry}</td>
                         <td>
-                            <g:render template="show" model="[instance:company]"/>
-                        &nbsp;
                             <g:if test="${!vip.onlyView(params)}">
                                 <g:render template="edit" model="[instance:company]"/>
                                 &nbsp;
                                 <g:render template="delete" model="[instance:company]"/>
                             </g:if>
                             <g:else>
+                                <g:render template="show" model="[instance:company]"/>
+                                &nbsp;
                                 <span class="glyphicon glyphicon-minus"></span>
                             </g:else>
                         </td>

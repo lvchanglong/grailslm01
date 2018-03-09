@@ -174,7 +174,7 @@
                             <label for="businessScope" class="col-sm-2">经营范围（主营产品）
                             </label>
                             <div class="col-sm-10">
-                                <g:textArea name="businessScope" value="${instance.businessScope}" class="form-control"/>
+                                <g:textArea name="businessScope" value="${instance.businessScope}" class="form-control" style="min-height:130px;"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -202,7 +202,7 @@
                             <label for="introduction" class="col-sm-2">企业简介
                             </label>
                             <div class="col-sm-10">
-                                <g:textArea name="introduction" value="${instance.introduction}" class="form-control"/>
+                                <g:textArea name="introduction" value="${instance.introduction}" class="form-control" style="min-height:210px;"/>
                             </div>
                         </div>
                     </fieldset>
