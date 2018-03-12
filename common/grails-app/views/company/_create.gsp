@@ -117,14 +117,36 @@
                             <label for="contactText" class="col-sm-2">联系人
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="contactText" value="${instance.contact?.getUniqueKey()}" class="form-control" autocomplete="off" data-provide="typeahead" data-min-length="0" data-show-hint-on-focus="true" data-source="${Contact.list()*.getUniqueKey() as grails.converters.JSON}"/>
+                                <g:textField name="contactText" id="companyContact" value="${instance.contact?.getUniqueKey()}" class="form-control"/>
+                                <script>
+                                    jQuery("#companyContact").typeahead({
+                                        minLength:0,
+                                        showHintOnFocus:true,
+                                        source:function(query, process) {
+                                            return jQuery.get("${createLink(controller:params.controller, action:'listContacts')}", {query: query}, function (data) {
+                                                return process(data);
+                                            });
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="actualContactText" class="col-sm-2">实际负责人
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="actualContactText" value="${instance.actualContact?.getUniqueKey()}" class="form-control" autocomplete="off" data-provide="typeahead" data-min-length="0" data-show-hint-on-focus="true" data-source="${Contact.list()*.getUniqueKey() as grails.converters.JSON}"/>
+                                <g:textField name="actualContactText" id="companyActualContact" value="${instance.actualContact?.getUniqueKey()}" class="form-control"/>
+                                <script>
+                                    jQuery("#companyActualContact").typeahead({
+                                        minLength:0,
+                                        showHintOnFocus:true,
+                                        source:function(query, process) {
+                                            return jQuery.get("${createLink(controller:params.controller, action:'listContacts')}", {query: query}, function (data) {
+                                                return process(data);
+                                            });
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
                         <div class="form-group">

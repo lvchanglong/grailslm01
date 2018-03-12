@@ -406,4 +406,13 @@ class CompanyController {
         redirect(uri:"/static/${keyPath}/${serverFileName}")
     }
 
+    /**
+     * 联系人列表
+     */
+    def listContacts(String query) {
+        render Contact.where {
+            name ==~ "%${query?query.trim():""}%" || phone ==~ "%${query?query.trim():""}%" || email ==~ "%${query?query.trim():""}%"
+        }.list([max: 8])*.getUniqueKey() as JSON
+    }
+
 }
