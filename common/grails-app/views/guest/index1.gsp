@@ -105,6 +105,10 @@
                                 </g:each>
                             </div>
                         </div>
+
+                        <g:if test="${1 == i%2}">
+                            <div class="col-md-12"></div>
+                        </g:if>
                     </g:each>
                 </g:else>
             </div>
