@@ -4,7 +4,7 @@
         <meta name="layout" content="main"/>
     </head>
     <body>
-        <g:applyLayout name="/bases/Center">
+        <g:applyLayout name="${application.platform.layout}">
             <g:render template="index/slider"/>
         </g:applyLayout>
     </body>
