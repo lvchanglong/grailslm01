@@ -410,6 +410,10 @@ class CompanyController {
      * 联系人列表
      */
     def listContacts(String query) {
+        if(!query) {
+            render Contact.list([max: 8])*.getUniqueKey() as JSON
+            return
+        }
         render Contact.where {
             name ==~ "%${query?query.trim():""}%" || phone ==~ "%${query?query.trim():""}%" || email ==~ "%${query?query.trim():""}%"
         }.list([max: 8])*.getUniqueKey() as JSON

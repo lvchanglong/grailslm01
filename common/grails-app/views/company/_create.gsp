@@ -117,7 +117,7 @@
                             <label for="contactText" class="col-sm-2">联系人
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="contactText" id="companyContact" value="${instance.contact?.getUniqueKey()}" class="form-control"/>
+                                <g:textField name="contactText" id="companyContact" value="${instance.contact?.getUniqueKey()}" class="form-control" autocomplete="off"/>
                                 <script>
                                     jQuery("#companyContact").typeahead({
                                         minLength:0,
@@ -135,7 +135,7 @@
                             <label for="actualContactText" class="col-sm-2">实际负责人
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="actualContactText" id="companyActualContact" value="${instance.actualContact?.getUniqueKey()}" class="form-control"/>
+                                <g:textField name="actualContactText" id="companyActualContact" value="${instance.actualContact?.getUniqueKey()}" class="form-control" autocomplete="off"/>
                                 <script>
                                     jQuery("#companyActualContact").typeahead({
                                         minLength:0,
