@@ -18,14 +18,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="type" id="articleType" value="${instance.type}" required="required" class="form-control" autocomplete="off"/>
-                                <script>
-                                    jQuery("#articleType").typeahead({
-                                        minLength:0,
-                                        showHintOnFocus:true,
-                                        source:${Article.listTypes() as grails.converters.JSON}
-                                    });
-                                </script>
+                                <g:textField name="type" value="${instance.type}" required="required" class="form-control" autocomplete="off" data-provide="typeahead" data-min-length="0" data-show-hint-on-focus="true" data-source="${Article.listTypes() as grails.converters.JSON}"/>
                             </div>
                         </div>
                         <div class="form-group">
