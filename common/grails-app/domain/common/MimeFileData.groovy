@@ -17,7 +17,6 @@ class MimeFileData {
         id column: "id"
         version column: "version"
 
-        parent column:"parent_id"
         bytes column:"bytes", sqlType:"LongBlob"
         dateCreated column:"date_created"
         lastUpdated column:"last_updated"
@@ -26,7 +25,6 @@ class MimeFileData {
     }
 
     static constraints = {
-        parent(nullable:false)
         bytes(nullable:false, maxSize:1024 * 1024 * 100) //100M
     }
 
