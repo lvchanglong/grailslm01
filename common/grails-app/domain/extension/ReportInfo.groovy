@@ -39,7 +39,7 @@ class ReportInfo {
     String zczb //注册资本
     String jjlx //经济类型
     String clrq //成立日期
-    String gszchtyshxydm //工商注册号/统一社会信用代码
+    String gszch //工商注册号(统一社会信用代码)
     String zzjgdm //组织机构代码
 
     String zcfzl3 //资产负债率-大前年
@@ -84,6 +84,48 @@ class ReportInfo {
     String zbbzzzl1 //资本保值增值率-去年
     String xslrzzl1 //销售利润增长率-去年
 
+    /**
+     * 企业基本信息
+     */
+    String lxdh //联系电话
+    String jyfw //经营范围
+    String yzbm //邮政编码
+    String jbkhh //基本开户行
+    String hkzh //货款证号
+    String zh //账号
+
+    /**
+     * 股东信息，历史沿革，分支机构
+     */
+    static hasMany = [gdxxs: ReportInfoGdxx, lsygs: ReportInfoLsyg, fzjgs: ReportInfoFzjg, ggryszs: ReportInfoGgrysz]
+
+    /**
+     * 其他
+     */
+    String zzjgsz //组织机构设置
+    String jynl //经营能力
+    String cyryqk //从业人员情况
+    String gjcyzcqk //国家产业政策情况
+    String zwqk //债务情况
+    String yfnl //研发能力
+    String xzjgxyjl //行政监管信用记录
+    String sfjgxyjl //司法监管信用记录
+    String yhxdlyqk //银行信贷履约情况
+    String glzdqk //管理制度情况
+    String glrzqk //管理认证情况
+    String ztzbjlyqk //招投中标及履约情况（招标投标领域重点建设项目中标及履约情况）
+    String ywqk //业务情况
+    String fznl //发展能力
+    String zjxyzk //资金信用状况
+    String zcyyzk //资产运营状况
+    String cwxyzk //财务效益状况
+    String shgxzk //社会贡献状况
+    String shgy //社会公益
+    String qyry //企业荣誉
+
+    //-信用等级
+
+
     Date dateCreated //创建时间
     Date lastUpdated //更新时间
 
@@ -101,6 +143,33 @@ class ReportInfo {
         ggxyxx column:"ggxyxx", sqlType:"Text"
         syxyxx column:"syxyxx", sqlType:"Text"
         gyryxx column:"gyryxx", sqlType:"Text"
+        jyfw column:"jyfw", sqlType:"Text"
+
+        zzjgsz column:"zzjgsz", sqlType:"Text"
+        jynl column:"jynl", sqlType:"Text"
+        cyryqk column:"cyryqk", sqlType:"Text"
+        gjcyzcqk column:"gjcyzcqk", sqlType:"Text"
+        zwqk column:"zwqk", sqlType:"Text"
+        yfnl column:"yfnl", sqlType:"Text"
+        xzjgxyjl column:"xzjgxyjl", sqlType:"Text"
+        sfjgxyjl column:"sfjgxyjl", sqlType:"Text"
+        yhxdlyqk column:"yhxdlyqk", sqlType:"Text"
+
+
+        glzdqk column:"glzdqk", sqlType:"Text"
+        glrzqk column:"glrzqk", sqlType:"Text"
+        ztzbjlyqk column:"ztzbjlyqk", sqlType:"Text"
+        ywqk column:"ywqk", sqlType:"Text"
+        zwqk column:"zwqk", sqlType:"Text"
+        fznl column:"fznl", sqlType:"Text"
+        zjxyzk column:"zjxyzk", sqlType:"Text"
+        zcyyzk column:"zcyyzk", sqlType:"Text"
+        cwxyzk column:"cwxyzk", sqlType:"Text"
+
+        cwxyzk column:"cwxyzk", sqlType:"Text"
+        shgxzk column:"shgxzk", sqlType:"Text"
+        shgy column:"shgy", sqlType:"Text"
+        qyry column:"qyry", sqlType:"Text"
 
         dateCreated column:"date_created"
         lastUpdated column:"last_updated"
