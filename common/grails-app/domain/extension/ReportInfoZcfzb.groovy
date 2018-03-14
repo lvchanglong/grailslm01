@@ -7,10 +7,13 @@ class ReportInfoZcfzb {
 
     static belongsTo = [parent: ReportInfo]
 
+    String nf3 //年份（由远及近）
+    String nf2 //年份（由远及近）
+    String nf1 //年份（由远及近）
+
     /**
      * 流动资产
      */
-    String nf3 //年份（由远及近）
     String hbzj3Begin //货币资金-期初
     String hbzj3End //货币资金-期末
     String hbzj2End //货币资金-期末
@@ -74,10 +77,10 @@ class ReportInfoZcfzb {
     /**
      * 非流动资产
      */
-    String fldzc3Begin //非流动资产-期初
-    String fldzc3End //非流动资产-期末
-    String fldzc2End //非流动资产-期末
-    String fldzc1End //非流动资产-期末
+//    String fldzc3Begin //非流动资产-期初
+//    String fldzc3End //非流动资产-期末
+//    String fldzc2End //非流动资产-期末
+//    String fldzc1End //非流动资产-期末
 
     String kgcsjrzc3Begin //可供出售金融资产-期初
     String kgcsjrzc3End //可供出售金融资产-期末
@@ -197,15 +200,166 @@ class ReportInfoZcfzb {
     /**
      * 流动负债
      */
-    String ch3Begin //固定资产净值-期初
-    String ch3End //固定资产净值-期末
-    String ch2End //固定资产净值-期末
-    String ch1End //固定资产净值-期末
+    String dqjk3Begin //短期借款-期初
+    String dqjk3End //短期借款-期末
+    String dqjk2End //短期借款-期末
+    String dqjk1End //短期借款-期末
 
-    String ch3Begin //固定资产净值-期初
-    String ch3End //固定资产净值-期末
-    String ch2End //固定资产净值-期末
-    String ch1End //固定资产净值-期末
+    String jyxjrfz3Begin //交易性金融负债-期初
+    String jyxjrfz3End //交易性金融负债-期末
+    String jyxjrfz2End //交易性金融负债-期末
+    String jyxjrfz1End //交易性金融负债-期末
+
+    String yfpj3Begin //应付票据-期初
+    String yfpj3End //应付票据-期末
+    String yfpj2End //应付票据-期末
+    String yfpj1End //应付票据-期末
+
+    String yfzk3Begin //应付账款-期初
+    String yfzk3End //应付账款-期末
+    String yfzk2End //应付账款-期末
+    String yfzk1End //应付账款-期末
+
+    String yskx3Begin //预收款项-期初
+    String yskx3End //预收款项-期末
+    String yskx2End //预收款项-期末
+    String yskx1End //预收款项-期末
+
+    String yfzgxc3Begin //应付职工薪酬-期初
+    String yfzgxc3End //应付职工薪酬-期末
+    String yfzgxc2End //应付职工薪酬-期末
+    String yfzgxc1End //应付职工薪酬-期末
+
+    String yjsf3Begin //应交税费-期初
+    String yjsf3End //应交税费-期末
+    String yjsf2End //应交税费-期末
+    String yjsf1End //应交税费-期末
+
+    String yflx3Begin //应付利息-期初
+    String yflx3End //应付利息-期末
+    String yflx2End //应付利息-期末
+    String yflx1End //应付利息-期末
+
+    String yfgl3Begin //应付股利-期初
+    String yfgl3End //应付股利-期末
+    String yfgl2End //应付股利-期末
+    String yfgl1End //应付股利-期末
+
+    String qtyfk3Begin //其他应付款-期初
+    String qtyfk3End //其他应付款-期末
+    String qtyfk2End //其他应付款-期末
+    String qtyfk1End //其他应付款-期末
+
+    String ynndqdfldfz3Begin //一年内到期的非流动负债-期初
+    String ynndqdfldfz3End //一年内到期的非流动负债-期末
+    String ynndqdfldfz2End //一年内到期的非流动负债-期末
+    String ynndqdfldfz1End //一年内到期的非流动负债-期末
+
+    String qtldfz3Begin //其他流动负债-期初
+    String qtldfz3End //其他流动负债-期末
+    String qtldfz2End //其他流动负债-期末
+    String qtldfz1End //其他流动负债-期末
+
+    String ldfzhj3Begin //流动负债合计-期初
+    String ldfzhj3End //流动负债合计-期末
+    String ldfzhj2End //流动负债合计-期末
+    String ldfzhj1End //流动负债合计-期末
+
+    /**
+     * 非流动负债
+     */
+//    String fldfz3Begin //非流动负债-期初
+//    String fldfz3End //非流动负债-期末
+//    String fldfz2End //非流动负债-期末
+//    String fldfz1End //非流动负债-期末
+
+    String cqjk3Begin //长期借款-期初
+    String cqjk3End //长期借款-期末
+    String cqjk2End //长期借款-期末
+    String cqjk1End //长期借款-期末
+
+    String yfzq3Begin //应付债劵-期初
+    String yfzq3End //应付债劵-期末
+    String yfzq2End //应付债劵-期末
+    String yfzq1End //应付债劵-期末
+
+    String cqjyfk3Begin //长期借应付款-期初
+    String cqjyfk3End //长期借应付款-期末
+    String cqjyfk2End //长期借应付款-期末
+    String cqjyfk1End //长期借应付款-期末
+
+    String zxyfk3Begin //专项应付款-期初
+    String zxyfk3End //专项应付款-期末
+    String zxyfk2End //专项应付款-期末
+    String zxyfk1End //专项应付款-期末
+
+    String yjfz3Begin //预计负债-期初
+    String yjfz3End //预计负债-期末
+    String yjfz2End //预计负债-期末
+    String yjfz1End //预计负债-期末
+
+    String dysdsfz3Begin //递延所得税负债-期初
+    String dysdsfz3End //递延所得税负债-期末
+    String dysdsfz2End //递延所得税负债-期末
+    String dysdsfz1End //递延所得税负债-期末
+
+    String qtfldfz3Begin //其他非流动负债-期初
+    String qtfldfz3End //其他非流动负债-期末
+    String qtfldfz2End //其他非流动负债-期末
+    String qtfldfz1End //其他非流动负债-期末
+
+    String fldfzhj3Begin //非流动负债合计-期初
+    String fldfzhj3End //非流动负债合计-期末
+    String fldfzhj2End //非流动负债合计-期末
+    String fldfzhj1End //非流动负债合计-期末
+
+    String fzhj3Begin //负债合计-期初
+    String fzhj3End //负债合计-期末
+    String fzhj2End //负债合计-期末
+    String fzhj1End //负债合计-期末
+
+    /**
+     * 所有者权益（或股东权益）
+     */
+    String ssgdqy3Begin //少数股东权益-期初
+    String ssgdqy3End //少数股东权益-期末
+    String ssgdqy2End //少数股东权益-期末
+    String ssgdqy1End //少数股东权益-期末
+
+    String sszb3Begin //实收资本（或股本）-期初
+    String sszb3End //实收资本（或股本）-期末
+    String sszb2End //实收资本（或股本）-期末
+    String sszb1End //实收资本（或股本）-期末
+
+    String zbgj3Begin //资本公积-期初
+    String zbgj3End //资本公积-期末
+    String zbgj2End //资本公积-期末
+    String zbgj1End //资本公积-期末
+
+    String kcg3Begin //减：库存股-期初
+    String kcg3End //减：库存股-期末
+    String kcg2End //减：库存股-期末
+    String kcg1End //减：库存股-期末
+
+    String yygj3Begin //盈余公积-期初
+    String yygj3End //盈余公积-期末
+    String yygj2End //盈余公积-期末
+    String yygj1End //盈余公积-期末
+
+    String wfplr3Begin //未分配利润-期初
+    String wfplr3End //未分配利润-期末
+    String wfplr2End //未分配利润-期末
+    String wfplr1End //未分配利润-期末
+
+    String syzqyhj3Begin //所有者权益（或股东权益）合计  -期初
+    String syzqyhj3End //所有者权益（或股东权益）合计  -期末
+    String syzqyhj2End //所有者权益（或股东权益）合计  -期末
+    String syzqyhj1End //所有者权益（或股东权益）合计  -期末
+
+    String fzhsyzqyzj3Begin //负债和所有者权益（或股东权益）总计-期初
+    String fzhsyzqyzj3End //负债和所有者权益（或股东权益）总计-期末
+    String fzhsyzqyzj2End //负债和所有者权益（或股东权益）总计-期末
+    String fzhsyzqyzj1End //负债和所有者权益（或股东权益）总计-期末
 
     Date dateCreated //创建时间
     Date lastUpdated //更新时间

@@ -98,9 +98,9 @@ class ReportInfo {
     String zh //账号
 
     /**
-     * 股东信息，历史沿革，分支机构，资产负债表
+     * 股东信息，历史沿革，分支机构，资产负债表，利润表
      */
-    static hasMany = [gdxxs: ReportInfoGdxx, lsygs: ReportInfoLsyg, fzjgs: ReportInfoFzjg, ggryszs: ReportInfoGgrysz, zcfzbs: ReportInfoZcfzb]
+    static hasMany = [gdxxs: ReportInfoGdxx, lsygs: ReportInfoLsyg, fzjgs: ReportInfoFzjg, ggryszs: ReportInfoGgrysz, zcfzbs: ReportInfoZcfzb, lrbs: ReportInfoLrb]
 
     /**
      * 其他1
