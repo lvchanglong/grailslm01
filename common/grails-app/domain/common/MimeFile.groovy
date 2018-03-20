@@ -45,7 +45,7 @@ class MimeFile {
         type(blank:false, nullable:false, inList:["文件", "文件夹"])
         classification(blank:false, nullable:false, inList:["公开", "私有"])
         parent(nullable:true)
-        creater(nullable:false)
+        creater(nullable:true)
         data(nullable:true)
     }
 

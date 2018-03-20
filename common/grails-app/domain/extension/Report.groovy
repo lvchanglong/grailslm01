@@ -1,5 +1,7 @@
 package extension
 
+import common.User
+
 /**
  * 信用报告-概要
  */
@@ -17,6 +19,7 @@ class Report {
     String dq = "省级"//地区
     String state = "已保存" //状态
 
+    User creater //创建人
     ReportInfo info //信用报告详情
 
     Date dateCreated //创建时间
@@ -32,8 +35,9 @@ class Report {
         ccr(blank:true, nullable:true)
         scyj(blank:true, nullable:true)
         dq(blank:true, nullable:true, inList: ["省级", "沈阳", "大连", "鞍山", "抚顺", "本溪", "丹东", "锦州", "营口", "阜新", "辽阳", "盘锦", "铁岭", "朝阳", "葫芦岛"])
-        state(blank:true, nullable:true, inList: ["已保存", "已提交", "已完成"])
-        info(blank:true, nullable:true)
+        state(blank:true, nullable:true, inList: ["已暂存", "已提交", "未合格", "已完成"])
+        info(nullable:true)
+        creater(nullable:true)
     }
 
     static mapping = {
@@ -48,11 +52,12 @@ class Report {
 
         yxq column:"yxq"
         ccr column:"ccr"
-        scyj column:"scyj"
+        scyj column:"scyj", sqlType:"Text"
 
         dq column:"dq"
         state column:"state"
 
+        creater column:"creater_id"
         info column:"info_id"
 
         dateCreated column:"date_created"
