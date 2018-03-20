@@ -52,7 +52,7 @@ class ReportInfoZcfzb {
     String qtysk3Begin //其他应收款-期初
     String qtysk3End //其他应收款-期末
     String qtysk2End //其他应收款-期末
-    String qtyskEnd //其他应收款-期末
+    String qtysk1End //其他应收款-期末
 
     String ch3Begin //存货-期初
     String ch3End //存货-期末
@@ -77,11 +77,6 @@ class ReportInfoZcfzb {
     /**
      * 非流动资产
      */
-//    String fldzc3Begin //非流动资产-期初
-//    String fldzc3End //非流动资产-期末
-//    String fldzc2End //非流动资产-期末
-//    String fldzc1End //非流动资产-期末
-
     String kgcsjrzc3Begin //可供出售金融资产-期初
     String kgcsjrzc3End //可供出售金融资产-期末
     String kgcsjrzc2End //可供出售金融资产-期末
@@ -268,11 +263,6 @@ class ReportInfoZcfzb {
     /**
      * 非流动负债
      */
-//    String fldfz3Begin //非流动负债-期初
-//    String fldfz3End //非流动负债-期末
-//    String fldfz2End //非流动负债-期末
-//    String fldfz1End //非流动负债-期末
-
     String cqjk3Begin //长期借款-期初
     String cqjk3End //长期借款-期末
     String cqjk2End //长期借款-期末
@@ -372,8 +362,6 @@ class ReportInfoZcfzb {
         table "extension_reportinfo_zcfzb"
         id column: "id"
         version column: "version"
-
-        parent column:"parent_id"
 
         dateCreated column:"date_created"
         lastUpdated column:"last_updated"

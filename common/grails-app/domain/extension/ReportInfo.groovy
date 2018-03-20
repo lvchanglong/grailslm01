@@ -98,9 +98,9 @@ class ReportInfo {
     String zh //账号
 
     /**
-     * 股东信息，历史沿革，分支机构，资产负债表，利润表
+     * 股东信息，历史沿革，分支机构
      */
-    static hasMany = [gdxxs: ReportInfoGdxx, lsygs: ReportInfoLsyg, fzjgs: ReportInfoFzjg, ggryszs: ReportInfoGgrysz, zcfzbs: ReportInfoZcfzb, lrbs: ReportInfoLrb]
+    static hasMany = [gdxxs: ReportInfoGdxx, lsygs: ReportInfoLsyg, fzjgs: ReportInfoFzjg, ggryszs: ReportInfoGgrysz]
 
     /**
      * 其他1
@@ -138,8 +138,26 @@ class ReportInfo {
      */
     String sm //声明
     String gzpjap //跟踪评级安排
-    String qydf //企业打分
 
+    /**
+     * 资产负债表
+     */
+    ReportInfoZcfzb zcfzb
+
+    /**
+     * 利润表
+     */
+    ReportInfoLrb lrb
+
+    /**
+     * 现金流量表
+     */
+    ReportInfoXjllb xjllb
+
+    /**
+     * 企业打分
+     */
+    String qydf //企业打分
 
     Date dateCreated //创建时间
     Date lastUpdated //更新时间
