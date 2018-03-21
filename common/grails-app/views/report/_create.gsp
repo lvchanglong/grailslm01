@@ -59,7 +59,7 @@
                                 <label for="yxq" class="col-sm-2">有效期
                                 </label>
                                 <div class="col-sm-10">
-                                    <g:textField name="yxq" value="${instance.yxq}" placeholder="1949-10-01" class="form-control"/>
+                                    <g:textField name="yxq" value="${instance.yxq}" placeholder="如：1949-10-01" class="form-control"/>
                                 </div>
                             </div>
                             <div class="form-group">

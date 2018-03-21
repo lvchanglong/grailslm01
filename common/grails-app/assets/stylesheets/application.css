@@ -164,6 +164,25 @@ html, body {
     border-color: #dfe2e5;
 }
 
+/* line */
+.linedark {
+    border-bottom: 1px solid darkred;
+    width: 10%;
+    float: left;
+    margin-bottom: 15px;
+}
+.linelight {
+    border-bottom: 1px solid lightgray;
+    width: 90%;
+    float: left;
+    margin-bottom: 15px;
+}
+.mhead {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 /* else */
 .ie7 .navbar-form, .ie8 .navbar-form {
     margin-top:9px;

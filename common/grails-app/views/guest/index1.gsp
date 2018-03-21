@@ -4,25 +4,6 @@
     <head>
         <meta name="layout" content="main"/>
         <g:set var="offset" value="${params.offset?:0}"/>
-        <style>
-            .linedark {
-                border-bottom: 1px solid darkred;
-                width: 10%;
-                float: left;
-                margin-bottom: 15px;
-            }
-            .linelight {
-                border-bottom: 1px solid lightgray;
-                width: 90%;
-                float: left;
-                margin-bottom: 15px;
-            }
-            .mhead {
-                text-align: left;
-                font-size: 22px;
-                font-weight: bold;
-            }
-        </style>
     </head>
     <body>
         <g:applyLayout name="/bases/LeftCenterRight">

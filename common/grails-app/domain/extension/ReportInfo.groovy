@@ -10,7 +10,7 @@ class ReportInfo {
     /**
      * 信用报告首页
      */
-    String bgqy //报告企业
+    String qymc = "" //企业名称
     String bgbh = ""//报告编号
     String zzjg = "" //制作机构
     String zzrq = "" //制作日期
@@ -33,7 +33,6 @@ class ReportInfo {
     String ggxyxx = "" //公共信用信息
     String syxyxx = "" //商业信用信息
     String gyryxx = "" //公益荣誉信息
-    String qymc = "" //企业名称
     String qyzs = "" //企业住所
     String fddbr = "" //法定代表人
     String zczb = "" //注册资本
@@ -129,7 +128,6 @@ class ReportInfo {
     /**
      * 信用等级
      */
-    String xydj = "" //信用等级
     String jffw = "" //计分范围
     String xyts = "" //信用提示
 
@@ -163,10 +161,10 @@ class ReportInfo {
     Date lastUpdated //更新时间
 
     static constraints = {
-        bgqy(blank:false, nullable:false)
+        qymc(blank:false, nullable:false)
         tdqkxybgsq(blank:true, nullable:true, inList: ["是", "否"])
         qylx(blank:true, nullable:true, inList: ["小型企业", "中型企业", "大型企业"])
-        xydj(blank:true, nullable:true, inList: ["AAA", "AA", "A", "BBB", "BB", "B", "CCC", "CC", "C", "D"])
+        dj(blank:true, nullable:true, inList: ["AAA", "AA", "A", "BBB", "BB", "B", "CCC", "CC", "C", "D"])
         zcfzb(nullable:true)
         lrb(nullable:true)
         xjllb(nullable:true)
@@ -224,7 +222,7 @@ class ReportInfo {
     }
 
     String toString() {
-        return bgqy
+        return qymc
     }
 
 }

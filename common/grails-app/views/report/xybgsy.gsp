@@ -4,37 +4,18 @@
     <head>
         <meta name="layout" content="main"/>
         <g:set var="offset" value="${params.offset?:0}"/>
-        <style>
-            .linedark {
-                border-bottom: 1px solid darkred;
-                width: 10%;
-                float: left;
-                margin-bottom: 15px;
-            }
-            .linelight {
-                border-bottom: 1px solid lightgray;
-                width: 90%;
-                float: left;
-                margin-bottom: 15px;
-            }
-            .mhead {
-                text-align: left;
-                font-size: 22px;
-                font-weight: bold;
-            }
-        </style>
     </head>
     <body>
         <g:applyLayout name="/bases/LeftCenterRight">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mhead">${reportInfo.bgqy}</div>
+                    <div class="mhead">${reportInfo.qymc}</div>
                     <div class="linedark"></div>
                     <div class="linelight"></div>
                 </div>
                 <div class="col-md-12">
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
-                        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+                        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
                                 <td colspan="4" class="form_th2 p5 tl h20 lh20 fb">
                                     企业信用报告：
@@ -45,7 +26,7 @@
                                     报告企业&nbsp;<span style="color: #ff0000">*</span>
                                 </td>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
-                                    <g:textField name="info.bgqy" value="${reportInfo.bgqy}" class="form-control"/>
+                                    <g:textField name="info.qymc" value="${reportInfo.qymc}" class="form-control"/>
                                 </td>
                             </tr>
                             <tr>
@@ -69,7 +50,7 @@
                                     制作日期&nbsp;<span style="color: #ff0000">*</span>
                                 </td>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
-                                    <g:textField name="info.zzrq" value="${reportInfo.zzrq}" class="form-control" placeholder="2018-03-13"/>
+                                    <g:textField name="info.zzrq" value="${reportInfo.zzrq}" class="form-control" placeholder="如：2018-03-13"/>
                                 </td>
                             </tr>
 

@@ -47,7 +47,7 @@ class ReportController {
             return
         }
         report.creater = User.load(session.uid) //创建人
-        report.info = ["bgqy":report.qymc, "hylx":report.hylx, "yyly":report.yyly] //默认值
+        report.info = ["qymc":report.qymc, "hylx":report.hylx, "yyly":report.yyly] //默认值
         try {
             reportService.save(report)
         } catch (ValidationException e) {
