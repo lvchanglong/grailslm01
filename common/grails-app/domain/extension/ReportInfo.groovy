@@ -18,7 +18,7 @@ class ReportInfo {
     String pgs1Lxfs = "" //评估师1-联系方式
     String pgs2 = "" //评估师2
     String pgs2Lxfs = "" //评估师2-联系方式
-    String tdqkxybgsq = "" //特定情况信用报告申请
+    String tdqkxybgsq = "否" //特定情况信用报告申请
     String sqsm = "" //申请说明
 
     /**
@@ -164,6 +164,7 @@ class ReportInfo {
 
     static constraints = {
         bgqy(blank:false, nullable:false)
+        tdqkxybgsq(blank:true, nullable:true, inList: ["是", "否"])
         qylx(blank:true, nullable:true, inList: ["小型企业", "中型企业", "大型企业"])
         xydj(blank:true, nullable:true, inList: ["AAA", "AA", "A", "BBB", "BB", "B", "CCC", "CC", "C", "D"])
         zcfzb(nullable:true)
@@ -176,6 +177,7 @@ class ReportInfo {
         id column: "id"
         version column: "version"
 
+        sqsm column:"sqsm", sqlType:"Text"
         jbjljfxts column:"jbjljfxts", sqlType:"Text"
         ggxyxx column:"ggxyxx", sqlType:"Text"
         syxyxx column:"syxyxx", sqlType:"Text"

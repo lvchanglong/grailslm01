@@ -47,7 +47,7 @@ class ReportController {
             return
         }
         report.creater = User.load(session.uid) //创建人
-        report.info = new ReportInfo(["bgqy":report.qymc, "hylx":report.hylx, "yyly":report.yyly])
+        report.info = ["bgqy":report.qymc, "hylx":report.hylx, "yyly":report.yyly] //默认值
         try {
             reportService.save(report)
         } catch (ValidationException e) {
@@ -67,11 +67,11 @@ class ReportController {
             notFound()
             return
         }
-
         try {
             reportService.save(report)
         } catch (ValidationException e) {
             render status: INTERNAL_SERVER_ERROR
+            println e.errors
             return
         }
         render status: OK
@@ -187,246 +187,246 @@ class ReportController {
     /**
      * 信用报告首页
      */
-    def xybgsy(ReportInfo reportInfo) {
-        respond reportInfo
+    def xybgsy(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 信用报告概述
      */
-    def xybggs(ReportInfo reportInfo) {
-        respond reportInfo
+    def xybggs(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 企业基本信息
      */
-    def qyjbxx() {
-
+    def qyjbxx(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 股东信息
      */
-    def gdxx() {
-
+    def gdxx(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 历史沿革
      */
-    def llyg() {
-
+    def llyg(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 分支机构
      */
-    def fzjg() {
-
+    def fzjg(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 组织机构设置
      */
-    def zzjgsz() {
-
+    def zzjgsz(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 经营能力
      */
-    def jynl() {
-
+    def jynl(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 高管人员素质
      */
-    def ggrysz() {
-
+    def ggrysz(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 从业人员情况
      */
-    def cyryqk() {
-
+    def cyryqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 国家产业政策情况
      */
-    def gjcyzcqk() {
-
+    def gjcyzcqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 债务情况
      */
-    def zwqk() {
-
+    def zwqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 研发能力
      */
-    def yfnl() {
-
+    def yfnl(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 行政监管信用记录
      */
-    def xzjgxyjl() {
-
+    def xzjgxyjl(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 司法监管信用记录
      */
-    def sfjgxyjl() {
-
+    def sfjgxyjl(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 银行信贷履约情况
      */
-    def yhxdlyqk() {
-
+    def yhxdlyqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 管理制度情况
      */
-    def glzdqk() {
-
+    def glzdqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 管理认证情况
      */
-    def glrzqk() {
-
+    def glrzqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 招投中标及履约情况（招标投标领域重点建设项目中标及履约情况）
      */
-    def ztzbjlyqk() {
-
+    def ztzbjlyqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 业务情况
      */
-    def ywqk() {
-
+    def ywqk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 发展能力
      */
-    def fznl() {
-
+    def fznl(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 资金信用状况
      */
-    def zjxyzk() {
-
+    def zjxyzk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 资产营运状况
      */
-    def zcyyzk() {
-
+    def zcyyzk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 财务效益状况
      */
-    def cwxyzk() {
-
+    def cwxyzk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 社会贡献状况
      */
-    def shgxzk() {
-
+    def shgxzk(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 社会公益
      */
-    def shgy() {
-
+    def shgy(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 企业荣誉
      */
-    def qyry() {
-
+    def qyry(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 基本结论及风险提示
      */
-    def jbjljfxts() {
-
+    def jbjljfxts(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 信用等级
      */
-    def xydj() {
-
+    def xydj(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 声明
      */
-    def sm() {
-
+    def sm(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 跟踪评级安排
      */
-    def gzpjap() {
-
+    def gzpjap(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 资产负债表
      */
-    def zcfzb() {
-
+    def zcfzb(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 利润表
      */
-    def lrb() {
-
+    def lrb(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 现金流量表
      */
-    def xjllb() {
-
+    def xjllb(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
     /**
      * 企业打分
      */
-    def qydf() {
-
+    def qydf(Report report) {
+        [report:report, reportInfo:report.info]
     }
 
 }
