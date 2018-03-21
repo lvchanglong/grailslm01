@@ -93,7 +93,7 @@ class ReportInfo {
     String jyfw = "" //经营范围
     String yzbm = "" //邮政编码
     String jbkhh = "" //基本开户行
-    String hkzh = "" //货款证号
+    String dkzh = "" //贷款证号
     String zh = "" //账号
 
     /**
