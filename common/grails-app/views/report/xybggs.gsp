@@ -287,7 +287,7 @@
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20" colspan="4">
-                                    <g:textArea name="info.jbjljfxts" value="${reportInfo.jbjljfxts}" class="form-control" resize="none" style="min-height:150px;"/>
+                                    <g:textArea name="info.ggxyxx" value="${reportInfo.ggxyxx}" class="form-control" resize="none" style="min-height:150px;"/>
                                 </td>
                             </tr>
                             <tr>
