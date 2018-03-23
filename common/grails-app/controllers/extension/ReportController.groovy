@@ -209,7 +209,16 @@ class ReportController {
      * 股东信息
      */
     def gdxx(Report report) {
-        [report:report, reportInfo:report.info]
+        [report:report, reportInfo:report.info, gdxxList:ReportInfoGdxx.list()]
+    }
+    
+    def deleteGdxx(ReportInfoGdxx reportInfoGdxx) {
+        if (reportInfoGdxx == null) {
+            notFound()
+            return
+        }
+        reportInfoGdxx.delete(flush: true)
+        render status: NO_CONTENT
     }
 
     /**

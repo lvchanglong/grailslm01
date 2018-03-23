@@ -10,6 +10,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
  */
 class ExcelHelper {
 
+    static {
+        AsposeLicense.setLicense()
+    }
+
     /**
      * 获得文件类型
      * @param file
