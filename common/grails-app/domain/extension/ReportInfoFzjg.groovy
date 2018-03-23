@@ -39,4 +39,8 @@ class ReportInfoFzjg {
         sort id:"desc"
     }
 
+    String toString() {
+        return this.ybgqygx + "-" + this.qymc
+    }
+
 }

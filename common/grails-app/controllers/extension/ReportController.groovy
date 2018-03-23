@@ -211,28 +211,46 @@ class ReportController {
     def gdxx(Report report) {
         [report:report, reportInfo:report.info, gdxxList:ReportInfoGdxx.list()]
     }
-    
-    def deleteGdxx(ReportInfoGdxx reportInfoGdxx) {
-        if (reportInfoGdxx == null) {
+
+    def deleteGdxx(ReportInfoGdxx instance) {
+        if (instance == null) {
             notFound()
             return
         }
-        reportInfoGdxx.delete(flush: true)
+        instance.delete(flush: true)
         render status: NO_CONTENT
     }
 
     /**
      * 历史沿革
      */
-    def llyg(Report report) {
-        [report:report, reportInfo:report.info]
+    def lsyg(Report report) {
+        [report:report, reportInfo:report.info, lsygList:ReportInfoLsyg.list()]
+    }
+
+    def deleteLsyg(ReportInfoLsyg instance) {
+        if (instance == null) {
+            notFound()
+            return
+        }
+        instance.delete(flush: true)
+        render status: NO_CONTENT
     }
 
     /**
      * 分支机构
      */
     def fzjg(Report report) {
-        [report:report, reportInfo:report.info]
+        [report:report, reportInfo:report.info, fzjgList:ReportInfoFzjg.list()]
+    }
+
+    def deleteFzjg(ReportInfoFzjg instance) {
+        if (instance == null) {
+            notFound()
+            return
+        }
+        instance.delete(flush: true)
+        render status: NO_CONTENT
     }
 
     /**
@@ -253,7 +271,16 @@ class ReportController {
      * 高管人员素质
      */
     def ggrysz(Report report) {
-        [report:report, reportInfo:report.info]
+        [report:report, reportInfo:report.info, ggryszList:ReportInfoGgrysz.list()]
+    }
+
+    def deleteGgrysz(ReportInfoGgrysz instance) {
+        if (instance == null) {
+            notFound()
+            return
+        }
+        instance.delete(flush: true)
+        render status: NO_CONTENT
     }
 
     /**

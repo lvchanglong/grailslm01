@@ -45,4 +45,8 @@ class ReportInfoGgrysz {
         sort id:"desc"
     }
 
+    String toString() {
+        return this.xm + "-" + this.zw
+    }
+
 }

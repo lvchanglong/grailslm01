@@ -5,7 +5,7 @@
 <div id="sidebarLeft" style="font-size:12px;">
 	<ul class="nav nav-pills nav-stacked">
 		<g:each in="${["信用报告首页":"xybgsy", "信用报告概述":"xybggs", "企业基本信息":"qyjbxx", "股东信息":"gdxx",
-					   "历史沿革":"llyg", "分支机构":"fzjg", "组织机构设置":"zzjgsz", "经营能力":"jynl", "高管人员素质":"ggrysz",
+					   "历史沿革":"lsyg", "分支机构":"fzjg", "组织机构设置":"zzjgsz", "经营能力":"jynl", "高管人员素质":"ggrysz",
 					   "从业人员情况":"cyryqk", "国家产业政策情况":"gjcyzcqk", "债务情况":"zwqk", "研发能力":"yfnl",
 					   "行政监管信用记录":"xzjgxyjl", "司法监管信用记录":"sfjgxyjl", "银行信贷履约情况":"yhxdlyqk",
 					   "管理制度情况":"glzdqk", "管理认证情况":"glrzqk", "招标投标领域重点建设项目中标及履约情况":"ztzbjlyqk",

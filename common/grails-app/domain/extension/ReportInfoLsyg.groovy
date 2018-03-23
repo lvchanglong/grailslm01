@@ -36,4 +36,8 @@ class ReportInfoLsyg {
         sort id:"desc"
     }
 
+    String toString() {
+        return this.bgqmc + "-" + this.bghmc
+    }
+
 }

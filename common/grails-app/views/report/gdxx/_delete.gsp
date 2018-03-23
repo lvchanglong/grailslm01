@@ -9,7 +9,7 @@
                 <h3 class="modal-title" id="deleteReportInfoGdxxModal${instance.id}Title">是否删除？</h3>
             </div>
             <div class="modal-body">
-                “&nbsp;${instance}&nbsp;”&nbsp;删除后，<strong>不可恢复</strong>，请慎重操作
+                “&nbsp;${instance.dwhzrr}&nbsp;”&nbsp;删除后，<strong>不可恢复</strong>，请慎重操作
             </div>
             <div class="modal-footer">
                 <g:form name="deleteReportInfoGdxxForm${instance.id}" url="[controller:params.controller, action: 'deleteGdxx', id:instance.id]" class="ajaxForm">
