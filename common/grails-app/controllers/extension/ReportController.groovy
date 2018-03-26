@@ -465,4 +465,11 @@ class ReportController {
         [report:report, reportInfo:report.info]
     }
 
+    /**
+     * 信用等级释义-列表
+     */
+    def ajaxXydjsyList(String key) {
+        render XydjsyHelper.getKey(key) as JSON
+    }
+
 }

@@ -24,12 +24,12 @@ class ReportInfo {
     /**
      * 信用报告概述
      */
-    String dj = "" //等级
+    String dj = "A" //等级
     String sy = "" //释义
     String yyly = "" //应用领域
     String hylx = "" //行业类型
     String qylx = "中型企业" //企业类型(大型企业，中型企业，小型企业)
-    String jbjljfxts = "" //基本结论及风险提示
+    String jljts = "" //结论及提示(基本结论及风险提示)
     String ggxyxx = "" //公共信用信息
     String syxyxx = "" //商业信用信息
     String gyryxx = "" //公益荣誉信息
@@ -124,6 +124,7 @@ class ReportInfo {
     String shgxzk = "" //社会贡献状况
     String shgy = "" //社会公益
     String qyry = "" //企业荣誉
+    String jbjljfxts = "" //基本结论及风险提示
 
     /**
      * 信用等级
@@ -176,7 +177,7 @@ class ReportInfo {
         version column: "version"
 
         sqsm column:"sqsm", sqlType:"Text"
-        jbjljfxts column:"jbjljfxts", sqlType:"Text"
+        jljts column:"jljts", sqlType:"Text"
         ggxyxx column:"ggxyxx", sqlType:"Text"
         syxyxx column:"syxyxx", sqlType:"Text"
         gyryxx column:"gyryxx", sqlType:"Text"
@@ -206,6 +207,7 @@ class ReportInfo {
         shgxzk column:"shgxzk", sqlType:"Text"
         shgy column:"shgy", sqlType:"Text"
         qyry column:"qyry", sqlType:"Text"
+        jbjljfxts column:"jbjljfxts", sqlType:"Text"
 
         sm column:"sm", sqlType:"Text"
         gzpjap column:"gzpjap", sqlType:"Text"

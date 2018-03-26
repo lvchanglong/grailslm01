@@ -246,13 +246,25 @@
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">等级</th>
                                 <td class="form_td p5 tl h20 lh20" colspan="3">
-                                    <g:select from="${ReportInfo.constrainedProperties.dj.inList}" name="info.dj" value="${reportInfo.dj}" class="form-control"/>
+                                    <g:select from="${ReportInfo.constrainedProperties.dj.inList}" id="reportInfoDj" name="info.dj" value="${reportInfo.dj}" class="form-control"/>
+
+                                    <script>
+                                        jQuery("#reportInfoDj").change(function(){
+                                            jQuery.getJSON("${createLink(controller:"report", action:"ajaxXydjsyList")}", {"key":jQuery(this).val()}, function(data){
+                                                jQuery("#reportInfoJffw").val(data.jffw);
+                                                jQuery("#reportInfoXyts").val(data.xyts);
+                                                jQuery("#reportInfoSy").val(data.sy);
+                                            });
+                                        });
+                                    </script>
                                 </td>
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">释义</th>
                                 <td class="form_td p5 tl h20 lh20" colspan="3">
-                                    <g:textArea name="info.sy" value="${reportInfo.sy}" class="form-control" resize="none" style="min-height:100px;"/>
+                                    <g:hiddenField id="reportInfoJffw" name="info.jffw" value="${reportInfo.jffw}"/>
+                                    <g:hiddenField id="reportInfoXyts" name="info.xyts" value="${reportInfo.xyts}"/>
+                                    <g:textArea id="reportInfoSy" name="info.sy" value="${reportInfo.sy}" class="form-control" resize="none" style="min-height:100px;" readonly="readonly"/>
                                 </td>
                             </tr>
                             <tr>
@@ -279,7 +291,7 @@
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20" colspan="4">
-                                    <g:textArea name="info.jbjljfxts" value="${reportInfo.jbjljfxts}" class="form-control" resize="none" style="min-height:150px;"/>
+                                    <g:textArea name="info.jljts" value="${reportInfo.jljts}" class="form-control" resize="none" style="min-height:150px;"/>
                                 </td>
                             </tr>
                             <tr>
