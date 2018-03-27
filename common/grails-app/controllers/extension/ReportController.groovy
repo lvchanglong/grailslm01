@@ -209,7 +209,7 @@ class ReportController {
      * 股东信息
      */
     def gdxx(Report report) {
-        [report:report, reportInfo:report.info, gdxxList:ReportInfoGdxx.list()]
+        [report:report, reportInfo:report.info, gdxxList:report.info.gdxxs]
     }
 
     def deleteGdxx(ReportInfoGdxx instance) {
@@ -225,7 +225,7 @@ class ReportController {
      * 历史沿革
      */
     def lsyg(Report report) {
-        [report:report, reportInfo:report.info, lsygList:ReportInfoLsyg.list()]
+        [report:report, reportInfo:report.info, lsygList:report.info.lsygs]
     }
 
     def deleteLsyg(ReportInfoLsyg instance) {
@@ -241,7 +241,7 @@ class ReportController {
      * 分支机构
      */
     def fzjg(Report report) {
-        [report:report, reportInfo:report.info, fzjgList:ReportInfoFzjg.list()]
+        [report:report, reportInfo:report.info, fzjgList:report.info.fzjgs]
     }
 
     def deleteFzjg(ReportInfoFzjg instance) {
@@ -271,7 +271,7 @@ class ReportController {
      * 高管人员素质
      */
     def ggrysz(Report report) {
-        [report:report, reportInfo:report.info, ggryszList:ReportInfoGgrysz.list()]
+        [report:report, reportInfo:report.info, ggryszList:report.info.ggryszs]
     }
 
     def deleteGgrysz(ReportInfoGgrysz instance) {
@@ -470,6 +470,15 @@ class ReportController {
      */
     def ajaxXydjsyList(String key) {
         render XydjsyHelper.getKey(key) as JSON
+    }
+
+    def test() {
+        ReportInfoZcfzbZcb.getConstrainedProperties().each {k, v->
+            if(k.endsWith("End") || k.endsWith("Begin")) {
+                println "$k column:\"$k\", sqlType:\"VarChar(30)\""
+            }
+        }
+        render true
     }
 
 }

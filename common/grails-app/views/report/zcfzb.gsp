@@ -1054,16 +1054,16 @@
                                     实收资本（或股本）
                                 </td>
                                 <td class="syzqy3 plus">
-                                    <g:textField name="info.zcfzb.fzb.kcg3Begin" value="${reportInfo.zcfzb?.fzb?.kcg3Begin?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.zcfzb.fzb.sszb3Begin" value="${reportInfo.zcfzb?.fzb?.sszb3Begin?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="syzqy4 plus">
-                                    <g:textField name="info.zcfzb.fzb.kcg3End" value="${reportInfo.zcfzb?.fzb?.kcg3End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.zcfzb.fzb.sszb3End" value="${reportInfo.zcfzb?.fzb?.sszb3End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="syzqy2 plus">
-                                    <g:textField name="info.zcfzb.fzb.kcg2End" value="${reportInfo.zcfzb?.fzb?.kcg2End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.zcfzb.fzb.sszb2End" value="${reportInfo.zcfzb?.fzb?.sszb2End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="syzqy1 plus">
-                                    <g:textField name="info.zcfzb.fzb.kcg1End" value="${reportInfo.zcfzb?.fzb?.kcg1End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.zcfzb.fzb.sszb1End" value="${reportInfo.zcfzb?.fzb?.sszb1End?:"0.00"}" class="form-control"/>
                                 </td>
                             </tr>
                             <tr>
