@@ -8,6 +8,13 @@
     <body>
         <g:applyLayout name="/bases/LeftCenterRight">
             <div class="row">
+                <g:if test="${report.scyj}">
+                    <div class="col-md-12">
+                        <p class="bg-info" style="padding:15px;">
+                            审查意见：${report.scyj}
+                        </p>
+                    </div>
+                </g:if>
                 <div class="col-md-12">
                     <div class="mhead">${reportInfo.qymc}</div>
                     <div class="linedark"></div>
