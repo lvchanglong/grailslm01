@@ -136,7 +136,6 @@ class ReportInfoLrb {
         nf3(blank:false, nullable:false)
         nf2(blank:false, nullable:false)
         nf1(blank:false, nullable:false)
-        parent(nullable:true)
     }
 
     static mapping = {

@@ -3,6 +3,10 @@
 <g:set var="vip" value="${User.get(session.uid)}"/>
 
 <div id="sidebarRight">
+	<g:link controller="report" action="index" target="_self" style="display:block;font-size:14px;margin-bottom:15px;">
+		<span class="glyphicon glyphicon-menu-right"></span>&nbsp;信用报告
+	</g:link>
+
 	<div class="info-header">
 		<div class="glyphicon glyphicon-phone-alt info-header-icon" style="font-size:44px;"></div>
 		<div class="info-header-msg" style="font-size:18px;">申报资讯热线</div>

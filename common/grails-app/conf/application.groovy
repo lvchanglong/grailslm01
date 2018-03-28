@@ -1,5 +1,3 @@
-grails.gorm.default = {
-    constraints {
-        '*'(nullable:true)
-    }
+grails.gorm.default.constraints = {
+    '*'(nullable:true)
 }
