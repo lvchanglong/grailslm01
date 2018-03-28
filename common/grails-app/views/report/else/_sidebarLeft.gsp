@@ -14,10 +14,18 @@
 					   "信用等级":"xydj", "声明":"sm", "跟踪评级安排":"gzpjap", "资产负债表":"zcfzb", "利润表":"lrb",
 					   "现金流量表":"xjllb", "企业打分":"qydf"]}" status="i" var="hm">
 			<li role="presentation" class="${hm.value.equals(params.action)?"active":""}">
-				<g:link controller="${params.controller}" action="${hm.value}" id="${params.id}">
+				<g:link controller="${params.controller}" action="${hm.value}" id="${params.id}" elementId="sidebarLeft-${hm.value}">
 					${hm.key}
 				</g:link>
 			</li>
 		</g:each>
 	</ul>
 </div>
+
+<script>
+    jQuery(document).ready(function() {
+        var $root = jQuery("#sidebarLeft");
+        var position = jQuery("#sidebarLeft-${params.action}").offset().top - $root.offset().top;
+        $root.parent().scrollTop(position - 210);
+    });
+</script>

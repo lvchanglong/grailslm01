@@ -36,7 +36,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="info.lsygs[0].pzsj" value="${instance.pzsj}" required="required" class="form-control"/>
+                                <g:textField name="info.lsygs[0].pzsj" value="${instance.pzsj?:new Date().format("yyyy-MM-dd")}" required="required" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>

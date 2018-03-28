@@ -29,10 +29,10 @@ class ReportInfoLrb {
     String yycb2End = "0.00"//减：营业成本-期末
     String yycb1End = "0.00"//减：营业成本-期末
 
-    String zyycb3Begin = "0.00"//其中：主营业务成本  -期初
-    String zyycb3End = "0.00"//其中：主营业务成本  -期末
-    String zyycb2End = "0.00"//其中：主营业务成本  -期末
-    String zyycb1End = "0.00"//其中：主营业务成本  -期末
+    String zyywcb3Begin = "0.00"//其中：主营业务成本  -期初
+    String zyywcb3End = "0.00"//其中：主营业务成本  -期末
+    String zyywcb2End = "0.00"//其中：主营业务成本  -期末
+    String zyywcb1End = "0.00"//其中：主营业务成本  -期末
 
     String yysjjfj3Begin = "0.00"//营业税金及附加-期初
     String yysjjfj3End = "0.00"//营业税金及附加-期末
@@ -136,6 +136,7 @@ class ReportInfoLrb {
         nf3(blank:false, nullable:false)
         nf2(blank:false, nullable:false)
         nf1(blank:false, nullable:false)
+        parent(nullable:true)
     }
 
     static mapping = {
@@ -161,13 +162,13 @@ class ReportInfoLrb {
         yysr3End column:"yysr3End", sqlType:"VarChar(30)"
         jbmgsy3End column:"jbmgsy3End", sqlType:"VarChar(30)"
         yywzc1End column:"yywzc1End", sqlType:"VarChar(30)"
-        zyycb2End column:"zyycb2End", sqlType:"VarChar(30)"
+        zyywcb2End column:"zyywcb2End", sqlType:"VarChar(30)"
         jlr1End column:"jlr1End", sqlType:"VarChar(30)"
         zyysr3End column:"zyysr3End", sqlType:"VarChar(30)"
         lrze3End column:"lrze3End", sqlType:"VarChar(30)"
         cwfy2End column:"cwfy2End", sqlType:"VarChar(30)"
         yycb1End column:"yycb1End", sqlType:"VarChar(30)"
-        zyycb3Begin column:"zyycb3Begin", sqlType:"VarChar(30)"
+        zyywcb3Begin column:"zyywcb3Begin", sqlType:"VarChar(30)"
         cwfy3Begin column:"cwfy3Begin", sqlType:"VarChar(30)"
         yywsr1End column:"yywsr1End", sqlType:"VarChar(30)"
         yylr2End column:"yylr2End", sqlType:"VarChar(30)"
@@ -197,7 +198,7 @@ class ReportInfoLrb {
         xsfy3End column:"xsfy3End", sqlType:"VarChar(30)"
         tzsy1End column:"tzsy1End", sqlType:"VarChar(30)"
         lrze1End column:"lrze1End", sqlType:"VarChar(30)"
-        zyycb1End column:"zyycb1End", sqlType:"VarChar(30)"
+        zyywcb1End column:"zyywcb1End", sqlType:"VarChar(30)"
         xsmgsy3Begin column:"xsmgsy3Begin", sqlType:"VarChar(30)"
         yylr3Begin column:"yylr3Begin", sqlType:"VarChar(30)"
         xsfy1End column:"xsfy1End", sqlType:"VarChar(30)"
@@ -214,7 +215,7 @@ class ReportInfoLrb {
         fldzcczss1End column:"fldzcczss1End", sqlType:"VarChar(30)"
         cwfy1End column:"cwfy1End", sqlType:"VarChar(30)"
         yycb3Begin column:"yycb3Begin", sqlType:"VarChar(30)"
-        zyycb3End column:"zyycb3End", sqlType:"VarChar(30)"
+        zyywcb3End column:"zyywcb3End", sqlType:"VarChar(30)"
         zcjzss2End column:"zcjzss2End", sqlType:"VarChar(30)"
         yysjjfj3Begin column:"yysjjfj3Begin", sqlType:"VarChar(30)"
         glfy1End column:"glfy1End", sqlType:"VarChar(30)"

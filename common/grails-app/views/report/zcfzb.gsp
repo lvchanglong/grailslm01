@@ -1,4 +1,4 @@
-<%@ page import="extension.ReportInfo; extension.Report;" %>
+<%@ page import="common.CommonHelper; extension.ReportInfo; extension.Report;" %>
 <!doctype html>
 <html>
     <head>
@@ -23,16 +23,17 @@
                             </tr>
                             <tr>
                                 <td colspan="3" rowspan="2">
-                                    <strong>年份</strong>
+                                    <strong>年份</strong>&nbsp;<span style="color: #ff0000">*</span>
+                                    <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </td>
                                 <td colspan="2">
-                                    <g:textField name="info.zcfzb.nf3" value="${reportInfo.zcfzb?.nf3}" class="form-control" placeholder="如：2015"/>
+                                    <g:textField name="info.zcfzb.nf3" value="${reportInfo.zcfzb?.nf3?:"${year - 3}"}" class="form-control" placeholder="如：2015"/>
                                 </td>
                                 <td>
-                                    <g:textField name="info.zcfzb.nf2" value="${reportInfo.zcfzb?.nf2}" class="form-control" placeholder="如：2016"/>
+                                    <g:textField name="info.zcfzb.nf2" value="${reportInfo.zcfzb?.nf2?:"${year - 2}"}" class="form-control" placeholder="如：2016"/>
                                 </td>
                                 <td>
-                                    <g:textField name="info.zcfzb.nf1" value="${reportInfo.zcfzb?.nf1}" class="form-control" placeholder="如：2017"/>
+                                    <g:textField name="info.zcfzb.nf1" value="${reportInfo.zcfzb?.nf1?:"${year - 1}"}" class="form-control" placeholder="如：2017"/>
                                 </td>
                             </tr>
                             <tr>

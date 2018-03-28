@@ -27,7 +27,9 @@
 					<ul class="list-group">
 						<g:each in="${hm.getValue()}" status="i" var="function">
 							<g:if test="${function.getStateToBoolean() || vip.isSuperman()}">
-								<li class="list-group-item"><g:link controller="${function.controllerName}" action="${function.actionName}">${function.name}</g:link></li>
+								<li class="list-group-item ${function.controllerName.equals(params.controller)?"active":""}">
+									<g:link controller="${function.controllerName}" action="${function.actionName}" elementId="sidebarLeft-${function.controllerName}" style="color:inherit;">${function.name}</g:link>
+								</li>
 							</g:if>
 						</g:each>
 					</ul>
@@ -36,3 +38,11 @@
 		</div>
 	</g:if>
 </div>
+
+<script>
+    jQuery(document).ready(function() {
+        var $root = jQuery("#sidebarLeft");
+        var position = jQuery("#sidebarLeft-${params.controller}").offset().top - $root.offset().top;
+        $root.parent().scrollTop(position - 210);
+    });
+</script>

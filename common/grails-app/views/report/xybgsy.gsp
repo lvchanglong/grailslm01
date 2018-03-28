@@ -50,7 +50,7 @@
                                     制作日期&nbsp;<span style="color: #ff0000">*</span>
                                 </th>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
-                                    <g:textField name="info.zzrq" value="${reportInfo.zzrq}" class="form-control" placeholder="如：2018-03-13"/>
+                                    <g:textField name="info.zzrq" value="${reportInfo.zzrq?:new Date().format("yyyy-MM-dd")}" class="form-control" placeholder="如：2018-03-13"/>
                                 </td>
                             </tr>
 

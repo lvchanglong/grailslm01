@@ -1,4 +1,4 @@
-<%@ page import="extension.ReportInfo; extension.Report;" %>
+<%@ page import="common.CommonHelper; extension.ReportInfo; extension.Report;" %>
 <!doctype html>
 <html>
     <head>
@@ -52,7 +52,7 @@
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">成立日期</th>
                                 <td class="form_td p5 tl h20 lh20" colspan="3">
-                                    <g:textField name="info.clrq" value="${reportInfo.clrq}" class="form-control" placeholder="如：2018-03-13"/>
+                                    <g:textField name="info.clrq" value="${reportInfo.clrq?:new Date().format("yyyy-MM-dd")}" class="form-control" placeholder="如：2018-03-13"/>
                                 </td>
                             </tr>
                             <tr>
@@ -72,15 +72,18 @@
                                 <th colspan="4" class="form_th2 p5 tl fb h20 lh20">主要财务数据与指标：</th>
                             </tr>
                             <tr>
-                                <th class="form_th p5 tr h20 lh20">项目&nbsp;\&nbsp;年份</th>
+                                <th class="form_th p5 tr h20 lh20">
+                                    项目&nbsp;\&nbsp;年份
+                                    <g:set var="year" value="${CommonHelper.getNian()}"/>
+                                </th>
                                 <td class="form_th p5 tc h20 lh20">
-                                    <g:textField name="info.nf3" value="${reportInfo.nf3}" class="form-control" placeholder="如：2015"/>
+                                    <g:textField name="info.nf3" value="${reportInfo.nf3?:"${year - 3}"}" class="form-control" placeholder="如：2015"/>
                                 </td>
                                 <td class="form_th p5 tc h20 lh20 ">
-                                    <g:textField name="info.nf2" value="${reportInfo.nf2}" class="form-control" placeholder="如：2016"/>
+                                    <g:textField name="info.nf2" value="${reportInfo.nf2?:"${year - 2}"}" class="form-control" placeholder="如：2016"/>
                                 </td>
                                 <td class="form_th p5 tc h20 lh20">
-                                    <g:textField name="info.nf1" value="${reportInfo.nf1}" class="form-control" placeholder="如：2017"/>
+                                    <g:textField name="info.nf1" value="${reportInfo.nf1?:"${year - 1}"}" class="form-control" placeholder="如：2017"/>
                                 </td>
                             </tr>
                             <tr>
