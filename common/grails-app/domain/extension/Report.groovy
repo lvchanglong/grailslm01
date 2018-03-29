@@ -10,7 +10,7 @@ class Report {
     String qymc //企业名称
     String bglx = "一般报告"//报告类型
     String hylx //行业类型
-    String yyly //应用领域
+    String yyly = "重点工程招投标领域"//应用领域
 
     String yxq //有效期
     String ccr //抽查人
@@ -26,10 +26,10 @@ class Report {
     Date lastUpdated //更新时间
 
     static constraints = {
-        qymc(blank:false, nullable:false)
-        bglx(blank:false, nullable:false)
+        qymc(blank:false, nullable:false, unique:true)
+        bglx(blank:false, nullable:false, inList:["一般报告", "跟踪评级报告"])
         hylx(blank:false, nullable:false)
-        yyly(blank:false, nullable:false)
+        yyly(blank:false, nullable:false, inList:["重点工程招投标领域", "政府采购领域"])
 
         yxq(blank:true, nullable:true)
         ccr(blank:true, nullable:true)

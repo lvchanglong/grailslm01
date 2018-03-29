@@ -1,12 +1,14 @@
 package extension
 
-
+import com.aspose.cells.Workbook
+import common.CommonHelper
 import common.FileConverter
 import common.FileHelper
 import common.ExcelHelper
 import common.User
 import grails.converters.JSON
 import grails.validation.ValidationException
+
 import static org.springframework.http.HttpStatus.*
 
 class ReportController {
@@ -47,7 +49,7 @@ class ReportController {
             return
         }
         report.creater = User.load(session.uid) //创建人
-        report.info = ["qymc":report.qymc, "hylx":report.hylx, "yyly":report.yyly] //默认值
+        report.info = ["qymc":report.qymc] //默认值
         try {
             reportService.save(report)
         } catch (ValidationException e) {
@@ -462,7 +464,8 @@ class ReportController {
      * 企业打分
      */
     def qydf(Report report) {
-        [report:report, reportInfo:report.info]
+        def file = FileHelper.getFile(servletContext.getRealPath("/") + "企业计分标准", "${report.hylx}.htm")
+        [report:report, reportInfo:report.info, html:file.getText("UTF-8")]
     }
 
     /**
@@ -473,12 +476,15 @@ class ReportController {
     }
 
     def test() {
-        ReportInfoZcfzbZcb.getConstrainedProperties().each {k, v->
-            if(k.endsWith("End") || k.endsWith("Begin")) {
-                println "$k column:\"$k\", sqlType:\"VarChar(30)\""
-            }
-        }
-        render true
+//        ReportInfoZcfzbZcb.getConstrainedProperties().each {k, v->
+//            if(k.endsWith("End") || k.endsWith("Begin")) {
+//                println "$k column:\"$k\", sqlType:\"VarChar(30)\""
+//            }
+//        }
+
+        render FileHelper.list(servletContext.getRealPath("/") + "企业计分标准").collect {elem->
+            elem.replaceFirst(/\.htm/, "")
+        } as JSON
     }
 
 }

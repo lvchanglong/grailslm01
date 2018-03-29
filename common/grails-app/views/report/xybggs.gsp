@@ -280,13 +280,13 @@
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">应用领域</th>
                                 <td class="form_td p5 tl h20 lh20" colspan="3">
-                                    <g:textField name="info.yyly" value="${reportInfo.yyly}" class="form-control"/>
+                                    <g:textField name="yyly" value="${report.yyly}" class="form-control" readonly="readonly"/>
                                 </td>
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">行业类型</th>
                                 <td class="form_td p5 tl h20 lh20" colspan="3">
-                                    <g:textField name="info.hylx" value="${reportInfo.hylx}" class="form-control"/>
+                                    <g:textField name="hylx" value="${report.hylx}" class="form-control" readonly="readonly"/>
                                 </td>
                             </tr>
                             <tr>

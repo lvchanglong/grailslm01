@@ -26,8 +26,6 @@ class ReportInfo {
      */
     String dj = "A" //等级
     String sy = "" //释义
-    String yyly = "" //应用领域
-    String hylx = "" //行业类型
     String qylx = "中型企业" //企业类型(大型企业，中型企业，小型企业)
     String jljts = "" //结论及提示(基本结论及风险提示)
     String ggxyxx = "" //公共信用信息
@@ -162,7 +160,7 @@ class ReportInfo {
     Date lastUpdated //更新时间
 
     static constraints = {
-        qymc(blank:false, nullable:false)
+        qymc(blank:false, nullable:false, unique:true)
         tdqkxybgsq(blank:true, nullable:true, inList: ["是", "否"])
         qylx(blank:true, nullable:true, inList: ["小型企业", "中型企业", "大型企业"])
         dj(blank:true, nullable:true, inList: ["AAA", "AA", "A", "BBB", "BB", "B", "CCC", "CC", "C", "D"])

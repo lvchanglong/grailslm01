@@ -1,4 +1,4 @@
-<%@ page import="common.User; extension.Report;" %>
+<%@ page import="common.FileHelper; common.User; extension.Report;" %>
 
 <g:set var="vip" value="${User.get(session.uid)}"/>
 
@@ -29,7 +29,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="bglx" value="${instance.bglx}" required="required" class="form-control"/>
+                                <g:select from="${Report.constrainedProperties.bglx.inList}" name="bglx" value="${instance.bglx}" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -37,7 +37,11 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="hylx" value="${instance.hylx}" required="required" class="form-control"/>
+                                <g:textField name="hylx" value="${instance.hylx}" required="required" class="form-control" autocomplete="off" data-provide="typeahead" data-min-length="0" data-show-hint-on-focus="true" data-source="${
+                                    FileHelper.list(application.getRealPath("/") + "企业计分标准").collect { elem->
+                                        elem.replaceFirst(/\.htm/, "")
+                                    } as grails.converters.JSON
+                                }"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -45,7 +49,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="yyly" value="${instance.yyly}" required="required" class="form-control"/>
+                                <g:select from="${Report.constrainedProperties.yyly.inList}" name="yyly" value="${instance.yyly}" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
