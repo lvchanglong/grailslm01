@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-12">
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
-                        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
+                        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
                             <tr>
                                 <td align="center" colspan="7" class="info">
                                     <span style="font-size: 14px; font-weight: bold;">现金流量表（单位：人民币元）</span>

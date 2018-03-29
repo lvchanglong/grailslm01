@@ -4,10 +4,11 @@
     <head>
         <meta name="layout" content="main"/>
         <g:set var="offset" value="${params.offset?:0}"/>
-
         <style>
-            .table-excel {
-                width:100%;font-size:12px;text-align:center;
+            #excel-table {
+                width:100% !important;
+                font-size:12px;
+                text-align:center;
             }
         </style>
     </head>
@@ -29,9 +30,7 @@
                 <div class="col-md-12">
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
 
-                        <ckeditor:editor name="info.qydf" id="reportInfoQydf" width="100%" height="6000px">
-                            ${reportInfo.qydf?:html}
-                        </ckeditor:editor>
+                        ${reportInfo.qydf?:html}
 
                         <g:submitButton name="submit" value="保存" class="btn btn-lg btn-primary"/>
                     </g:form>
