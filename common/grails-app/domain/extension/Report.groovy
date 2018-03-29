@@ -8,7 +8,7 @@ import common.User
 class Report {
 
     String qymc //企业名称
-    String bglx //报告类型
+    String bglx = "一般报告"//报告类型
     String hylx //行业类型
     String yyly //应用领域
 

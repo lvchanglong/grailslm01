@@ -24,13 +24,13 @@
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
-                                <td align="center" colspan="7" class="form_table_top2">
+                                <td align="center" colspan="7" class="info">
                                     <span style="font-size: 14px; font-weight: bold;">资产负债表（单位：人民币元）</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="3" rowspan="2">
-                                    <strong>年份</strong>&nbsp;<span style="color: #ff0000">*</span>
+                                    <strong>年份</strong>&nbsp;<span class="required-indicator">*</span>
                                     <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </td>
                                 <td colspan="2">
@@ -54,7 +54,7 @@
                                     期末</td>
                             </tr>
                             <tr>
-                                <td rowspan="12">
+                                <td rowspan="11">
                                     <strong>流动资产</strong>
                                 </td>
                                 <td colspan="2">
@@ -244,7 +244,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="3" class="info">
                                     <strong>流动资产合计</strong>
                                 </td>
                                 <td class="ldzc3-sum zczj3 plus">
@@ -261,7 +261,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="22">
+                                <td rowspan="21">
                                     <strong>非流动资产</strong>
                                 </td>
                                 <td colspan="2">
@@ -349,8 +349,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="5">
-                                    固定资产
+                                <td rowspan="5" class="info">
+                                    <strong>固定资产</strong>
                                 </td>
                                 <td>
                                     固定资产原值
@@ -624,7 +624,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="3" class="info">
                                     <strong>非流动资产合计</strong>
                                 </td>
                                 <td class="fldzc3-sum zczj3 plus">
@@ -641,7 +641,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3">
+                                <td colspan="3" class="info">
                                     <strong>资产总计</strong>
                                 </td>
                                 <td class="zczj3-sum">
@@ -658,7 +658,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="13">
+                                <td rowspan="12">
                                     <strong>流动负债</strong>
                                 </td>
                                 <td colspan="2">
@@ -865,7 +865,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="3" class="info">
                                     <strong>流动负债合计</strong>
                                 </td>
                                 <td class="ldfz3-sum fzhj3 plus">
@@ -882,7 +882,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="8">
+                                <td rowspan="7">
                                     <strong>非流动负债</strong>
                                 </td>
                                 <td colspan="2">
@@ -1004,7 +1004,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="3" class="info">
                                     <strong>非流动负债合计</strong>
                                 </td>
                                 <td class="fldfz3-sum fzhj3 plus">
@@ -1021,7 +1021,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3">
+                                <td colspan="3" class="info">
                                     <strong>负债合计</strong>
                                 </td>
                                 <td class=" fzhj3-sum fzhsyzqyzj3 plus">
@@ -1038,7 +1038,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="7">
+                                <td rowspan="6">
                                     所有者权益（或股东权益）
                                 </td>
                                 <td colspan="2">
@@ -1143,7 +1143,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="3" class="info">
                                     <strong>所有者权益（或股东权益）合计</strong>
                                 </td>
                                 <td class="syzqy3-sum fzhsyzqyzj3 plus">
@@ -1160,7 +1160,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3">
+                                <td colspan="3" class="info">
                                     <strong>负债和所有者权益（或股东权益）总计</strong>
                                 </td>
                                 <td class="fzhsyzqyzj3-sum">

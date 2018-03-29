@@ -24,7 +24,7 @@
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
-                                <th colspan="4" class="form_th2 p5 tl h20 lh20 fb">企业基本信息：</th>
+                                <th colspan="4" class="info">企业基本信息：</th>
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20 ">企业名称</th>

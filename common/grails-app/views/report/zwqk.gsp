@@ -24,7 +24,7 @@
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
-                                <th class="form_th2 p5 tl h20 lh20 fb">债务情况：</th>
+                                <th class="info">债务情况：</th>
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20">

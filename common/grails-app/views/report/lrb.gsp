@@ -24,13 +24,13 @@
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
-                                <td align="center" colspan="7" class="form_table_top2">
+                                <td align="center" colspan="7" class="info">
                                     <span style="font-size: 14px; font-weight: bold;">利润表（单位：人民币元）</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td rowspan="2">
-                                    <strong>年份</strong>&nbsp;<span style="color: #ff0000">*</span>
+                                    <strong>年份</strong>&nbsp;<span class="required-indicator">*</span>
                                     <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </td>
                                 <td colspan="2">
@@ -54,7 +54,7 @@
                                     期末</td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>一、营业收入</strong>
                                 </td>
                                 <td class="yylr3 plus">
@@ -275,7 +275,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>二、营业利润（损失以“-”号填列）</strong>
                                 </td>
                                 <td class="yylr3-sum lrze3 plus">
@@ -343,7 +343,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>三、利润总额（损失以“-”号填列）</strong>
                                 </td>
                                 <td class="lrze3-sum jlr3 plus">
@@ -377,8 +377,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    四、净利润
+                                <td class="info">
+                                    <strong>四、净利润</strong>
                                 </td>
                                 <td class="jlr3-sum">
                                     <g:textField name="info.lrb.jlr3Begin" value="${reportInfo.lrb?.jlr3Begin?:"0.00"}" class="form-control" readonly="readonly"/>
@@ -394,8 +394,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    五、每股收益
+                                <td class="info">
+                                    <strong>五、每股收益</strong>
                                 </td>
                                 <td class="">
                                     <g:textField name="info.lrb.mgsy3Begin" value="${reportInfo.lrb?.mgsy3Begin?:"0.00"}" class="form-control"/>

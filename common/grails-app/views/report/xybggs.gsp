@@ -24,7 +24,7 @@
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
-                                <th colspan="4" class="form_th2 p5 tl h20 lh20 fb">基本信息：</th>
+                                <th colspan="4" class="info">基本信息：</th>
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">企业名称</th>
@@ -76,7 +76,7 @@
                             </tr>
 
                             <tr>
-                                <th colspan="4" class="form_th2 p5 tl fb h20 lh20">主要财务数据与指标：</th>
+                                <th colspan="4" class="info">主要财务数据与指标：</th>
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">
@@ -251,7 +251,7 @@
                             </tr>
 
                             <tr>
-                                <th colspan="4" class="form_th2 p5 tl h20 lh20 fb">信用等级、释义及领域：</th>
+                                <th colspan="4" class="info">信用等级、释义及领域：</th>
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">等级</th>
@@ -297,7 +297,7 @@
                             </tr>
 
                             <tr>
-                                <th class="form_th2 p5 tl fb h20 lh20" colspan="4">基本结论及风险提示：</th>
+                                <th class="info" colspan="4">基本结论及风险提示：</th>
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20" colspan="4">
@@ -305,7 +305,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th colspan="2" class="form_th2 p5 tl fb h20 lh20" colspan="4">公共信用信息：</th>
+                                <th colspan="4" class="info" colspan="4">公共信用信息：</th>
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20" colspan="4">
@@ -313,7 +313,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th colspan="2" class="form_th2 p5 tl fb h20 lh20" colspan="4">商业信用信息：</th>
+                                <th colspan="4" class="info" colspan="4">商业信用信息：</th>
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20" colspan="4">
@@ -321,7 +321,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th colspan="2" class="form_th2 p5 tl fb h20 lh20" colspan="4">公益荣誉信息：</th>
+                                <th colspan="4" class="info" colspan="4">公益荣誉信息：</th>
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20" colspan="4">

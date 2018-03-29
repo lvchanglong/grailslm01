@@ -24,13 +24,13 @@
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
-                                <td align="center" colspan="7" class="form_table_top2">
+                                <td align="center" colspan="7" class="info">
                                     <span style="font-size: 14px; font-weight: bold;">现金流量表（单位：人民币元）</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td rowspan="2">
-                                    <strong>年份</strong>&nbsp;<span style="color: #ff0000">*</span>
+                                    <strong>年份</strong>&nbsp;<span class="required-indicator">*</span>
                                     <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </td>
                                 <td colspan="2">
@@ -113,7 +113,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>经营活动现金流入小计</strong>
                                 </td>
                                 <td class="jyhdxjlrxj3-sum jyhdcsdxjllje3 plus">
@@ -198,7 +198,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>经营活动现金流出小计</strong>
                                 </td>
                                 <td class="jyhdxjlcxj3-sum jyhdcsdxjllje3 minus">
@@ -215,7 +215,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>经营活动产生的现金流量净额</strong>
                                 </td>
                                 <td class="jyhdcsdxjllje3-sum xjjxjdjwjzje3 plus">
@@ -325,7 +325,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>投资活动现金流入小计</strong>
                                 </td>
                                 <td class="tzhdxjlrxj3-sum tzhdcsdxjllje3 plus">
@@ -410,7 +410,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>投资活动现金流出小计</strong>
                                 </td>
                                 <td class="tzhdxjlcxj3-sum tzhdcsdxjllje3 minus">
@@ -427,7 +427,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>投资活动产生的现金流量净额</strong>
                                 </td>
                                 <td class="tzhdcsdxjllje3-sum xjjxjdjwjzje3 plus">
@@ -503,7 +503,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     筹资活动现金流入小计
                                 </td>
                                 <td class="czhdxjlrxj3-sum czhdcsdxjllje3 plus">
@@ -571,7 +571,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>筹资活动现金流出小计</strong>
                                 </td>
                                 <td class="czhdxjlcxj3-sum czhdcsdxjllje3 minus">
@@ -588,7 +588,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>筹资活动产生的现金流量净额</strong>
                                 </td>
                                 <td class="czhdcsdxjllje3-sum xjjxjdjwjzje3 plus">
@@ -622,19 +622,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>五、现金及现金等价物净增加额</strong>
                                 </td>
-                                <td class="xjjxjdjwjzje3-sum">
+                                <td class="xjjxjdjwjzje3-sum qmxjjxjdjwye3 plus">
                                     <g:textField name="info.xjllb.xjjxjdjwjzje3Begin" value="${reportInfo.xjllb?.xjjxjdjwjzje3Begin?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
-                                <td class="xjjxjdjwjzje4-sum">
+                                <td class="xjjxjdjwjzje4-sum qmxjjxjdjwye4 plus">
                                     <g:textField name="info.xjllb.xjjxjdjwjzje3End" value="${reportInfo.xjllb?.xjjxjdjwjzje3End?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
-                                <td class="xjjxjdjwjzje2-sum">
+                                <td class="xjjxjdjwjzje2-sum qmxjjxjdjwye2 plus">
                                     <g:textField name="info.xjllb.xjjxjdjwjzje2End" value="${reportInfo.xjllb?.xjjxjdjwjzje2End?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
-                                <td class="xjjxjdjwjzje1-sum">
+                                <td class="xjjxjdjwjzje1-sum qmxjjxjdjwye1 plus">
                                     <g:textField name="info.xjllb.xjjxjdjwjzje1End" value="${reportInfo.xjllb?.xjjxjdjwjzje1End?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
                             </tr>
@@ -642,34 +642,34 @@
                                 <td>
                                     加：期初现金及现金等价物余额
                                 </td>
-                                <td class="">
+                                <td class="qmxjjxjdjwye3 plus">
                                     <g:textField name="info.xjllb.qcxjjxjdjwye3Begin" value="${reportInfo.xjllb?.qcxjjxjdjwye3Begin?:"0.00"}" class="form-control"/>
                                 </td>
-                                <td class="">
+                                <td class="qmxjjxjdjwye4 plus">
                                     <g:textField name="info.xjllb.qcxjjxjdjwye3End" value="${reportInfo.xjllb?.qcxjjxjdjwye3End?:"0.00"}" class="form-control"/>
                                 </td>
-                                <td class="">
+                                <td class="qmxjjxjdjwye2 plus">
                                     <g:textField name="info.xjllb.qcxjjxjdjwye2End" value="${reportInfo.xjllb?.qcxjjxjdjwye2End?:"0.00"}" class="form-control"/>
                                 </td>
-                                <td class="">
+                                <td class="qmxjjxjdjwye1 plus">
                                     <g:textField name="info.xjllb.qcxjjxjdjwye1End" value="${reportInfo.xjllb?.qcxjjxjdjwye1End?:"0.00"}" class="form-control"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="info">
                                     <strong>六、期末现金及现金等价物余额</strong>
                                 </td>
-                                <td class="">
-                                    <g:textField name="info.xjllb.qmxjjxjdjwye3Begin" value="${reportInfo.xjllb?.qmxjjxjdjwye3Begin?:"0.00"}" class="form-control"/>
+                                <td class="qmxjjxjdjwye3-sum">
+                                    <g:textField name="info.xjllb.qmxjjxjdjwye3Begin" value="${reportInfo.xjllb?.qmxjjxjdjwye3Begin?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
-                                <td class="">
-                                    <g:textField name="info.xjllb.qmxjjxjdjwye3End" value="${reportInfo.xjllb?.qmxjjxjdjwye3End?:"0.00"}" class="form-control"/>
+                                <td class="qmxjjxjdjwye4-sum">
+                                    <g:textField name="info.xjllb.qmxjjxjdjwye3End" value="${reportInfo.xjllb?.qmxjjxjdjwye3End?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
-                                <td class="">
-                                    <g:textField name="info.xjllb.qmxjjxjdjwye2End" value="${reportInfo.xjllb?.qmxjjxjdjwye2End?:"0.00"}" class="form-control"/>
+                                <td class="qmxjjxjdjwye2-sum">
+                                    <g:textField name="info.xjllb.qmxjjxjdjwye2End" value="${reportInfo.xjllb?.qmxjjxjdjwye2End?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
-                                <td class="">
-                                    <g:textField name="info.xjllb.qmxjjxjdjwye1End" value="${reportInfo.xjllb?.qmxjjxjdjwye1End?:"0.00"}" class="form-control"/>
+                                <td class="qmxjjxjdjwye1-sum">
+                                    <g:textField name="info.xjllb.qmxjjxjdjwye1End" value="${reportInfo.xjllb?.qmxjjxjdjwye1End?:"0.00"}" class="form-control" readonly="readonly"/>
                                 </td>
                             </tr>
                         </table>
@@ -693,6 +693,7 @@
                                 calAll("czhdcsdxjllje");//筹资活动产生的现金流量净额
 
                                 calAll("xjjxjdjwjzje");//现金及现金等价物净增加额
+                                calAll("qmxjjxjdjwye");//期末现金及现金等价物余额
                             });
                         });
 

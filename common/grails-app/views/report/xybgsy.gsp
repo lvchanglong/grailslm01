@@ -24,13 +24,13 @@
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-striped">
                             <tr>
-                                <th colspan="4" class="form_th2 p5 tl h20 lh20 fb">
+                                <th colspan="4" class="info">
                                     企业信用报告：
                                 </th>
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    报告企业&nbsp;<span style="color: #ff0000">*</span>
+                                    报告企业&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.qymc" value="${reportInfo.qymc}" class="form-control"/>
@@ -38,7 +38,7 @@
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    报告编号&nbsp;<span style="color: #ff0000">*</span>
+                                    报告编号&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.bgbh" value="${reportInfo.bgbh}" class="form-control"/>
@@ -46,7 +46,7 @@
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    制作机构&nbsp;<span style="color: #ff0000">*</span>
+                                    制作机构&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.zzjg" value="${reportInfo.zzjg}" class="form-control"/>
@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    制作日期&nbsp;<span style="color: #ff0000">*</span>
+                                    制作日期&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.zzrq" value="${reportInfo.zzrq?:new Date().format("yyyy-MM-dd")}" class="form-control" placeholder="如：2018-03-13"/>
@@ -63,13 +63,13 @@
 
                             <tr>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    评估师1&nbsp;<span style="color: #ff0000">*</span>
+                                    评估师1&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.pgs1" value="${reportInfo.pgs1}" class="form-control"/>
                                 </td>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    联系方式&nbsp;<span style="color: #ff0000">*</span>
+                                    联系方式&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.pgs1Lxfs" value="${reportInfo.pgs1Lxfs}" class="form-control"/>
@@ -77,13 +77,13 @@
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    评估师2&nbsp;<span style="color: #ff0000">*</span>
+                                    评估师2&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.pgs2" value="${reportInfo.pgs2}" class="form-control"/>
                                 </td>
                                 <th class="form_th p5 tr h20 lh20 ">
-                                    联系方式&nbsp;<span style="color: #ff0000">*</span>
+                                    联系方式&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td class="form_td p5 tl h20 lh20">
                                     <g:textField name="info.pgs2Lxfs" value="${reportInfo.pgs2Lxfs}" class="form-control"/>
