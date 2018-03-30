@@ -19,10 +19,10 @@ class ReportInfoLrb {
     String yysr2End = "0.00"//营业收入-期末
     String yysr1End = "0.00"//营业收入-期末
 
-    String zyysr3Begin = "0.00"//其中：主营业务收入-期初
-    String zyysr3End = "0.00"//其中：主营业务收入-期末
-    String zyysr2End = "0.00"//其中：主营业务收入-期末
-    String zyysr1End = "0.00"//其中：主营业务收入-期末
+    String zyywsr3Begin = "0.00"//其中：主营业务收入-期初
+    String zyywsr3End = "0.00"//其中：主营业务收入-期末
+    String zyywsr2End = "0.00"//其中：主营业务收入-期末
+    String zyywsr1End = "0.00"//其中：主营业务收入-期末
 
     String yycb3Begin = "0.00"//减：营业成本-期初
     String yycb3End = "0.00"//减：营业成本-期末
@@ -163,7 +163,7 @@ class ReportInfoLrb {
         yywzc1End column:"yywzc1End", sqlType:"VarChar(30)"
         zyywcb2End column:"zyywcb2End", sqlType:"VarChar(30)"
         jlr1End column:"jlr1End", sqlType:"VarChar(30)"
-        zyysr3End column:"zyysr3End", sqlType:"VarChar(30)"
+        zyywsr3End column:"zyywsr3End", sqlType:"VarChar(30)"
         lrze3End column:"lrze3End", sqlType:"VarChar(30)"
         cwfy2End column:"cwfy2End", sqlType:"VarChar(30)"
         yycb1End column:"yycb1End", sqlType:"VarChar(30)"
@@ -174,7 +174,7 @@ class ReportInfoLrb {
         sdsfy1End column:"sdsfy1End", sqlType:"VarChar(30)"
         lrze3Begin column:"lrze3Begin", sqlType:"VarChar(30)"
         yywzc3End column:"yywzc3End", sqlType:"VarChar(30)"
-        zyysr2End column:"zyysr2End", sqlType:"VarChar(30)"
+        zyywsr2End column:"zyywsr2End", sqlType:"VarChar(30)"
         yywsr3Begin column:"yywsr3Begin", sqlType:"VarChar(30)"
         gyjzbdsy3Begin column:"gyjzbdsy3Begin", sqlType:"VarChar(30)"
         dlyqyhhyqydtzsy3Begin column:"dlyqyhhyqydtzsy3Begin", sqlType:"VarChar(30)"
@@ -230,13 +230,13 @@ class ReportInfoLrb {
         yycb2End column:"yycb2End", sqlType:"VarChar(30)"
         xsfy2End column:"xsfy2End", sqlType:"VarChar(30)"
         yysjjfj1End column:"yysjjfj1End", sqlType:"VarChar(30)"
-        zyysr1End column:"zyysr1End", sqlType:"VarChar(30)"
+        zyywsr1End column:"zyywsr1End", sqlType:"VarChar(30)"
         jbmgsy3Begin column:"jbmgsy3Begin", sqlType:"VarChar(30)"
         zcjzss3Begin column:"zcjzss3Begin", sqlType:"VarChar(30)"
         tzsy3Begin column:"tzsy3Begin", sqlType:"VarChar(30)"
         gyjzbdsy1End column:"gyjzbdsy1End", sqlType:"VarChar(30)"
         yysr2End column:"yysr2End", sqlType:"VarChar(30)"
-        zyysr3Begin column:"zyysr3Begin", sqlType:"VarChar(30)"
+        zyywsr3Begin column:"zyywsr3Begin", sqlType:"VarChar(30)"
         cwfy3End column:"cwfy3End", sqlType:"VarChar(30)"
         yywzc3Begin column:"yywzc3Begin", sqlType:"VarChar(30)"
 

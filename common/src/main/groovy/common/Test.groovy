@@ -13,6 +13,8 @@ class Test {
 
     static main(args) {
         //new DocumentBuilder(doc).insertHtml("")
+
+        println "0.00".toDouble() == 0
     }
 
 }

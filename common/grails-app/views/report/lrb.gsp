@@ -75,16 +75,16 @@
                                     其中：主营业务收入
                                 </td>
                                 <td class="">
-                                    <g:textField name="info.lrb.zyysr3Begin" value="${reportInfo.lrb?.zyysr3Begin?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.lrb.zyywsr3Begin" value="${reportInfo.lrb?.zyywsr3Begin?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="">
-                                    <g:textField name="info.lrb.zyysr3End" value="${reportInfo.lrb?.zyysr3End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.lrb.zyywsr3End" value="${reportInfo.lrb?.zyywsr3End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="">
-                                    <g:textField name="info.lrb.zyysr2End" value="${reportInfo.lrb?.zyysr2End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.lrb.zyywsr2End" value="${reportInfo.lrb?.zyywsr2End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="">
-                                    <g:textField name="info.lrb.zyysr1End" value="${reportInfo.lrb?.zyysr1End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.lrb.zyywsr1End" value="${reportInfo.lrb?.zyywsr1End?:"0.00"}" class="form-control"/>
                                 </td>
                             </tr>
                             <tr>

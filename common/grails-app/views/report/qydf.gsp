@@ -94,6 +94,240 @@
                     </script>
                 </div>
                 <div class="col-md-12">
+                    <g:form name="pgzbReportForm" url="[controller:'report', action:'update', id:report.id]" class="form-horizontal ajaxForm">
+                        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+                            <tr>
+                                <th colspan="4" class="info">评估指标</th>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">
+                                    项目&nbsp;\&nbsp;年份
+                                    <g:set var="year" value="${CommonHelper.getNian()}"/>
+                                </th>
+                                <td class="form_th p5 tc h20 lh20">
+                                    <g:textField name="info.nf3" value="${reportInfo.nf3?:"${year - 3}"}" class="form-control" placeholder="如：2015"/>
+                                </td>
+                                <td class="form_th p5 tc h20 lh20 ">
+                                    <g:textField name="info.nf2" value="${reportInfo.nf2?:"${year - 2}"}" class="form-control" placeholder="如：2016"/>
+                                </td>
+                                <td class="form_th p5 tc h20 lh20">
+                                    <g:textField name="info.nf1" value="${reportInfo.nf1?:"${year - 1}"}" class="form-control" placeholder="如：2017"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">资产负债率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zcfzl3" value="${reportInfo.zcfzl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.zcfzl2" value="${reportInfo.zcfzl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zcfzl1" value="${reportInfo.zcfzl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">现金流动负债比率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xjldfzbl3" value="${reportInfo.xjldfzbl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.xjldfzbl2" value="${reportInfo.xjldfzbl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xjldfzbl1" value="${reportInfo.xjldfzbl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">速动比率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.sdbl3" value="${reportInfo.sdbl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.sdbl2" value="${reportInfo.sdbl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.sdbl1" value="${reportInfo.sdbl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">总资产周转率（次）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zzczzl3" value="${reportInfo.zzczzl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.zzczzl2" value="${reportInfo.zzczzl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zzczzl1" value="${reportInfo.zzczzl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">应收账款周转率（次）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.yszkzzl3" value="${reportInfo.yszkzzl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.yszkzzl2" value="${reportInfo.yszkzzl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.yszkzzl1" value="${reportInfo.yszkzzl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">流动资产周转率（次）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.ldzczzl3" value="${reportInfo.ldzczzl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.ldzczzl2" value="${reportInfo.ldzczzl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.ldzczzl1" value="${reportInfo.ldzczzl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">净资产收益率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.jzcsyl3" value="${reportInfo.jzcsyl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.jzcsyl2" value="${reportInfo.jzcsyl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.jzcsyl1" value="${reportInfo.jzcsyl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">销售(营业)利润率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xsyylrl3" value="${reportInfo.xsyylrl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.xsyylrl2" value="${reportInfo.xsyylrl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xsyylrl1" value="${reportInfo.xsyylrl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">成本费用利润率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.cbfylrl3" value="${reportInfo.cbfylrl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.cbfylrl2" value="${reportInfo.cbfylrl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.cbfylrl1" value="${reportInfo.cbfylrl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">总资产报酬率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zzcbcl3" value="${reportInfo.zzcbcl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.zzcbcl2" value="${reportInfo.zzcbcl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zzcbcl1" value="${reportInfo.zzcbcl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">销售(营业)收入增长率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xsyysrzzl3" value="${reportInfo.xsyysrzzl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.xsyysrzzl2" value="${reportInfo.xsyysrzzl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xsyysrzzl1" value="${reportInfo.xsyysrzzl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20">资本保值增值率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zbbzzzl3" value="${reportInfo.zbbzzzl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.zbbzzzl2" value="${reportInfo.zbbzzzl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zbbzzzl1" value="${reportInfo.zbbzzzl1}" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20" valign="top">销售(营业)利润增长率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xsyylrzzl3" value="${reportInfo.xsyylrzzl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.xsyylrzzl2" value="${reportInfo.xsyylrzzl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.xsyylrzzl1" value="${reportInfo.xsyylrzzl1}" class="form-control" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20" valign="top">主营业务利润率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zyywlrl3" value="${reportInfo.zyywlrl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.zyywlrl2" value="${reportInfo.zyywlrl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zyywlrl1" value="${reportInfo.zyywlrl1}" class="form-control" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20" valign="top">成本费用占主营业务收入的比率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.cbfyzzyywsrdbl3" value="${reportInfo.cbfyzzyywsrdbl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.cbfyzzyywsrdbl2" value="${reportInfo.cbfyzzyywsrdbl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.cbfyzzyywsrdbl1" value="${reportInfo.cbfyzzyywsrdbl1}" class="form-control" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20" valign="top">社会贡献率（%）</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.shgxl3" value="${reportInfo.shgxl3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.shgxl2" value="${reportInfo.shgxl2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.shgxl1" value="${reportInfo.shgxl1}" class="form-control" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th class="form_th p5 tr h20 lh20" valign="top">债务上限</th>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zwsx3" value="${reportInfo.zwsx3}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20 ">
+                                    <g:textField name="info.zwsx2" value="${reportInfo.zwsx2}" class="form-control" />
+                                </td>
+                                <td class="form_td p5 tc h20 lh20">
+                                    <g:textField name="info.zwsx1" value="${reportInfo.zwsx1}" class="form-control" />
+                                </td>
+                            </tr>
+                        </table>
+
+                        <g:submitButton name="submit" value="确定" class="btn btn-lg btn-primary"/>
+                    </g:form>
+                </div>
+                <div class="col-md-12">
                     <g:if test="${vip.isAdmin()}">
                         <hr/>
 
@@ -147,6 +381,8 @@
                     </g:else>
                 </div>
             </div>
+
+            ${reportInfo.pgzb}---
 
             <content tag="sidebarLeft">
                 <g:render template="else/sidebarLeft"/>

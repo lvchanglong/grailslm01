@@ -151,16 +151,16 @@
                                     支付经职工以及为职工支付的现金
                                 </td>
                                 <td class="jyhdxjlcxj3 plus">
-                                    <g:textField name="info.xjllb.zfjzgyjwzgzfdxj3Begin" value="${reportInfo.xjllb?.zfjzgyjwzgzfdxj3Begin?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.zfgzgyjwzgzfdxj3Begin" value="${reportInfo.xjllb?.zfgzgyjwzgzfdxj3Begin?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="jyhdxjlcxj4 plus">
-                                    <g:textField name="info.xjllb.zfjzgyjwzgzfdxj3End" value="${reportInfo.xjllb?.zfjzgyjwzgzfdxj3End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.zfgzgyjwzgzfdxj3End" value="${reportInfo.xjllb?.zfgzgyjwzgzfdxj3End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="jyhdxjlcxj2 plus">
-                                    <g:textField name="info.xjllb.zfjzgyjwzgzfdxj2End" value="${reportInfo.xjllb?.zfjzgyjwzgzfdxj2End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.zfgzgyjwzgzfdxj2End" value="${reportInfo.xjllb?.zfgzgyjwzgzfdxj2End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="jyhdxjlcxj1 plus">
-                                    <g:textField name="info.xjllb.zfjzgyjwzgzfdxj1End" value="${reportInfo.xjllb?.zfjzgyjwzgzfdxj1End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.zfgzgyjwzgzfdxj1End" value="${reportInfo.xjllb?.zfgzgyjwzgzfdxj1End?:"0.00"}" class="form-control"/>
                                 </td>
                             </tr>
                             <tr>

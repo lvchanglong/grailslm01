@@ -214,15 +214,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="form_th p5 tr h20 lh20">销售收入增长率（%）</th>
+                                <th class="form_th p5 tr h20 lh20">销售(营业)收入增长率（%）</th>
                                 <td class="form_td p5 tc h20 lh20">
-                                    <g:textField name="info.xssrzzl3" value="${reportInfo.xssrzzl3}" class="form-control" readonly="readonly"/>
+                                    <g:textField name="info.xsyysrzzl3" value="${reportInfo.xsyysrzzl3}" class="form-control" readonly="readonly"/>
                                 </td>
                                 <td class="form_td p5 tc h20 lh20 ">
-                                    <g:textField name="info.xssrzzl2" value="${reportInfo.xssrzzl2}" class="form-control" readonly="readonly"/>
+                                    <g:textField name="info.xsyysrzzl2" value="${reportInfo.xsyysrzzl2}" class="form-control" readonly="readonly"/>
                                 </td>
                                 <td class="form_td p5 tc h20 lh20">
-                                    <g:textField name="info.xssrzzl1" value="${reportInfo.xssrzzl1}" class="form-control" readonly="readonly"/>
+                                    <g:textField name="info.xsyysrzzl1" value="${reportInfo.xsyysrzzl1}" class="form-control" readonly="readonly"/>
                                 </td>
                             </tr>
                             <tr>
@@ -238,15 +238,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="form_th p5 tr h20 lh20" valign="top">销售利润增长率（%）</th>
+                                <th class="form_th p5 tr h20 lh20" valign="top">销售(营业)利润增长率（%）</th>
                                 <td class="form_td p5 tc h20 lh20">
-                                    <g:textField name="info.xslrzzl3" value="${reportInfo.xslrzzl3}" class="form-control" readonly="readonly"/>
+                                    <g:textField name="info.xsyylrzzl3" value="${reportInfo.xsyylrzzl3}" class="form-control" readonly="readonly"/>
                                 </td>
                                 <td class="form_td p5 tc h20 lh20 ">
-                                    <g:textField name="info.xslrzzl2" value="${reportInfo.xslrzzl2}" class="form-control" readonly="readonly"/>
+                                    <g:textField name="info.xsyylrzzl2" value="${reportInfo.xsyylrzzl2}" class="form-control" readonly="readonly"/>
                                 </td>
                                 <td class="form_td p5 tc h20 lh20">
-                                    <g:textField name="info.xslrzzl1" value="${reportInfo.xslrzzl1}" class="form-control" readonly="readonly"/>
+                                    <g:textField name="info.xsyylrzzl1" value="${reportInfo.xsyylrzzl1}" class="form-control" readonly="readonly"/>
                                 </td>
                             </tr>
 
@@ -266,6 +266,7 @@
                                                 jQuery("#reportInfoSy").val(data.sy);
                                             });
                                         });
+                                        jQuery("#reportInfoDj").change();
                                     </script>
                                 </td>
                             </tr>

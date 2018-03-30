@@ -38,10 +38,10 @@ class ReportInfoXjllb {
     String gmspjslwzfdxj2End = "0.00"//购买商品、接受劳务支付的现金-期末
     String gmspjslwzfdxj1End = "0.00"//购买商品、接受劳务支付的现金-期末
 
-    String zfjzgyjwzgzfdxj3Begin = "0.00"//支付经职工以及为职工支付的现金-期初
-    String zfjzgyjwzgzfdxj3End = "0.00"//支付经职工以及为职工支付的现金-期末
-    String zfjzgyjwzgzfdxj2End = "0.00"//支付经职工以及为职工支付的现金-期末
-    String zfjzgyjwzgzfdxj1End = "0.00"//支付经职工以及为职工支付的现金-期末
+    String zfgzgyjwzgzfdxj3Begin = "0.00"//支付给职工以及为职工支付的现金-期初
+    String zfgzgyjwzgzfdxj3End = "0.00"//支付给职工以及为职工支付的现金-期末
+    String zfgzgyjwzgzfdxj2End = "0.00"//支付给职工以及为职工支付的现金-期末
+    String zfgzgyjwzgzfdxj1End = "0.00"//支付给职工以及为职工支付的现金-期末
 
     String zfdgxsf3Begin = "0.00"//支付的各项税费-期初
     String zfdgxsf3End = "0.00"//支付的各项税费-期末
@@ -228,7 +228,7 @@ class ReportInfoXjllb {
         sdqtytzhdygdxj1End column:"sdqtytzhdygdxj1End", sqlType:"VarChar(30)"
         zfqtyczhdygdxj3End column:"zfqtyczhdygdxj3End", sqlType:"VarChar(30)"
         czhdxjlrxj2End column:"czhdxjlrxj2End", sqlType:"VarChar(30)"
-        zfjzgyjwzgzfdxj3End column:"zfjzgyjwzgzfdxj3End", sqlType:"VarChar(30)"
+        zfgzgyjwzgzfdxj3End column:"zfgzgyjwzgzfdxj3End", sqlType:"VarChar(30)"
         qdzgsjqtyydwzfdxjje1End column:"qdzgsjqtyydwzfdxjje1End", sqlType:"VarChar(30)"
         jyhdcsdxjllje3End column:"jyhdcsdxjllje3End", sqlType:"VarChar(30)"
         czzgsjqtyydwsddxjje1End column:"czzgsjqtyydwsddxjje1End", sqlType:"VarChar(30)"
@@ -272,7 +272,7 @@ class ReportInfoXjllb {
         jyhdxjlcxj3Begin column:"jyhdxjlcxj3Begin", sqlType:"VarChar(30)"
         sddsffh2End column:"sddsffh2End", sqlType:"VarChar(30)"
         czhdxjlcxj3Begin column:"czhdxjlcxj3Begin", sqlType:"VarChar(30)"
-        zfjzgyjwzgzfdxj1End column:"zfjzgyjwzgzfdxj1End", sqlType:"VarChar(30)"
+        zfgzgyjwzgzfdxj1End column:"zfgzgyjwzgzfdxj1End", sqlType:"VarChar(30)"
         fpgllrhcflxzfdxj2End column:"fpgllrhcflxzfdxj2End", sqlType:"VarChar(30)"
         zfdgxsf3Begin column:"zfdgxsf3Begin", sqlType:"VarChar(30)"
         sdqtytzhdygdxj3End column:"sdqtytzhdygdxj3End", sqlType:"VarChar(30)"
@@ -282,7 +282,7 @@ class ReportInfoXjllb {
         xstzsddxj3End column:"xstzsddxj3End", sqlType:"VarChar(30)"
         xjjxjdjwjzje2End column:"xjjxjdjwjzje2End", sqlType:"VarChar(30)"
         zfqtyjyhdygdxj2End column:"zfqtyjyhdygdxj2End", sqlType:"VarChar(30)"
-        zfjzgyjwzgzfdxj2End column:"zfjzgyjwzgzfdxj2End", sqlType:"VarChar(30)"
+        zfgzgyjwzgzfdxj2End column:"zfgzgyjwzgzfdxj2End", sqlType:"VarChar(30)"
         sdqtyczhdygdxj3End column:"sdqtyczhdygdxj3End", sqlType:"VarChar(30)"
         czgdzcwxzchqtcqzcshdxjje1End column:"czgdzcwxzchqtcqzcshdxjje1End", sqlType:"VarChar(30)"
         tzhdxjlcxj3End column:"tzhdxjlcxj3End", sqlType:"VarChar(30)"
@@ -296,7 +296,7 @@ class ReportInfoXjllb {
         sdqtytzhdygdxj3Begin column:"sdqtytzhdygdxj3Begin", sqlType:"VarChar(30)"
         qcxjjxjdjwye1End column:"qcxjjxjdjwye1End", sqlType:"VarChar(30)"
         zfdgxsf1End column:"zfdgxsf1End", sqlType:"VarChar(30)"
-        zfjzgyjwzgzfdxj3Begin column:"zfjzgyjwzgzfdxj3Begin", sqlType:"VarChar(30)"
+        zfgzgyjwzgzfdxj3Begin column:"zfgzgyjwzgzfdxj3Begin", sqlType:"VarChar(30)"
         shtzsddxj2End column:"shtzsddxj2End", sqlType:"VarChar(30)"
         tzhdxjlrxj2End column:"tzhdxjlrxj2End", sqlType:"VarChar(30)"
         sdqtyjyhdygdxj3End column:"sdqtyjyhdygdxj3End", sqlType:"VarChar(30)"
