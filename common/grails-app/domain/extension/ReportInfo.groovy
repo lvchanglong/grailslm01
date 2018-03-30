@@ -243,17 +243,11 @@ class ReportInfo {
         return qymc
     }
 
-    def beforeLoad() {
-        println "loading---"
-        println this.zcfzb
-        println this.lrb
-        println this.xjllb
+    def afterLoad() {
         if(this.zcfzb && this.lrb && this.xjllb) {
-            println "pass"
             def zcb = this.zcfzb.zcb
             def fzb = this.zcfzb.fzb
             if(zcb && fzb) {
-                println "go----"
                 HashMap hm = new HashMap()
 
                 def fzhj3 = fzb.fzhj3End.toDouble()//负债合计
