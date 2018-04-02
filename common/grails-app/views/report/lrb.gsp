@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-12">
                     <g:form name="reportForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
-                        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
+                        <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered table-condensed">
                             <tr>
                                 <td align="center" colspan="7" class="info">
                                     <span style="font-size: 14px; font-weight: bold;">利润表（单位：人民币元）</span>
@@ -34,13 +34,13 @@
                                     <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </td>
                                 <td colspan="2">
-                                    <g:textField name="info.lrb.nf3" value="${reportInfo.lrb?.nf3?:"${year - 3}"}" class="form-control" placeholder="如：2015"/>
+                                    <g:textField name="info.lrb.nf3" value="${reportInfo.lrb?.nf3?:(reportInfo.nf3?:"${year - 3}")}" class="form-control" placeholder="如：2015"/>
                                 </td>
                                 <td>
-                                    <g:textField name="info.lrb.nf2" value="${reportInfo.lrb?.nf2?:"${year - 2}"}" class="form-control" placeholder="如：2016"/>
+                                    <g:textField name="info.lrb.nf2" value="${reportInfo.lrb?.nf2?:(reportInfo.nf2?:"${year - 2}")}" class="form-control" placeholder="如：2016"/>
                                 </td>
                                 <td>
-                                    <g:textField name="info.lrb.nf1" value="${reportInfo.lrb?.nf1?:"${year - 1}"}" class="form-control" placeholder="如：2017"/>
+                                    <g:textField name="info.lrb.nf1" value="${reportInfo.lrb?.nf1?:(reportInfo.nf1?:"${year - 1}")}" class="form-control" placeholder="如：2017"/>
                                 </td>
                             </tr>
                             <tr>
@@ -446,7 +446,7 @@
                             </tr>
                         </table>
 
-                        <g:submitButton name="submit" value="保存" class="btn btn-lg btn-primary"/>
+                        <g:submitButton name="submit" value="暂存" class="btn btn-lg btn-primary"/>
                     </g:form>
 
                     <script>
@@ -468,7 +468,17 @@
                         function cal(key) {
                             var rtn = 0.00; //结果
                             jQuery("." + key).each(function() {
-                                var n = jQuery(this).children("input:first").val();
+                                var $input = jQuery(this).children("input:first");
+                                var n = $input.val();
+                                /**
+                                 * 统一数据格式
+                                 */
+                                n = jQuery.decodeMoney(n);//千分位-格式解析
+                                $input.val(jQuery.codeMoney(n, 2));
+
+                                /**
+                                 * 结果运算
+                                 */
                                 if(!isNaN(n)) {
                                     var cls = jQuery(this).attr("class");
                                     if(cls.indexOf("plus") != -1) {
@@ -478,7 +488,7 @@
                                     }
                                 }
                             });
-                            jQuery("." + key + "-sum > input:first").val(rtn);
+                            jQuery("." + key + "-sum > input:first").val(jQuery.codeMoney(rtn, 2));
                         }
                     </script>
                 </div>

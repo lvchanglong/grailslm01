@@ -1,5 +1,7 @@
 package common
 
+import java.text.DecimalFormat
+
 class CommonHelper {
 
     /**

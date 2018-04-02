@@ -44,7 +44,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="info.ggryszs[0].xljzc" value="${instance.xljzc}" required="required" class="form-control"/>
+                                <g:textField name="info.ggryszs[0].xljzc" value="${instance.xljzc?:"-"}" required="required" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -52,7 +52,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textArea name="info.ggryszs[0].cyzz" value="${instance.cyzz}" required="required" class="form-control" style="min-height:100px;"/>
+                                <g:textArea name="info.ggryszs[0].cyzz" value="${instance.cyzz?:"-"}" required="required" class="form-control" style="min-height:100px;"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -60,7 +60,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textArea name="info.ggryszs[0].hjqk" value="${instance.hjqk}" required="required" class="form-control" style="min-height:100px;"/>
+                                <g:textArea name="info.ggryszs[0].hjqk" value="${instance.hjqk?:"-"}" required="required" class="form-control" style="min-height:100px;"/>
                             </div>
                         </div>
                     </fieldset>

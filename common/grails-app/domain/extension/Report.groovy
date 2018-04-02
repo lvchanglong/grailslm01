@@ -17,7 +17,7 @@ class Report {
     String scyj //审查意见
 
     String dq = "省级"//地区
-    String state = "已保存" //状态
+    String state = "已暂存" //状态
 
     User creater //创建人
     ReportInfo info //信用报告详情

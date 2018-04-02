@@ -11,6 +11,12 @@
                 font-size:12px;
                 text-align:center;
             }
+            [contenteditable=true] {
+                background-color: #c7f9c7;
+            }
+            [contenteditable=false] {
+                background-color: #eee;
+            }
         </style>
     </head>
     <body>
@@ -34,7 +40,7 @@
 
                         ${reportInfo.qydf?:html}
 
-                        <g:submitButton name="submit" value="保存" class="btn btn-lg btn-primary"/>
+                        <g:submitButton name="submit" value="暂存" class="btn btn-lg btn-primary"/>
                     </g:form>
 
                     <script>
@@ -94,6 +100,8 @@
                     </script>
                 </div>
                 <div class="col-md-12">
+                    <hr/>
+
                     <g:form name="pgzbReportForm" url="[controller:'report', action:'update', id:report.id]" class="form-horizontal ajaxForm">
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
                             <tr>
@@ -324,16 +332,14 @@
                             </tr>
                         </table>
 
-                        <g:submitButton name="submit" value="确定" class="btn btn-lg btn-primary"/>
+                        <g:hiddenField name="info.pgzb" value="${reportInfo.pgzb}"/>
+
+                        <g:submitButton name="submit" value="持久化（注意：持久化操作后，将无法再自动进行计算）" class="btn btn-lg btn-warning"/>
                     </g:form>
                 </div>
                 <div class="col-md-12">
                     <g:if test="${vip.isAdmin()}">
                         <hr/>
-
-                        <h1 style="text-align:center;font-size:30px;">
-                            抽查
-                        </h1>
 
                         <g:form name="checkReportForm" url="[controller:'report', action:'update', id:report.id]" class="form-horizontal ajaxForm">
                             <div class="row">
@@ -368,14 +374,16 @@
                                     </div>
                                 </fieldset>
                             </div>
-                            <g:submitButton name="submit" value="确定" class="btn btn-lg btn-primary"/>
+                            <g:submitButton name="submit" value="提交审查结果" class="btn btn-lg btn-success" style="display:block;margin:0 auto;"/>
                         </g:form>
                     </g:if>
                     <g:else>
                         <g:if test="${report.state.equals("已暂存") || report.state.equals("未合格") }">
-                            <g:form name="submitForm" controller="report" action="update" id="${report.id}" class="ajaxForm pull-right" style="position:relative;left:0;top:-47px;">
+                            <hr/>
+
+                            <g:form name="submitForm" controller="report" action="update" id="${report.id}" class="ajaxForm">
                                 <g:hiddenField name="state" value="已提交"/>
-                                <g:submitButton name="submit" value="提交报告" class="btn btn-lg btn-success"/>
+                                <g:submitButton name="submit" value="提交报告" class="btn btn-lg btn-success" style="display:block;margin:30px auto 0 auto;"/>
                             </g:form>
                         </g:if>
                     </g:else>

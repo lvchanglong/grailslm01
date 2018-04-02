@@ -100,7 +100,7 @@
                             </tr>
                         </table>
 
-                        <g:submitButton name="submit" value="保存" class="btn btn-lg btn-primary"/>
+                        <g:submitButton name="submit" value="暂存" class="btn btn-lg btn-primary"/>
                     </g:form>
                 </div>
             </div>

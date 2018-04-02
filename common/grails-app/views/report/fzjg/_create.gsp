@@ -20,7 +20,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="info.fzjgs[0].ybgqygx" value="${instance.ybgqygx}" required="required" class="form-control"/>
+                                <g:textField name="info.fzjgs[0].ybgqygx" value="${instance.ybgqygx?:"-"}" required="required" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -28,7 +28,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="info.fzjgs[0].qymc" value="${instance.qymc}" required="required" class="form-control"/>
+                                <g:textField name="info.fzjgs[0].qymc" value="${instance.qymc?:"-"}" required="required" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -36,7 +36,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="info.fzjgs[0].dz" value="${instance.dz}" required="required" class="form-control"/>
+                                <g:textField name="info.fzjgs[0].dz" value="${instance.dz?:"-"}" required="required" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -44,7 +44,7 @@
                                 <span class="required-indicator">*</span>
                             </label>
                             <div class="col-sm-10">
-                                <g:textField name="info.fzjgs[0].lxdh" value="${instance.lxdh}" required="required" class="form-control"/>
+                                <g:textField name="info.fzjgs[0].lxdh" value="${instance.lxdh?:"-"}" required="required" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>

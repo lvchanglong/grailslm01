@@ -80,7 +80,7 @@
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">
-                                    项目&nbsp;\&nbsp;年份
+                                    项目&nbsp;\&nbsp;年份&nbsp;<span class="required-indicator">*</span>
                                     <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </th>
                                 <td class="form_th p5 tc h20 lh20">
@@ -331,7 +331,7 @@
                             </tr>
                         </table>
 
-                        <g:submitButton name="submit" value="保存" class="btn btn-lg btn-primary"/>
+                        <g:submitButton name="submit" value="暂存" class="btn btn-lg btn-primary"/>
                     </g:form>
                 </div>
             </div>

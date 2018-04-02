@@ -6,6 +6,7 @@
 // to create separate JavaScript files as needed.
 //
 //= require media.js/jquery.media.min.js
+//= require money/money.js
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
