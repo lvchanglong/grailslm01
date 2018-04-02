@@ -334,7 +334,7 @@
 
                         <g:hiddenField name="info.pgzb" value="${reportInfo.pgzb}"/>
 
-                        <g:submitButton name="submit" value="持久化（注意：持久化操作后，将无法再自动进行计算）" class="btn btn-lg btn-warning"/>
+                        <g:submitButton name="submit" value="持久化（注意：持久化操作后，将取消自动计算）" class="btn btn-lg btn-warning"/>
                     </g:form>
                 </div>
                 <div class="col-md-12">
@@ -389,8 +389,6 @@
                     </g:else>
                 </div>
             </div>
-
-            ${reportInfo.pgzb}---
 
             <content tag="sidebarLeft">
                 <g:render template="else/sidebarLeft"/>
