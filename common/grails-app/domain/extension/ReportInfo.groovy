@@ -176,6 +176,7 @@ class ReportInfo {
      */
     String qydf = "" //企业打分
     String pgzb = ""//评估指标(JSON)
+    static transients = ["pgzb"]
 
     Date dateCreated //创建时间
     Date lastUpdated //更新时间
@@ -231,7 +232,6 @@ class ReportInfo {
         sm column:"sm", sqlType:"Text"
         gzpjap column:"gzpjap", sqlType:"Text"
         qydf column:"qydf", sqlType:"Text"
-        pgzb column:"pgzb", sqlType:"Text"
 
         zcfzb column:"zcfzb_id"
         lrb column:"lrb_id"
@@ -268,8 +268,8 @@ class ReportInfo {
                         this.zcfzl3 = NumberHelper.format(fzhj3 / zczj3 * 100)
                         this.zcfzl2 = NumberHelper.format(fzhj2 / zczj2 * 100)
                         this.zcfzl1 = NumberHelper.format(fzhj1 / zczj1 * 100)
-                        hm.put("资产负债率", [zcfzl3, zcfzl2, zcfzl1])
                     }
+                    hm.put("资产负债率", [zcfzl3, zcfzl2, zcfzl1])
                 }
 
                 def jyhdcsdxjllje3 = NumberHelper.decodeMoney(xjllb.jyhdcsdxjllje3End) //经营活动产生的现金流量净额
@@ -294,15 +294,15 @@ class ReportInfo {
                         this.xjldfzbl3 = NumberHelper.format(jyhdcsdxjllje3 / ldfzhj3 * 100)
                         this.xjldfzbl2 = NumberHelper.format(jyhdcsdxjllje2 / ldfzhj2 * 100)
                         this.xjldfzbl1 = NumberHelper.format(jyhdcsdxjllje1 / ldfzhj1 * 100)
-                        hm.put("现金流动负债比率", [xjldfzbl3, xjldfzbl2, xjldfzbl1])
                     }
+                    hm.put("现金流动负债比率", [xjldfzbl3, xjldfzbl2, xjldfzbl1])
 
                     if(!this.sdbl3 && !this.sdbl2 && !this.sdbl1) {
                         this.sdbl3 = NumberHelper.format((ldzchj3 - ch3) / ldfzhj3 * 100)
                         this.sdbl2 = NumberHelper.format((ldzchj2 - ch2) / ldfzhj2 * 100)
                         this.sdbl1 = NumberHelper.format((ldzchj1 - ch1) / ldfzhj1 * 100)
-                        hm.put("速动比率", [sdbl3, sdbl2, sdbl1])
                     }
+                    hm.put("速动比率", [sdbl3, sdbl2, sdbl1])
                 }
 
                 def zyywsr4 = NumberHelper.decodeMoney(lrb.zyywsr3Begin) //主营业务收入
@@ -328,15 +328,15 @@ class ReportInfo {
                         this.yszkzzl3 = NumberHelper.format(pjyszkye3 / pjzcze3)
                         this.yszkzzl2 = NumberHelper.format(pjyszkye2 / pjzcze2)
                         this.yszkzzl1 = NumberHelper.format(pjyszkye1 / pjzcze1)
-                        hm.put("应收账款周转率", [yszkzzl3, yszkzzl2, yszkzzl1])
                     }
+                    hm.put("应收账款周转率", [yszkzzl3, yszkzzl2, yszkzzl1])
 
                     if(!this.zzczzl3 && !this.zzczzl2 && !this.zzczzl1) {
                         this.zzczzl3 = NumberHelper.format(zyywsr3 / pjzcze3)
                         this.zzczzl2 = NumberHelper.format(zyywsr2 / pjzcze2)
                         this.zzczzl1 = NumberHelper.format(zyywsr1 / pjzcze1)
-                        hm.put("总资产周转率", [zzczzl3, zzczzl2, zzczzl1])
                     }
+                    hm.put("总资产周转率", [zzczzl3, zzczzl2, zzczzl1])
                 }
 
                 def pjldzcze3 = (ldzchj4 + ldzchj3) / 2 //平均流动资产总额
@@ -348,8 +348,8 @@ class ReportInfo {
                         this.ldzczzl3 = NumberHelper.format(zyywsr3 / pjldzcze3)
                         this.ldzczzl2 = NumberHelper.format(zyywsr2 / pjldzcze2)
                         this.ldzczzl1 = NumberHelper.format(zyywsr1 / pjldzcze1)
-                        hm.put("流动资产周转率", [ldzczzl3, ldzczzl2, ldzczzl1])
                     }
+                    hm.put("流动资产周转率", [ldzczzl3, ldzczzl2, ldzczzl1])
                 }
 
                 def jlr3 = NumberHelper.decodeMoney(lrb.jlr3End) //净利润
@@ -370,8 +370,8 @@ class ReportInfo {
                         this.jzcsyl3 = NumberHelper.format(jlr3 / pjjzc3 * 100)
                         this.jzcsyl2 = NumberHelper.format(jlr2 / pjjzc2 * 100)
                         this.jzcsyl1 = NumberHelper.format(jlr1 / pjjzc1 * 100)
-                        hm.put("净资产收益率", [jzcsyl3, jzcsyl2, jzcsyl1])
                     }
+                    hm.put("净资产收益率", [jzcsyl3, jzcsyl2, jzcsyl1])
                 }
 
                 def lrze3 = NumberHelper.decodeMoney(lrb.lrze3End) //利润总额
@@ -387,8 +387,8 @@ class ReportInfo {
                         this.xsyylrl3 = NumberHelper.format(lrze3 / yysr3 * 100)
                         this.xsyylrl2 = NumberHelper.format(lrze2 / yysr2 * 100)
                         this.xsyylrl1 = NumberHelper.format(lrze1 / yysr1 * 100)
-                        hm.put("销售(营业)利润率", [xsyylrl3, xsyylrl2, xsyylrl1])
                     }
+                    hm.put("销售(营业)利润率", [xsyylrl3, xsyylrl2, xsyylrl1])
                 }
 
                 def cbfyze3 = NumberHelper.decodeMoney(lrb.zyywcb3End) + NumberHelper.decodeMoney(lrb.yysjjfj3End) + NumberHelper.decodeMoney(lrb.xsfy3End) + NumberHelper.decodeMoney(lrb.glfy3End) + NumberHelper.decodeMoney(lrb.cwfy3End) //成本费用总额
@@ -400,8 +400,8 @@ class ReportInfo {
                         this.cbfylrl3 = NumberHelper.format(lrze3 / cbfyze3 * 100)
                         this.cbfylrl2 = NumberHelper.format(lrze2 / cbfyze2 * 100)
                         this.cbfylrl1 = NumberHelper.format(lrze1 / cbfyze1 * 100)
-                        hm.put("成本费用利润率", [cbfylrl3, cbfylrl2, cbfylrl1])
                     }
+                    hm.put("成本费用利润率", [cbfylrl3, cbfylrl2, cbfylrl1])
                 }
 
                 def lxzc3 = NumberHelper.decodeMoney(lrb.lxzc3End) //利息支出
@@ -413,8 +413,8 @@ class ReportInfo {
                         this.zzcbcl3 = NumberHelper.format((lrze3 + lxzc3) / pjzcze3 * 100)
                         this.zzcbcl2 = NumberHelper.format((lrze2 + lxzc2) / pjzcze2 * 100)
                         this.zzcbcl1 = NumberHelper.format((lrze1 + lxzc1) / pjzcze1 * 100)
-                        hm.put("总资产报酬率", [zzcbcl3, zzcbcl2, zzcbcl1])
                     }
+                    hm.put("总资产报酬率", [zzcbcl3, zzcbcl2, zzcbcl1])
                 }
 
                 def bnzyywsrzze3 = zyywsr3 - zyywsr4 //本年主营业务收入增长额
@@ -426,8 +426,8 @@ class ReportInfo {
                         this.xsyysrzzl3 = NumberHelper.format(bnzyywsrzze3 / zyywsr4 * 100)
                         this.xsyysrzzl2 = NumberHelper.format(bnzyywsrzze2 / zyywsr3 * 100)
                         this.xsyysrzzl1 = NumberHelper.format(bnzyywsrzze1 / zyywsr2 * 100)
-                        hm.put("销售(营业)收入增长率", [xsyysrzzl3, xsyysrzzl2, xsyysrzzl1])
                     }
+                    hm.put("销售(营业)收入增长率", [xsyysrzzl3, xsyysrzzl2, xsyysrzzl1])
                 }
 
                 if(syzqyhj4 != 0 && syzqyhj3 != 0 && syzqyhj2 != 0) {
@@ -435,8 +435,8 @@ class ReportInfo {
                         this.zbbzzzl3 = NumberHelper.format(syzqyhj3 / syzqyhj4 * 100)
                         this.zbbzzzl2 = NumberHelper.format(syzqyhj2 / syzqyhj3 * 100)
                         this.zbbzzzl1 = NumberHelper.format(syzqyhj1 / syzqyhj2 * 100)
-                        hm.put("资本保值增值率", [zbbzzzl3, zbbzzzl2, zbbzzzl1])
                     }
+                    hm.put("资本保值增值率", [zbbzzzl3, zbbzzzl2, zbbzzzl1])
                 }
 
                 def yysjjfj4 = NumberHelper.decodeMoney(lrb.yysjjfj3Begin) //营业税金及附加
@@ -463,8 +463,8 @@ class ReportInfo {
                         this.xsyylrzzl3 = NumberHelper.format((bnzyywlr3 - snzyywlr4) / snzyywlr4 * 100)
                         this.xsyylrzzl2 = NumberHelper.format((bnzyywlr2 - snzyywlr3) / snzyywlr3 * 100)
                         this.xsyylrzzl1 = NumberHelper.format((bnzyywlr1 - snzyywlr2) / snzyywlr2 * 100)
-                        hm.put("销售(营业)利润增长率", [xsyylrzzl3, xsyylrzzl2, xsyylrzzl1])
                     }
+                    hm.put("销售(营业)利润增长率", [xsyylrzzl3, xsyylrzzl2, xsyylrzzl1])
                 }
 
                 def yylr3 = NumberHelper.decodeMoney(lrb.yylr3End)
@@ -476,15 +476,15 @@ class ReportInfo {
                         this.zyywlrl3 = NumberHelper.format(yylr3 / zyywsr3 * 100)
                         this.zyywlrl2 = NumberHelper.format(yylr2 / zyywsr2 * 100)
                         this.zyywlrl1 = NumberHelper.format(yylr1 / zyywsr1 * 100)
-                        hm.put("主营业务利润率", [zyywlrl3, zyywlrl2, zyywlrl1])
                     }
+                    hm.put("主营业务利润率", [zyywlrl3, zyywlrl2, zyywlrl1])
 
                     if(!this.cbfyzzyywsrdbl3 && !this.cbfyzzyywsrdbl2 && !this.cbfyzzyywsrdbl1) {
                         this.cbfyzzyywsrdbl3 = NumberHelper.format(cbfyze3 / zyywsr3 * 100)
                         this.cbfyzzyywsrdbl2 = NumberHelper.format(cbfyze2 / zyywsr2 * 100)
                         this.cbfyzzyywsrdbl1 = NumberHelper.format(cbfyze1 / zyywsr1 * 100)
-                        hm.put("成本费用占主营业务收入的比率", [cbfyzzyywsrdbl3, cbfyzzyywsrdbl2, cbfyzzyywsrdbl1])
                     }
+                    hm.put("成本费用占主营业务收入的比率", [cbfyzzyywsrdbl3, cbfyzzyywsrdbl2, cbfyzzyywsrdbl1])
                 }
 
                 def shgxze3 = jlr3 + NumberHelper.decodeMoney(xjllb.zfdgxsf3End) + NumberHelper.decodeMoney(xjllb.zfgzgyjwzgzfdxj3End)
@@ -496,8 +496,8 @@ class ReportInfo {
                         this.shgxl3 = NumberHelper.format(shgxze3 / pjjzc3 * 100)
                         this.shgxl2 = NumberHelper.format(shgxze2 / pjjzc2 * 100)
                         this.shgxl1 = NumberHelper.format(shgxze1 / pjjzc1 * 100)
-                        hm.put("社会贡献率", [shgxl3, shgxl2, shgxl1])
                     }
+                    hm.put("社会贡献率", [shgxl3, shgxl2, shgxl1])
                 }
 
                 if(syzqyhj3 != 0 && syzqyhj2 != 0 && syzqyhj1 != 0) {
@@ -505,20 +505,11 @@ class ReportInfo {
                         this.zwsx3 = NumberHelper.format((NumberHelper.decodeMoney(zcb.hbzj3End) + NumberHelper.decodeMoney(zcb.yspj3End) + yszk3 + NumberHelper.decodeMoney(zcb.yfkx3End) + ch3 - NumberHelper.decodeMoney(fzb.dqjk3End) - NumberHelper.decodeMoney(fzb.yfzk3End) - NumberHelper.decodeMoney(fzb.yskx3End)) / syzqyhj3)
                         this.zwsx2 = NumberHelper.format((NumberHelper.decodeMoney(zcb.hbzj2End) + NumberHelper.decodeMoney(zcb.yspj2End) + yszk2 + NumberHelper.decodeMoney(zcb.yfkx2End) + ch2 - NumberHelper.decodeMoney(fzb.dqjk2End) - NumberHelper.decodeMoney(fzb.yfzk2End) - NumberHelper.decodeMoney(fzb.yskx2End)) / syzqyhj2)
                         this.zwsx1 = NumberHelper.format((NumberHelper.decodeMoney(zcb.hbzj1End) + NumberHelper.decodeMoney(zcb.yspj1End) + yszk1 + NumberHelper.decodeMoney(zcb.yfkx1End) + ch1 - NumberHelper.decodeMoney(fzb.dqjk1End) - NumberHelper.decodeMoney(fzb.yfzk1End) - NumberHelper.decodeMoney(fzb.yskx1End)) / syzqyhj1)
-                        hm.put("债务上限", [zwsx3, zwsx2, zwsx1])
                     }
+                    hm.put("债务上限", [zwsx3, zwsx2, zwsx1])
                 }
 
                 this.pgzb = hm as JSON
-            }
-        }
-
-        if(this.qydf && this.pgzb) {
-            def hm = new JsonSlurper().parseText(this.pgzb)
-            if(hm) {
-                hm.each {k, v->
-                    this.qydf = this.qydf.replaceFirst(">${k}.*?<", ">${k}${v}<")
-                }
             }
         }
     }

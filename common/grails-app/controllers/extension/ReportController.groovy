@@ -8,6 +8,7 @@ import common.ExcelHelper
 import common.User
 import grails.converters.JSON
 import grails.validation.ValidationException
+import groovy.json.JsonSlurper
 
 import static org.springframework.http.HttpStatus.*
 
@@ -465,7 +466,18 @@ class ReportController {
      */
     def qydf(Report report) {
         def file = FileHelper.getFile(servletContext.getRealPath("/") + "企业计分标准", "${report.hylx}.htm")
-        [report:report, reportInfo:report.info, html:file.getText("UTF-8")]
+        def reportInfo = report.info
+        def html = reportInfo.qydf?:file.getText("UTF-8")
+
+        if(html && reportInfo.pgzb) {
+            def hm = new JsonSlurper().parseText(reportInfo.pgzb)
+            if(hm) {
+                hm.each {k, v->
+                    html = html.replaceFirst(">${k}.*?<", ">${k}<div>${v}</div><")
+                }
+            }
+        }
+        [report:report, reportInfo:reportInfo, html:html]
     }
 
     /**
