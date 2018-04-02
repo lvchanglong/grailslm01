@@ -3,6 +3,7 @@ package extension
 import common.CommonHelper
 import common.NumberHelper
 import grails.converters.JSON
+import groovy.json.JsonSlurper
 
 /**
  * 信用报告-详情
@@ -509,6 +510,15 @@ class ReportInfo {
                 }
 
                 this.pgzb = hm as JSON
+            }
+        }
+
+        if(this.qydf && this.pgzb) {
+            def hm = new JsonSlurper().parseText(this.pgzb)
+            if(hm) {
+                hm.each {k, v->
+                    this.qydf = this.qydf.replaceFirst(">${k}.*?<", ">${k}${v}<")
+                }
             }
         }
     }

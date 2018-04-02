@@ -103,6 +103,8 @@
                     <hr/>
 
                     <g:form name="pgzbReportForm" url="[controller:'report', action:'update', id:report.id]" class="form-horizontal ajaxForm">
+                        <g:hiddenField name="info.pgzb" value="${reportInfo.pgzb}"/>
+
                         <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">
                             <tr>
                                 <th colspan="4" class="info">评估指标</th>
@@ -331,8 +333,6 @@
                                 </td>
                             </tr>
                         </table>
-
-                        <g:hiddenField name="info.pgzb" value="${reportInfo.pgzb}"/>
 
                         <g:submitButton name="submit" value="持久化（注意：持久化操作后，将取消自动计算）" class="btn btn-lg btn-warning"/>
                     </g:form>
