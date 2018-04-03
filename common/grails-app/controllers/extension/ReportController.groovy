@@ -1,6 +1,7 @@
 package extension
 
 import com.aspose.words.Document
+import com.aspose.words.DocumentBuilder
 import common.AsposeLicense
 import common.CommonHelper
 import common.FileConverter
@@ -117,6 +118,10 @@ class ReportController {
             if(propertyName.endsWith("xxx")) {
                 propertyName = propertyName.find(/.*?(?=\.\d+xxx|$)/)
             }
+
+            /*DocumentBuilder builder = new DocumentBuilder(document)
+            builder.moveToBookmark("bookmark")
+            builder.insertHtml("Html代码")*/
 
             bookmark.setText(groovyShell.evaluate("return report.${propertyName}"))
         }
