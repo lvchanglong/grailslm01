@@ -16,7 +16,9 @@
                     </div>
                 </g:if>
                 <div class="col-md-12">
-                    <div class="mhead">${reportInfo.qymc}</div>
+                    <div class="mhead">
+                        ${reportInfo.qymc}<g:render template="export" model="[instance:report]"/>
+                    </div>
                     <div class="linedark"></div>
                     <div class="linelight"></div>
                 </div>
@@ -57,7 +59,7 @@
                                     制作日期&nbsp;<span class="required-indicator">*</span>
                                 </th>
                                 <td colspan="3" class="form_td p5 tl h20 lh20">
-                                    <g:textField name="info.zzrq" value="${reportInfo.zzrq?:new Date().format("yyyy-MM-dd")}" class="form-control" placeholder="如：2018-03-13"/>
+                                    <g:textField name="info.zzrq" value="${reportInfo.zzrq?:new Date().format("yyyy年MM月dd日")}" class="form-control" placeholder="如：2018-03-13"/>
                                 </td>
                             </tr>
 

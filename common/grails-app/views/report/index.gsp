@@ -71,8 +71,6 @@
                 </div>
             </div>
 
-            %{--<g:render template="export"/>--}%
-
             <table class="table table-striped">
                 <tr>
                     <th>
@@ -113,6 +111,8 @@
                         <td>${report.state}</td>
                         <td><g:formatDate format="yyyy-MM-dd" date="${report.dateCreated}"/></td>
                         <td>
+                            <g:render template="export" model="[instance:report]"/>
+                            &nbsp;
                             <g:render template="edit" model="[instance:report]"/>
                             &nbsp;
                             <g:render template="delete" model="[instance:report]"/>

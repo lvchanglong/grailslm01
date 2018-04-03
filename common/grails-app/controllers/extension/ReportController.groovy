@@ -1,6 +1,7 @@
 package extension
 
-import com.aspose.cells.Workbook
+import com.aspose.words.Document
+import common.AsposeLicense
 import common.CommonHelper
 import common.FileConverter
 import common.FileHelper
@@ -10,9 +11,16 @@ import grails.converters.JSON
 import grails.validation.ValidationException
 import groovy.json.JsonSlurper
 
+import javax.script.ScriptEngine
+import javax.script.ScriptEngineManager
+
 import static org.springframework.http.HttpStatus.*
 
 class ReportController {
+
+    static {
+        AsposeLicense.setLicense()
+    }
 
     ReportService reportService
     ReportInfoService reportInfoService
@@ -94,57 +102,40 @@ class ReportController {
     }
 
     /**
-     * 批量导出
+     * 导出
     */
-    def exportData() {
-        def dirpath = servletContext.getRealPath("/") + "temp"
-        def filetype = 'xls'
-        def filename = new Date().format("yyyyMMddHHmmss") + "." + filetype
-        def file = FileHelper.getFile(dirpath, filename)
+    def exportData(Report report) {
+        def groovyShell = new GroovyShell(new Binding(["report": report]))
 
-        def array = new ArrayList()
-        Report.list().each {
-            def cell = new HashMap()
-            cell.put(0, it.id)
-            cell.put(1, it.version)
-            cell.put(2, it.dateCreated)
-            cell.put(3, it.lastUpdated)
-            array.add(cell)
+        def srcFile = FileHelper.getFile(servletContext.getRealPath("/") + "报告导出模板", "模板A.doc")
+        Document document = new Document(srcFile.newInputStream())
+
+        document.getRange().getBookmarks().each {bookmark->
+            def bookmarkName = bookmark.getName()
+            def propertyName = bookmarkName.replaceAll("_", ".")
+
+            if(propertyName.endsWith("xxx")) {
+                propertyName = propertyName.find(/.*?(?=\.\d+xxx|$)/)
+            }
+
+            bookmark.setText(groovyShell.evaluate("return report.${propertyName}"))
         }
-        ExcelHelper.writeExcel(file, array)
 
-        response.contentType = grailsApplication.config.grails.mime.types[filetype]
-        response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(filename, "utf-8"))
+        def fileType = "doc"
+        def fileName = "${report.qymc}.${fileType}"
+        def tarFile = FileHelper.getFile(servletContext.getRealPath("/") + "temp", fileName)
+        document.save(tarFile.getAbsolutePath())
+
+        response.contentType = grailsApplication.config.grails.mime.types[fileType]
+        response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, "utf-8"))
         response.outputStream.withStream {
-            it.write(file.getBytes())
+            it.write(tarFile.getBytes())
             it.flush()
             it.close()
         }
 
-        if(file.exists()) {
-            file.delete()
-        }
-    }
-
-    /**
-     * 下载
-     */
-    def download(Report instance) {
-        if(!instance.data) {
-            render status: BAD_REQUEST, text: "无法下载"
-            return
-        }
-        try {
-            def filename = instance.filename
-            def filetype = FileHelper.getFileType(filename)
-            response.contentType = grailsApplication.config.grails.mime.types[filetype]
-            response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(filename, "UTF-8"))
-            def out = response.getOutputStream()
-            out << instance.data.bytes
-            out.flush()
-            out.close()
-        } catch(Exception e) {
-
+        if(tarFile.exists()) {
+            tarFile.delete()
         }
     }
 
