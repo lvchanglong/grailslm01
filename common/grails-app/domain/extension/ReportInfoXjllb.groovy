@@ -76,10 +76,10 @@ class ReportInfoXjllb {
     String qdtzsysddxj2End = "0.00"//取得投资收益收到的现金-期末
     String qdtzsysddxj1End = "0.00"//取得投资收益收到的现金-期末
 
-    String czgdzcwxzchqtcqzcshdxjje3Begin = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期初
-    String czgdzcwxzchqtcqzcshdxjje3End = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期末
-    String czgdzcwxzchqtcqzcshdxjje2End = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期末
-    String czgdzcwxzchqtcqzcshdxjje1End = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期末
+    String czgdzcwxzcdxjje3Begin = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期初
+    String czgdzcwxzcdxjje3End = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期末
+    String czgdzcwxzcdxjje2End = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期末
+    String czgdzcwxzcdxjje1End = "0.00"//处置固定资产、无形资产和其他长期资产收回的现金净额-期末
 
     String czzgsjqtyydwsddxjje3Begin = "0.00"//处置子公司及其他营业单位收到的现金净额-期初
     String czzgsjqtyydwsddxjje3End = "0.00"//处置子公司及其他营业单位收到的现金净额-期末
@@ -96,10 +96,10 @@ class ReportInfoXjllb {
     String tzhdxjlrxj2End = "0.00"//投资活动现金流入小计-期末
     String tzhdxjlrxj1End = "0.00"//投资活动现金流入小计-期末
 
-    String gjgdzcwxzchqtcqzczfdxj3Begin = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期初
-    String gjgdzcwxzchqtcqzczfdxj3End = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期末
-    String gjgdzcwxzchqtcqzczfdxj2End = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期末
-    String gjgdzcwxzchqtcqzczfdxj1End = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期末
+    String gjgdzcwxzcdxj3Begin = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期初
+    String gjgdzcwxzcdxj3End = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期末
+    String gjgdzcwxzcdxj2End = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期末
+    String gjgdzcwxzcdxj1End = "0.00"//购建固定资产、无形资产和其他长期资产支付的现金-期末
 
     String tzzfdxj3Begin = "0.00"//投资支付的现金-期初
     String tzzfdxj3End = "0.00"//投资支付的现金-期末
@@ -249,9 +249,9 @@ class ReportInfoXjllb {
         tzhdcsdxjllje3End column:"tzhdcsdxjllje3End", sqlType:"VarChar(30)"
         qdtzsysddxj3End column:"qdtzsysddxj3End", sqlType:"VarChar(30)"
         zfqtyjyhdygdxj3End column:"zfqtyjyhdygdxj3End", sqlType:"VarChar(30)"
-        gjgdzcwxzchqtcqzczfdxj1End column:"gjgdzcwxzchqtcqzczfdxj1End", sqlType:"VarChar(30)"
+        gjgdzcwxzcdxj1End column:"gjgdzcwxzchqtcqzczfdxj1End", sqlType:"VarChar(30)"
         jyhdcsdxjllje1End column:"jyhdcsdxjllje1End", sqlType:"VarChar(30)"
-        czgdzcwxzchqtcqzcshdxjje3Begin column:"czgdzcwxzchqtcqzcshdxjje3Begin", sqlType:"VarChar(30)"
+        czgdzcwxzcdxjje3Begin column:"czgdzcwxzchqtcqzcshdxjje3Begin", sqlType:"VarChar(30)"
         qdjksddxj3Begin column:"qdjksddxj3Begin", sqlType:"VarChar(30)"
         czhdxjlcxj2End column:"czhdxjlcxj2End", sqlType:"VarChar(30)"
         chzwzfdxj1End column:"chzwzfdxj1End", sqlType:"VarChar(30)"
@@ -259,13 +259,13 @@ class ReportInfoXjllb {
         sddsffh3Begin column:"sddsffh3Begin", sqlType:"VarChar(30)"
         sdqtyczhdygdxj1End column:"sdqtyczhdygdxj1End", sqlType:"VarChar(30)"
         sdqtytzhdygdxj2End column:"sdqtytzhdygdxj2End", sqlType:"VarChar(30)"
-        gjgdzcwxzchqtcqzczfdxj2End column:"gjgdzcwxzchqtcqzczfdxj2End", sqlType:"VarChar(30)"
+        gjgdzcwxzcdxj2End column:"gjgdzcwxzchqtcqzczfdxj2End", sqlType:"VarChar(30)"
         czhdxjlrxj3Begin column:"czhdxjlrxj3Begin", sqlType:"VarChar(30)"
         gmspjslwzfdxj3Begin column:"gmspjslwzfdxj3Begin", sqlType:"VarChar(30)"
         qdtzsysddxj1End column:"qdtzsysddxj1End", sqlType:"VarChar(30)"
         czzgsjqtyydwsddxjje3End column:"czzgsjqtyydwsddxjje3End", sqlType:"VarChar(30)"
         hlbddxjjxjdjwdyx3End column:"hlbddxjjxjdjwdyx3End", sqlType:"VarChar(30)"
-        czgdzcwxzchqtcqzcshdxjje3End column:"czgdzcwxzchqtcqzcshdxjje3End", sqlType:"VarChar(30)"
+        czgdzcwxzcdxjje3End column:"czgdzcwxzchqtcqzcshdxjje3End", sqlType:"VarChar(30)"
         tzhdxjlrxj3Begin column:"tzhdxjlrxj3Begin", sqlType:"VarChar(30)"
         czhdxjlrxj1End column:"czhdxjlrxj1End", sqlType:"VarChar(30)"
         tzhdxjlcxj1End column:"tzhdxjlcxj1End", sqlType:"VarChar(30)"
@@ -284,7 +284,7 @@ class ReportInfoXjllb {
         zfqtyjyhdygdxj2End column:"zfqtyjyhdygdxj2End", sqlType:"VarChar(30)"
         zfgzgyjwzgzfdxj2End column:"zfgzgyjwzgzfdxj2End", sqlType:"VarChar(30)"
         sdqtyczhdygdxj3End column:"sdqtyczhdygdxj3End", sqlType:"VarChar(30)"
-        czgdzcwxzchqtcqzcshdxjje1End column:"czgdzcwxzchqtcqzcshdxjje1End", sqlType:"VarChar(30)"
+        czgdzcwxzcdxjje1End column:"czgdzcwxzchqtcqzcshdxjje1End", sqlType:"VarChar(30)"
         tzhdxjlcxj3End column:"tzhdxjlcxj3End", sqlType:"VarChar(30)"
         czzgsjqtyydwsddxjje2End column:"czzgsjqtyydwsddxjje2End", sqlType:"VarChar(30)"
         qdjksddxj1End column:"qdjksddxj1End", sqlType:"VarChar(30)"
@@ -303,7 +303,7 @@ class ReportInfoXjllb {
         gdzcjz3Begin column:"gdzcjz3Begin", sqlType:"VarChar(30)"
         hlbddxjjxjdjwdyx1End column:"hlbddxjjxjdjwdyx1End", sqlType:"VarChar(30)"
         czhdxjlcxj1End column:"czhdxjlcxj1End", sqlType:"VarChar(30)"
-        czgdzcwxzchqtcqzcshdxjje2End column:"czgdzcwxzchqtcqzcshdxjje2End", sqlType:"VarChar(30)"
+        czgdzcwxzcdxjje2End column:"czgdzcwxzchqtcqzcshdxjje2End", sqlType:"VarChar(30)"
         gmspjslwzfdxj3End column:"gmspjslwzfdxj3End", sqlType:"VarChar(30)"
         chzwzfdxj3End column:"chzwzfdxj3End", sqlType:"VarChar(30)"
         czzgsjqtyydwsddxjje3Begin column:"czzgsjqtyydwsddxjje3Begin", sqlType:"VarChar(30)"
@@ -345,8 +345,8 @@ class ReportInfoXjllb {
         shtzsddxj1End column:"shtzsddxj1End", sqlType:"VarChar(30)"
         tzhdcsdxjllje1End column:"tzhdcsdxjllje1End", sqlType:"VarChar(30)"
         xstzsddxj1End column:"xstzsddxj1End", sqlType:"VarChar(30)"
-        gjgdzcwxzchqtcqzczfdxj3Begin column:"gjgdzcwxzchqtcqzczfdxj3Begin", sqlType:"VarChar(30)"
-        gjgdzcwxzchqtcqzczfdxj3End column:"gjgdzcwxzchqtcqzczfdxj3End", sqlType:"VarChar(30)"
+        gjgdzcwxzcdxj3Begin column:"gjgdzcwxzchqtcqzczfdxj3Begin", sqlType:"VarChar(30)"
+        gjgdzcwxzcdxj3End column:"gjgdzcwxzchqtcqzczfdxj3End", sqlType:"VarChar(30)"
         jyhdxjlcxj3End column:"jyhdxjlcxj3End", sqlType:"VarChar(30)"
         czhdxjlcxj3End column:"czhdxjlcxj3End", sqlType:"VarChar(30)"
         jyhdcsdxjllje2End column:"jyhdcsdxjllje2End", sqlType:"VarChar(30)"

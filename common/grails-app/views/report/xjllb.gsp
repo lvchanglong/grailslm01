@@ -278,16 +278,16 @@
                                     处置固定资产、无形资产和其他长期资产收回的现金净额
                                 </td>
                                 <td class="tzhdxjlrxj3 plus">
-                                    <g:textField name="info.xjllb.czgdzcwxzchqtcqzcshdxjje3Begin" value="${reportInfo.xjllb?.czgdzcwxzchqtcqzcshdxjje3Begin?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.czgdzcwxzcdxjje3Begin" value="${reportInfo.xjllb?.czgdzcwxzcdxjje3Begin?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="tzhdxjlrxj4 plus">
-                                    <g:textField name="info.xjllb.czgdzcwxzchqtcqzcshdxjje3End" value="${reportInfo.xjllb?.czgdzcwxzchqtcqzcshdxjje3End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.czgdzcwxzcdxjje3End" value="${reportInfo.xjllb?.czgdzcwxzcdxjje3End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="tzhdxjlrxj2 plus">
-                                    <g:textField name="info.xjllb.czgdzcwxzchqtcqzcshdxjje2End" value="${reportInfo.xjllb?.czgdzcwxzchqtcqzcshdxjje2End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.czgdzcwxzcdxjje2End" value="${reportInfo.xjllb?.czgdzcwxzcdxjje2End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="tzhdxjlrxj1 plus">
-                                    <g:textField name="info.xjllb.czgdzcwxzchqtcqzcshdxjje1End" value="${reportInfo.xjllb?.czgdzcwxzchqtcqzcshdxjje1End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.czgdzcwxzcdxjje1End" value="${reportInfo.xjllb?.czgdzcwxzcdxjje1End?:"0.00"}" class="form-control"/>
                                 </td>
                             </tr>
                             <tr>
@@ -346,16 +346,16 @@
                                     购建固定资产、无形资产和其他长期资产支付的现金
                                 </td>
                                 <td class="tzhdxjlcxj3 plus">
-                                    <g:textField name="info.xjllb.gjgdzcwxzchqtcqzczfdxj3Begin" value="${reportInfo.xjllb?.gjgdzcwxzchqtcqzczfdxj3Begin?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.gjgdzcwxzcdxj3Begin" value="${reportInfo.xjllb?.gjgdzcwxzcdxj3Begin?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="tzhdxjlcxj4 plus">
-                                    <g:textField name="info.xjllb.gjgdzcwxzchqtcqzczfdxj3End" value="${reportInfo.xjllb?.gjgdzcwxzchqtcqzczfdxj3End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.gjgdzcwxzcdxj3End" value="${reportInfo.xjllb?.gjgdzcwxzcdxj3End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="tzhdxjlcxj2 plus">
-                                    <g:textField name="info.xjllb.gjgdzcwxzchqtcqzczfdxj2End" value="${reportInfo.xjllb?.gjgdzcwxzchqtcqzczfdxj2End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.gjgdzcwxzcdxj2End" value="${reportInfo.xjllb?.gjgdzcwxzcdxj2End?:"0.00"}" class="form-control"/>
                                 </td>
                                 <td class="tzhdxjlcxj1 plus">
-                                    <g:textField name="info.xjllb.gjgdzcwxzchqtcqzczfdxj1End" value="${reportInfo.xjllb?.gjgdzcwxzchqtcqzczfdxj1End?:"0.00"}" class="form-control"/>
+                                    <g:textField name="info.xjllb.gjgdzcwxzcdxj1End" value="${reportInfo.xjllb?.gjgdzcwxzcdxj1End?:"0.00"}" class="form-control"/>
                                 </td>
                             </tr>
                             <tr>
