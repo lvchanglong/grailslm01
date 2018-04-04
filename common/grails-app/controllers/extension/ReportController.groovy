@@ -120,14 +120,9 @@ class ReportController {
 
             def value = groovyShell.evaluate("return report.${propertyName}")
             if(htmlFlag) {
-                println bookmarkName
-                if(bookmarkName.matches(/(info_gdxxHtml|info_lsygHtml|info_fzjgHtml|info_ggryszHtml)/)) {
-
-                } else {
-                    bookmark.setText("")
-                    builder.moveToBookmark(bookmarkName)
-                    builder.insertHtml(value)
-                }
+                bookmark.setText("")
+                builder.moveToBookmark(bookmarkName)
+                builder.insertHtml(value)
             } else {
                 bookmark.setText(value)
             }
