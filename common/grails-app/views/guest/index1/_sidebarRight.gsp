@@ -12,11 +12,11 @@
 		<span class="info-body-value">024-23181588</span>
 	</div>
 
-	<g:link controller="report" action="index" target="_self" style="display:block;font-size:14px;margin-top:15px;">
-		<span class="glyphicon glyphicon-menu-right"></span>&nbsp;信用报告
-	</g:link>
-
 	<g:if test="${vip}">
+		<g:link controller="report" action="index" target="_self" style="display:block;font-size:14px;margin-top:15px;">
+			<span class="glyphicon glyphicon-menu-right"></span>&nbsp;信用报告
+		</g:link>
+
 		<div style="padding:15px 55px 10px 0;">
 			<g:form controller="vip" action="feedback" class="ajaxForm">
 				<div class="row">
