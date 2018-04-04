@@ -249,7 +249,7 @@ class ReportInfo {
 
     String getGdxxHtml() {
         StringBuilder sb = new StringBuilder()
-        sb.append("<table>")
+        sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
         sb.append("<tr><th>序号</th><th>单位或自然人</th><th>投资金额（元）</th><th>投资比例（％）</th></tr>")
         this.gdxxs.eachWithIndex{ entry, i ->
             sb.append("<tr><td>${i}</td><td>${entry.dwhzrr}</td><td>${entry.tzje}</td><td>${entry.tzbl}</td></tr>")
@@ -260,7 +260,7 @@ class ReportInfo {
 
     String getLsygHtml() {
         StringBuilder sb = new StringBuilder()
-        sb.append("<table>")
+        sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
         sb.append("<tr><th>序号</th><th>变更前名称</th><th>变更后名称</th><th>批准时间</th></tr>")
         this.lsygs.eachWithIndex{ entry, i ->
             sb.append("<tr><td>${i}</td><td>${entry.bgqmc}</td><td>${entry.bghmc}</td><td>${entry.pzsj}</td></tr>")
@@ -271,7 +271,7 @@ class ReportInfo {
 
     String getFzjgHtml() {
         StringBuilder sb = new StringBuilder()
-        sb.append("<table>")
+        sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
         sb.append("<tr><th>序号</th><th>与报告企业关系</th><th>企业名称</th><th>地址</th><th>联系电话</th></tr>")
         this.fzjgs.eachWithIndex{ entry, i ->
             sb.append("<tr><td>${i}</td><td>${entry.ybgqygx}</td><td>${entry.qymc}</td><td>${entry.dz}</td><td>${entry.lxdh}</td></tr>")
@@ -282,7 +282,7 @@ class ReportInfo {
 
     String getGgryszHtml() {
         StringBuilder sb = new StringBuilder()
-        sb.append("<table>")
+        sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
         sb.append("<tr><th>序号</th><th>姓名</th><th>职务</th><th>年龄</th><th>学历及职称</th><th>从业资质</th><th>获奖情况</th></tr>")
         this.ggryszs.eachWithIndex{ entry, i ->
             sb.append("<tr><td>${i}</td><td>${entry.xm}</td><td>${entry.zw}</td><td>${entry.nl}</td><td>${entry.xljzc}</td><td>${entry.cyzz}</td><td>${entry.hjqk}</td></tr>")

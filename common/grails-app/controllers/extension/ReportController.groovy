@@ -12,9 +12,6 @@ import grails.converters.JSON
 import grails.validation.ValidationException
 import groovy.json.JsonSlurper
 
-import javax.script.ScriptEngine
-import javax.script.ScriptEngineManager
-
 import static org.springframework.http.HttpStatus.*
 
 class ReportController {
@@ -112,7 +109,7 @@ class ReportController {
         Document document = new Document(srcFile.newInputStream())
         DocumentBuilder builder = new DocumentBuilder(document)
 
-        document.getRange().getBookmarks().each {bookmark->
+        document.getRange().getBookmarks().each { bookmark->
             def bookmarkName = bookmark.getName()
             def htmlFlag = bookmarkName.matches(/(info_zzjgsz|info_jynl|info_cyryqk|info_gjcyzcqk|info_zwqk|info_yfnl|info_xzjgxyjl|info_sfjgxyjl|info_yhxdlyqk|info_glzdqk|info_glrzqk|info_ztzbjlyqk|info_ywqk|info_fznl|info_zjxyzk|info_zcyyzk|info_cwxyzk|info_shgxzk|info_shgy|info_qyry|info_jbjljfxts|info_sm|info_gzpjap|info_gdxxHtml|info_lsygHtml|info_fzjgHtml|info_ggryszHtml)/)
 
@@ -123,9 +120,14 @@ class ReportController {
 
             def value = groovyShell.evaluate("return report.${propertyName}")
             if(htmlFlag) {
-                //bookmark.setText("")
-                builder.moveToBookmark(bookmarkName)
-                builder.insertHtml(value)
+                println bookmarkName
+                if(bookmarkName.matches(/(info_gdxxHtml|info_lsygHtml|info_fzjgHtml|info_ggryszHtml)/)) {
+
+                } else {
+                    bookmark.setText("")
+                    builder.moveToBookmark(bookmarkName)
+                    builder.insertHtml(value)
+                }
             } else {
                 bookmark.setText(value)
             }
