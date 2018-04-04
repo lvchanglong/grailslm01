@@ -110,20 +110,24 @@ class ReportController {
 
         def srcFile = FileHelper.getFile(servletContext.getRealPath("/") + "报告导出模板", "模板A.doc")
         Document document = new Document(srcFile.newInputStream())
+        DocumentBuilder builder = new DocumentBuilder(document)
 
         document.getRange().getBookmarks().each {bookmark->
             def bookmarkName = bookmark.getName()
-            def propertyName = bookmarkName.replaceAll("_", ".")
+            def htmlFlag = bookmarkName.matches(/(info_zzjgsz|info_jynl|info_cyryqk|info_gjcyzcqk|info_zwqk|info_yfnl|info_xzjgxyjl|info_sfjgxyjl|info_yhxdlyqk|info_glzdqk|info_glrzqk|info_ztzbjlyqk|info_ywqk|info_fznl|info_zjxyzk|info_zcyyzk|info_cwxyzk|info_shgxzk|info_shgy|info_qyry|info_jbjljfxts|info_sm|info_gzpjap|info_gdxxHtml|info_lsygHtml|info_fzjgHtml|info_ggryszHtml)/)
 
+            def propertyName = bookmarkName.replaceAll("_", ".")
             if(propertyName.endsWith("xxx")) {
                 propertyName = propertyName.find(/.*?(?=\.\d+xxx|$)/)
             }
 
-            /*DocumentBuilder builder = new DocumentBuilder(document)
-            builder.moveToBookmark("bookmark")
-            builder.insertHtml("Html代码")*/
-
-            bookmark.setText(groovyShell.evaluate("return report.${propertyName}"))
+            def value = groovyShell.evaluate("return report.${propertyName}")
+            if(htmlFlag) {
+                //bookmark.setText("")
+                builder.insertHtml(value)
+            } else {
+                bookmark.setText(value)
+            }
         }
 
         def fileType = "doc"

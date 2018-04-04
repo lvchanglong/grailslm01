@@ -2,6 +2,7 @@ package common
 
 import com.aspose.cells.HtmlSaveOptions
 import com.aspose.cells.Workbook
+import com.aspose.words.Document
 import com.aspose.words.DocumentBuilder
 import org.jsoup.Jsoup
 
@@ -16,8 +17,7 @@ class Test {
     static main(args) {
         //new DocumentBuilder(doc).insertHtml("")
         //println "0.00".toDouble() == 0
-
-        println "info.test.1xxx".find(/.*?(?=\.\d+xxx|$)/)
+        //println "info.test.1xxx".find(/.*?(?=\.\d+xxx|$)/)
     }
 
 }
