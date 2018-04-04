@@ -124,6 +124,7 @@ class ReportController {
             def value = groovyShell.evaluate("return report.${propertyName}")
             if(htmlFlag) {
                 //bookmark.setText("")
+                builder.moveToBookmark(bookmarkName)
                 builder.insertHtml(value)
             } else {
                 bookmark.setText(value)
