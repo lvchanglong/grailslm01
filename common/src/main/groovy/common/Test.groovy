@@ -38,6 +38,13 @@ class Test {
 //
 //        def tarFile = FileHelper.getFile("F:\\workspace\\grailslm01\\common\\src\\main\\webapp\\报告导出模板", "123456.doc")
 //        document.save(tarFile.getAbsolutePath())
+
+        if("") {
+            println "in"
+        } else {
+            println "else"
+        }
+
     }
 
 }
