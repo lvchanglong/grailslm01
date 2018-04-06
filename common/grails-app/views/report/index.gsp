@@ -123,7 +123,7 @@
 
             <div style="text-align: center;">
                 <div class="pagination">
-                    <g:paginate total="${reportCount ?: 0}" />
+                    <g:paginate total="${reportCount ?: 0}" params="[q:params.q]"/>
                 </div>
             </div>
 

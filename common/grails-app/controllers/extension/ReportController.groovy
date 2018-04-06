@@ -27,7 +27,7 @@ class ReportController {
     def index(String state, String q, Integer max) {
         def vip = User.get(session.uid)
 
-        params.max = Math.min(max ?: 10, 100)
+        params.max = Math.min(max ?: 1, 100)
         def query = Report.where {
             if(state) {
                 state == state
@@ -40,7 +40,7 @@ class ReportController {
             }
         }
         def reportCount = query.count()
-        respond query.list(params), model:[reportCount: reportService.count()]
+        respond query.list(params), model:[reportCount: reportCount]
     }
 
     def show(Long id) {
