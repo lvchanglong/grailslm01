@@ -27,7 +27,7 @@ class Report {
 
     static constraints = {
         qymc(blank:false, nullable:false, unique:true)
-        bglx(blank:false, nullable:false, inList:["一般报告", "跟踪评级报告"])
+        bglx(blank:false, nullable:false, inList:["一般报告", "跟踪评级报告", "初评报告"])
         hylx(blank:false, nullable:false)
         yyly(blank:false, nullable:false, inList:["重点工程招投标领域", "政府采购领域"])
 

@@ -95,7 +95,7 @@
                                     }
                                 }
                             });
-                            jQuery("." + key + "-sum").html(rtn);
+                            jQuery("." + key + "-sum").html(rtn.toFixed(2));
                         }
                     </script>
                 </div>
@@ -109,7 +109,7 @@
                             </tr>
                             <tr>
                                 <th class="form_th p5 tr h20 lh20">
-                                    项目&nbsp;\&nbsp;年份
+                                    项目&nbsp;\&nbsp;年份&nbsp;<span class="required-indicator">*</span>
                                     <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </th>
                                 <td class="form_th p5 tc h20 lh20">

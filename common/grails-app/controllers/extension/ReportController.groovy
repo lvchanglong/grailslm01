@@ -474,6 +474,7 @@ class ReportController {
                     html = html.replaceFirst(">${k}.*?<", ">${k}<div>${v}</div><")
                 }
             }
+            html = html.replaceFirst(">企业类型<", ">${reportInfo.qylx}<")
         }
         [report:report, reportInfo:reportInfo, html:html]
     }
@@ -492,9 +493,11 @@ class ReportController {
 //            }
 //        }
 
-        render FileHelper.list(servletContext.getRealPath("/") + "企业计分标准").collect {elem->
-            elem.replaceFirst(/\.htm/, "")
-        } as JSON
+//        render FileHelper.list(servletContext.getRealPath("/") + "企业计分标准").collect {elem->
+//            elem.replaceFirst(/\.htm/, "")
+//        } as JSON
+
+        render "Test"
     }
 
 }
