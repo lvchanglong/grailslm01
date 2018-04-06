@@ -11,6 +11,7 @@ import common.User
 import grails.converters.JSON
 import grails.validation.ValidationException
 import groovy.json.JsonSlurper
+import org.jsoup.Jsoup
 
 import static org.springframework.http.HttpStatus.*
 
@@ -124,10 +125,18 @@ class ReportController {
                 builder.moveToBookmark(bookmarkName)
 
                 /**
-                 * 导出图片处理
+                 * 本地图片导出处理
                  */
                 if(value.contains("/uploads/Image/")) {
-                    value = value.replaceAll("/uploads/Image/", "${createLink(uri:"/", absolute:true)}uploads/Image/")
+                    def htmlDocument = Jsoup.parse(value)
+                    htmlDocument.getElementsByTag("img").each {img->
+                        def imgPath = img.attr("src")
+                        def fileName = FileHelper.getFileNameFromFilePath(imgPath) //有后缀
+                        def fileType = FileHelper.getFileType(fileName) //后缀
+                        def realName = FileHelper.getRealNameFromFileName(fileName) //无后缀
+                        img.attr("src", "${createLink(uri:"/", absolute:true)}uploads/Image/${URLEncoder.encode(realName, "UTF-8")}.${fileType}")
+                    }
+                    value = htmlDocument.outerHtml()
                 }
 
                 builder.insertHtml(value)
@@ -479,7 +488,7 @@ class ReportController {
             def hm = new JsonSlurper().parseText(reportInfo.pgzb)
             if(hm) {
                 hm.each {k, v->
-                    html = html.replaceFirst(">${k}.*?<", ">${k}<div>${v}</div><")
+                    html = html.replaceFirst(">${k}.*?<", ">${k}<div style='color:#ff0000;'>${v[2]}</div><")
                 }
             }
             html = html.replaceFirst(">企业类型<", ">${reportInfo.qylx}<")

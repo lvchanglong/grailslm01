@@ -34,6 +34,26 @@ class FileHelper {
 	}
 
 	/**
+	 * 获取文件路径中的文件名
+	 * @param filePath
+	 * @return
+	 */
+	static String getFileNameFromFilePath(String filePath) {
+		String[] splits = filePath.split(/(\\|\/)/)
+		return splits[splits.length - 1]
+	}
+
+	/**
+	 * 获取文件名中的无后缀名称
+	 * @param path
+	 * @return
+	 */
+	static String getRealNameFromFileName(String fileName) {
+		def idx = fileName.lastIndexOf(".")
+		return fileName.substring(0, idx)
+	}
+
+	/**
 	 * 通过文件名获得文件类型
 	 * @param fileName 文件名
 	 */

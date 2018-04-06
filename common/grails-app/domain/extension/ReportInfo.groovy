@@ -57,7 +57,7 @@ class ReportInfo {
     String zzcbcl3 = "-" //总资产报酬率
     String xsyysrzzl3 = "-" //销售（营业）收入增长率
     String zbbzzzl3 = "-" //资本保值增值率
-    String xsyylrzzl3 = "-" //销售(营业)利润增长率
+    String xsyylrzzl3 = "-" //销售（营业）利润增长率
 
     String zyywlrl3 = "-" //主营业务利润率
     String cbfyzzyywsrdbl3 = "-" //成本费用占主营业务收入的比率
@@ -77,7 +77,7 @@ class ReportInfo {
     String zzcbcl2 = "-" //总资产报酬率
     String xsyysrzzl2 = "-" //销售（营业）收入增长率
     String zbbzzzl2 = "-" //资本保值增值率
-    String xsyylrzzl2 = "-" //销售(营业)利润增长率
+    String xsyylrzzl2 = "-" //销售（营业）利润增长率
 
     String zyywlrl2 = "-" //主营业务利润率
     String cbfyzzyywsrdbl2 = "-" //成本费用占主营业务收入的比率
@@ -453,7 +453,7 @@ class ReportInfo {
                 if((!this.xsyylrl1 || this.xsyylrl1.contains("-")) && yysr1 != 0) {
                     this.xsyylrl1 = NumberHelper.format(lrze1 / yysr1 * 100)
                 }
-                hm.put("销售(营业)利润率", [xsyylrl3, xsyylrl2, xsyylrl1]) //正确
+                hm.put("销售（营业）利润率", [xsyylrl3, xsyylrl2, xsyylrl1]) //正确
 
                 def cbfyze3 = NumberHelper.decodeMoney(lrb.zyywcb3End) + NumberHelper.decodeMoney(lrb.yysjjfj3End) + NumberHelper.decodeMoney(lrb.xsfy3End) + NumberHelper.decodeMoney(lrb.glfy3End) + NumberHelper.decodeMoney(lrb.cwfy3End) //成本费用总额
                 def cbfyze2 = NumberHelper.decodeMoney(lrb.zyywcb2End) + NumberHelper.decodeMoney(lrb.yysjjfj2End) + NumberHelper.decodeMoney(lrb.xsfy2End) + NumberHelper.decodeMoney(lrb.glfy2End) + NumberHelper.decodeMoney(lrb.cwfy2End)
@@ -498,7 +498,7 @@ class ReportInfo {
                 if((!this.xsyysrzzl1 || this.xsyysrzzl1.contains("-")) && zyywsr2 != 0) {
                     this.xsyysrzzl1 = NumberHelper.format(bnzyywsrzze1 / zyywsr2 * 100)
                 }
-                hm.put("销售(营业)收入增长率", [xsyysrzzl3, xsyysrzzl2, xsyysrzzl1]) //正确
+                hm.put("销售（营业）收入增长率", [xsyysrzzl3, xsyysrzzl2, xsyysrzzl1]) //正确
 
                 if((!this.zbbzzzl3 || this.zbbzzzl3.contains("-")) && syzqyhj4 != 0) {
                     this.zbbzzzl3 = NumberHelper.format(syzqyhj3 / syzqyhj4 * 100)
@@ -539,7 +539,7 @@ class ReportInfo {
                 if((!this.xsyylrzzl1 || this.xsyylrzzl1.contains("-")) && snzyywlr2 != 0) {
                     this.xsyylrzzl1 = NumberHelper.format((bnzyywlr1 - snzyywlr2) / snzyywlr2 * 100)
                 }
-                hm.put("销售(营业)利润增长率", [xsyylrzzl3, xsyylrzzl2, xsyylrzzl1]) //正确
+                hm.put("销售（营业）利润增长率", [xsyylrzzl3, xsyylrzzl2, xsyylrzzl1]) //正确
 
                 def yylr3 = NumberHelper.decodeMoney(lrb.yylr3End)
                 def yylr2 = NumberHelper.decodeMoney(lrb.yylr2End)

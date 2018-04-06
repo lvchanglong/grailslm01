@@ -186,7 +186,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="form_th p5 tr h20 lh20">销售(营业)利润率（%）</th>
+                                <th class="form_th p5 tr h20 lh20">销售（营业）利润率（%）</th>
                                 <td class="form_td p5 tc h20 lh20">
                                     <g:textField name="info.xsyylrl3" value="${reportInfo.xsyylrl3}" class="form-control" readonly="readonly"/>
                                 </td>
@@ -222,7 +222,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="form_th p5 tr h20 lh20">销售(营业)收入增长率（%）</th>
+                                <th class="form_th p5 tr h20 lh20">销售（营业）收入增长率（%）</th>
                                 <td class="form_td p5 tc h20 lh20">
                                     <g:textField name="info.xsyysrzzl3" value="${reportInfo.xsyysrzzl3}" class="form-control" readonly="readonly"/>
                                 </td>
@@ -246,7 +246,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="form_th p5 tr h20 lh20" valign="top">销售(营业)利润增长率（%）</th>
+                                <th class="form_th p5 tr h20 lh20" valign="top">销售（营业）利润增长率（%）</th>
                                 <td class="form_td p5 tc h20 lh20">
                                     <g:textField name="info.xsyylrzzl3" value="${reportInfo.xsyylrzzl3}" class="form-control" readonly="readonly"/>
                                 </td>
