@@ -84,13 +84,21 @@
                                     <g:set var="year" value="${CommonHelper.getNian()}"/>
                                 </th>
                                 <td class="form_th p5 tc h20 lh20">
-                                    <g:textField name="info.nf3" value="${reportInfo.nf3?:"${year - 3}"}" class="form-control" placeholder="如：2015"/>
+                                    <g:textField name="info.nf3" id="info-nf3" value="${reportInfo.nf3?:"${year - 3}"}" class="form-control" readonly="readonly"/>
                                 </td>
                                 <td class="form_th p5 tc h20 lh20 ">
-                                    <g:textField name="info.nf2" value="${reportInfo.nf2?:"${year - 2}"}" class="form-control" placeholder="如：2016"/>
+                                    <g:textField name="info.nf2" id="info-nf2" value="${reportInfo.nf2?:"${year - 2}"}" class="form-control" readonly="readonly"/>
                                 </td>
                                 <td class="form_th p5 tc h20 lh20">
-                                    <g:textField name="info.nf1" value="${reportInfo.nf1?:"${year - 1}"}" class="form-control" placeholder="如：2017"/>
+                                    <g:textField name="info.nf1" id="info-nf1" value="${reportInfo.nf1?:"${year - 1}"}" class="form-control" placeholder="如：2017"/>
+
+                                    <script>
+                                        jQuery("#info-nf1").change(function(){
+                                            var year = parseInt(jQuery(this).val());
+                                            jQuery("#info-nf2").val(year - 1);
+                                            jQuery("#info-nf3").val(year - 2);
+                                        });
+                                    </script>
                                 </td>
                             </tr>
                             <tr>

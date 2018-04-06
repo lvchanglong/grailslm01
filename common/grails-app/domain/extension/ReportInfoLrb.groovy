@@ -7,10 +7,6 @@ class ReportInfoLrb {
 
     static belongsTo = [parent: ReportInfo]
 
-    String nf3 //年份（由远及近）
-    String nf2 //年份（由远及近）
-    String nf1 //年份（由远及近）
-
     /**
      * 营业收入
      */
@@ -133,19 +129,13 @@ class ReportInfoLrb {
     Date lastUpdated //更新时间
 
     static constraints = {
-        nf3(blank:false, nullable:false)
-        nf2(blank:false, nullable:false)
-        nf1(blank:false, nullable:false)
+
     }
 
     static mapping = {
         table "extension_reportinfo_lrb"
         id column: "id"
         version column: "version"
-
-        nf3 column:"nf3", sqlType:"VarChar(30)"
-        nf2 column:"nf2", sqlType:"VarChar(30)"
-        nf1 column:"nf1", sqlType:"VarChar(30)"
 
         lxzc1End column:"lxzc1End", sqlType:"VarChar(30)"
         tzsy2End column:"tzsy2End", sqlType:"VarChar(30)"

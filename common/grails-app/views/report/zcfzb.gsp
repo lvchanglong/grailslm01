@@ -30,17 +30,16 @@
                             </tr>
                             <tr>
                                 <td colspan="3" rowspan="2">
-                                    <strong>年份</strong>&nbsp;<span class="required-indicator">*</span>
-                                    <g:set var="year" value="${CommonHelper.getNian()}"/>
+                                    <strong>年份</strong>
                                 </td>
-                                <td colspan="2">
-                                    <g:textField name="info.zcfzb.nf3" value="${reportInfo.zcfzb?.nf3?:(reportInfo.nf3?:"${year - 3}")}" class="form-control" placeholder="如：2015"/>
+                                <td class="form_th p5 tc h20 lh20" colspan="2">
+                                    <g:textField name="info.nf3" value="${reportInfo.nf3}" class="form-control" readonly="readonly" placeholder="详见-信用报告概述"/>
                                 </td>
-                                <td>
-                                    <g:textField name="info.zcfzb.nf2" value="${reportInfo.zcfzb?.nf2?:(reportInfo.nf2?:"${year - 2}")}" class="form-control" placeholder="如：2016"/>
+                                <td class="form_th p5 tc h20 lh20 ">
+                                    <g:textField name="info.nf2" value="${reportInfo.nf2}" class="form-control" readonly="readonly" placeholder="详见-信用报告概述"/>
                                 </td>
-                                <td>
-                                    <g:textField name="info.zcfzb.nf1" value="${reportInfo.zcfzb?.nf1?:(reportInfo.nf1?:"${year - 1}")}" class="form-control" placeholder="如：2017"/>
+                                <td class="form_th p5 tc h20 lh20">
+                                    <g:textField name="info.nf1" value="${reportInfo.nf1}" class="form-control" readonly="readonly" placeholder="详见-信用报告概述"/>
                                 </td>
                             </tr>
                             <tr>

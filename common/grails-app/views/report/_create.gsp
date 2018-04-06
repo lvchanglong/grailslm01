@@ -3,7 +3,7 @@
 <g:set var="vip" value="${User.get(session.uid)}"/>
 
 <a href="#fakelink" class="btn btn-lg btn-info" data-toggle="modal" data-target="#createReportModal">
-    <span class="glyphicon glyphicon-plus"></span>&nbsp;信息添加
+    <span class="glyphicon glyphicon-plus"></span>&nbsp;创建报告
 </a>
 <div class="modal fade" id="createReportModal" role="dialog" aria-labelledby="createReportModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg">
