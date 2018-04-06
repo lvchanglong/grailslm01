@@ -4,6 +4,7 @@
     <head>
         <meta name="layout" content="main"/>
         <g:set var="offset" value="${params.offset?:0}"/>
+        <g:set var="vip" value="${common.User.get(session.uid)}"/>
     </head>
     <body>
         <g:applyLayout name="/bases/LeftCenterRight">
@@ -28,7 +29,7 @@
                             </tr>
                             <tr>
                                 <td class="form_td p5 tl h20 lh20">
-                                    <ckeditor:editor name="info.shgy" id="createInfoShgy" width="100%" height="370px">
+                                    <ckeditor:editor name="info.shgy" id="createInfoShgy" width="100%" height="370px" userSpace="${vip.username}">
                                         ${reportInfo.shgy}
                                     </ckeditor:editor>
                                 </td>

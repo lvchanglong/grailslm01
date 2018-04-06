@@ -127,14 +127,15 @@ class ReportController {
                 /**
                  * 本地图片导出处理
                  */
-                if(value.contains("/uploads/Image/")) {
+                if(value.contains("/uploads/")) {
                     def htmlDocument = Jsoup.parse(value)
                     htmlDocument.getElementsByTag("img").each {img->
                         def imgPath = img.attr("src")
+                        def fileSpace = imgPath.find(/uploads\/(.*?\/)?Image/) // uploads/Image 或 uploads/admin/Image
                         def fileName = FileHelper.getFileNameFromFilePath(imgPath) //有后缀
                         def fileType = FileHelper.getFileType(fileName) //后缀
                         def realName = FileHelper.getRealNameFromFileName(fileName) //无后缀
-                        img.attr("src", "${createLink(uri:"/", absolute:true)}uploads/Image/${URLEncoder.encode(realName, "UTF-8")}.${fileType}")
+                        img.attr("src", "${createLink(uri:"", absolute:true)}/${fileSpace}/${URLEncoder.encode(realName, "UTF-8")}.${fileType}")
                     }
                     value = htmlDocument.outerHtml()
                 }
