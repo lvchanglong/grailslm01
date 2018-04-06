@@ -307,13 +307,13 @@ class ReportInfo {
                 def zczj2 = NumberHelper.decodeMoney(zcb.zczj2End)
                 def zczj1 = NumberHelper.decodeMoney(zcb.zczj1End)
 
-                if((!this.zcfzl3 || this.zcfzl3.contains("-")) && zczj3 != 0) {
+                if(zczj3 != 0) {
                     this.zcfzl3 = NumberHelper.format(fzhj3 / zczj3 * 100)
                 }
-                if((!this.zcfzl2 || this.zcfzl2.contains("-")) && zczj2 != 0) {
+                if(zczj2 != 0) {
                     this.zcfzl2 = NumberHelper.format(fzhj2 / zczj2 * 100)
                 }
-                if((!this.zcfzl1 || this.zcfzl1.contains("-")) && zczj1 != 0) {
+                if(zczj1 != 0) {
                     this.zcfzl1 = NumberHelper.format(fzhj1 / zczj1 * 100)
                 }
                 hm.put("资产负债率", [zcfzl3, zcfzl2, zcfzl1]) //正确
@@ -335,24 +335,24 @@ class ReportInfo {
                 def ch2 = NumberHelper.decodeMoney(zcb.ch2End) //存货
                 def ch1 = NumberHelper.decodeMoney(zcb.ch1End) //存货
 
-                if((!this.xjldfzbl3 || this.xjldfzbl3.contains("-")) && ldfzhj3 != 0) {
+                if(ldfzhj3 != 0) {
                     this.xjldfzbl3 = NumberHelper.format(jyhdcsdxjllje3 / ldfzhj3 * 100)
                 }
-                if((!this.xjldfzbl2 || this.xjldfzbl2.contains("-")) && ldfzhj2 != 0) {
+                if(ldfzhj2 != 0) {
                     this.xjldfzbl2 = NumberHelper.format(jyhdcsdxjllje2 / ldfzhj2 * 100)
                 }
-                if((!this.xjldfzbl1 || this.xjldfzbl1.contains("-")) && ldfzhj1 != 0) {
+                if(ldfzhj1 != 0) {
                     this.xjldfzbl1 = NumberHelper.format(jyhdcsdxjllje1 / ldfzhj1 * 100)
                 }
                 hm.put("现金流动负债比率", [xjldfzbl3, xjldfzbl2, xjldfzbl1]) //正确
 
-                if((!this.sdbl3 || this.sdbl3.contains("-")) && ldfzhj3 != 0) {
+                if(ldfzhj3 != 0) {
                     this.sdbl3 = NumberHelper.format((ldzchj3 - ch3) / ldfzhj3 * 100)
                 }
-                if((!this.sdbl2 || this.sdbl2.contains("-")) && ldfzhj2 != 0) {
+                if(ldfzhj2 != 0) {
                     this.sdbl2 = NumberHelper.format((ldzchj2 - ch2) / ldfzhj2 * 100)
                 }
-                if((!this.sdbl1 || this.sdbl1.contains("-")) && ldfzhj1 != 0) {
+                if(ldfzhj1 != 0) {
                     this.sdbl1 = NumberHelper.format((ldzchj1 - ch1) / ldfzhj1 * 100)
                 }
                 hm.put("速动比率", [sdbl3, sdbl2, sdbl1]) //正确
@@ -375,24 +375,24 @@ class ReportInfo {
                 def pjyszkye2 = (yszk3 + yszk2) / 2
                 def pjyszkye1 = (yszk2 + yszk1) / 2
 
-                if((!this.yszkzzl3 || this.yszkzzl3.contains("-")) && pjzcze3 != 0) {
+                if(pjzcze3 != 0) {
                     this.yszkzzl3 = NumberHelper.format(zyywsr3 / pjyszkye3)
                 }
-                if((!this.yszkzzl2 || this.yszkzzl2.contains("-")) && pjzcze2 != 0) {
+                if(pjzcze2 != 0) {
                     this.yszkzzl2 = NumberHelper.format(zyywsr2 / pjyszkye2)
                 }
-                if((!this.yszkzzl1 || this.yszkzzl1.contains("-")) && pjzcze1 != 0) {
+                if(pjzcze1 != 0) {
                     this.yszkzzl1 = NumberHelper.format(zyywsr1 / pjyszkye1)
                 }
                 hm.put("应收账款周转率", [yszkzzl3, yszkzzl2, yszkzzl1]) //非错
 
-                if((!this.zzczzl3 || this.zzczzl3.contains("-")) && pjzcze3 != 0) {
+                if(pjzcze3 != 0) {
                     this.zzczzl3 = NumberHelper.format(zyywsr3 / pjzcze3)
                 }
-                if((!this.zzczzl2 || this.zzczzl2.contains("-")) && pjzcze2 != 0) {
+                if(pjzcze2 != 0) {
                     this.zzczzl2 = NumberHelper.format(zyywsr2 / pjzcze2)
                 }
-                if((!this.zzczzl1 || this.zzczzl1.contains("-")) && pjzcze1 != 0) {
+                if(pjzcze1 != 0) {
                     this.zzczzl1 = NumberHelper.format(zyywsr1 / pjzcze1)
                 }
                 hm.put("总资产周转率", [zzczzl3, zzczzl2, zzczzl1]) //正确
@@ -401,13 +401,13 @@ class ReportInfo {
                 def pjldzcze2 = (ldzchj3 + ldzchj2) / 2
                 def pjldzcze1 = (ldzchj2 + ldzchj1) / 2
 
-                if((!this.ldzczzl3 || this.ldzczzl3.contains("-")) && pjldzcze3 != 0) {
+                if(pjldzcze3 != 0) {
                     this.ldzczzl3 = NumberHelper.format(zyywsr3 / pjldzcze3)
                 }
-                if((!this.ldzczzl2 || this.ldzczzl2.contains("-")) && pjldzcze2 != 0) {
+                if(pjldzcze2 != 0) {
                     this.ldzczzl2 = NumberHelper.format(zyywsr2 / pjldzcze2)
                 }
-                if((!this.ldzczzl1 || this.ldzczzl1.contains("-")) && pjldzcze1 != 0) {
+                if(pjldzcze1 != 0) {
                     this.ldzczzl1 = NumberHelper.format(zyywsr1 / pjldzcze1)
                 }
                 hm.put("流动资产周转率", [ldzczzl3, ldzczzl2, ldzczzl1]) //正确
@@ -425,13 +425,13 @@ class ReportInfo {
                 def pjjzc2 = (syzqyhj3 + syzqyhj2) / 2
                 def pjjzc1 = (syzqyhj2 + syzqyhj1) / 2
 
-                if((!this.jzcsyl3 || this.jzcsyl3.contains("-")) && pjjzc3 != 0) {
+                if(pjjzc3 != 0) {
                     this.jzcsyl3 = NumberHelper.format(jlr3 / pjjzc3 * 100)
                 }
-                if((!this.jzcsyl2 || this.jzcsyl2.contains("-")) && pjjzc2 != 0) {
+                if(pjjzc2 != 0) {
                     this.jzcsyl2 = NumberHelper.format(jlr2 / pjjzc2 * 100)
                 }
-                if((!this.jzcsyl1 || this.jzcsyl1.contains("-")) && pjjzc1 != 0) {
+                if(pjjzc1 != 0) {
                     this.jzcsyl1 = NumberHelper.format(jlr1 / pjjzc1 * 100)
                 }
                 hm.put("净资产收益率", [jzcsyl3, jzcsyl2, jzcsyl1]) //正确
@@ -444,13 +444,13 @@ class ReportInfo {
                 def yysr2 = NumberHelper.decodeMoney(lrb.yysr2End)
                 def yysr1 = NumberHelper.decodeMoney(lrb.yysr1End)
 
-                if((!this.xsyylrl3 || this.xsyylrl3.contains("-")) && yysr3 != 0) {
+                if(yysr3 != 0) {
                     this.xsyylrl3 = NumberHelper.format(lrze3 / yysr3 * 100)
                 }
-                if((!this.xsyylrl2 || this.xsyylrl2.contains("-")) && yysr2 != 0) {
+                if(yysr2 != 0) {
                     this.xsyylrl2 = NumberHelper.format(lrze2 / yysr2 * 100)
                 }
-                if((!this.xsyylrl1 || this.xsyylrl1.contains("-")) && yysr1 != 0) {
+                if(yysr1 != 0) {
                     this.xsyylrl1 = NumberHelper.format(lrze1 / yysr1 * 100)
                 }
                 hm.put("销售（营业）利润率", [xsyylrl3, xsyylrl2, xsyylrl1]) //正确
@@ -459,13 +459,13 @@ class ReportInfo {
                 def cbfyze2 = NumberHelper.decodeMoney(lrb.zyywcb2End) + NumberHelper.decodeMoney(lrb.yysjjfj2End) + NumberHelper.decodeMoney(lrb.xsfy2End) + NumberHelper.decodeMoney(lrb.glfy2End) + NumberHelper.decodeMoney(lrb.cwfy2End)
                 def cbfyze1 = NumberHelper.decodeMoney(lrb.zyywcb1End) + NumberHelper.decodeMoney(lrb.yysjjfj1End) + NumberHelper.decodeMoney(lrb.xsfy1End) + NumberHelper.decodeMoney(lrb.glfy1End) + NumberHelper.decodeMoney(lrb.cwfy1End)
 
-                if((!this.cbfylrl3 || this.cbfylrl3.contains("-")) && cbfyze3 != 0) {
+                if(cbfyze3 != 0) {
                     this.cbfylrl3 = NumberHelper.format(lrze3 / cbfyze3 * 100)
                 }
-                if((!this.cbfylrl2 || this.cbfylrl2.contains("-")) && cbfyze2 != 0) {
+                if(cbfyze2 != 0) {
                     this.cbfylrl2 = NumberHelper.format(lrze2 / cbfyze2 * 100)
                 }
-                if((!this.cbfylrl1 || this.cbfylrl1.contains("-")) && cbfyze1 != 0) {
+                if(cbfyze1 != 0) {
                     this.cbfylrl1 = NumberHelper.format(lrze1 / cbfyze1 * 100)
                 }
                 hm.put("成本费用利润率", [cbfylrl3, cbfylrl2, cbfylrl1]) //非错
@@ -474,13 +474,13 @@ class ReportInfo {
                 def lxzc2 = NumberHelper.decodeMoney(lrb.lxzc2End)
                 def lxzc1 = NumberHelper.decodeMoney(lrb.lxzc1End)
 
-                if((!this.zzcbcl3 || this.zzcbcl3.contains("-")) && pjzcze3 != 0) {
+                if(pjzcze3 != 0) {
                     this.zzcbcl3 = NumberHelper.format((lrze3 + lxzc3) / pjzcze3 * 100)
                 }
-                if((!this.zzcbcl2 || this.zzcbcl2.contains("-")) && pjzcze2 != 0) {
+                if(pjzcze2 != 0) {
                     this.zzcbcl2 = NumberHelper.format((lrze2 + lxzc2) / pjzcze2 * 100)
                 }
-                if((!this.zzcbcl1 || this.zzcbcl1.contains("-")) && pjzcze1 != 0) {
+                if(pjzcze1 != 0) {
                     this.zzcbcl1 = NumberHelper.format((lrze1 + lxzc1) / pjzcze1 * 100)
                 }
                 hm.put("总资产报酬率", [zzcbcl3, zzcbcl2, zzcbcl1]) //非错
@@ -489,24 +489,24 @@ class ReportInfo {
                 def bnzyywsrzze2 = zyywsr2 - zyywsr3
                 def bnzyywsrzze1 = zyywsr1 - zyywsr2
 
-                if((!this.xsyysrzzl3 || this.xsyysrzzl3.contains("-")) && zyywsr4 != 0) {
+                if(zyywsr4 != 0) {
                     this.xsyysrzzl3 = NumberHelper.format(bnzyywsrzze3 / zyywsr4 * 100)
                 }
-                if((!this.xsyysrzzl2 || this.xsyysrzzl2.contains("-")) && zyywsr3 != 0) {
+                if(zyywsr3 != 0) {
                     this.xsyysrzzl2 = NumberHelper.format(bnzyywsrzze2 / zyywsr3 * 100)
                 }
-                if((!this.xsyysrzzl1 || this.xsyysrzzl1.contains("-")) && zyywsr2 != 0) {
+                if(zyywsr2 != 0) {
                     this.xsyysrzzl1 = NumberHelper.format(bnzyywsrzze1 / zyywsr2 * 100)
                 }
                 hm.put("销售（营业）收入增长率", [xsyysrzzl3, xsyysrzzl2, xsyysrzzl1]) //正确
 
-                if((!this.zbbzzzl3 || this.zbbzzzl3.contains("-")) && syzqyhj4 != 0) {
+                if(syzqyhj4 != 0) {
                     this.zbbzzzl3 = NumberHelper.format(syzqyhj3 / syzqyhj4 * 100)
                 }
-                if((!this.zbbzzzl2 || this.zbbzzzl2.contains("-")) && syzqyhj3 != 0) {
+                if(syzqyhj3 != 0) {
                     this.zbbzzzl2 = NumberHelper.format(syzqyhj2 / syzqyhj3 * 100)
                 }
-                if((!this.zbbzzzl1 || this.zbbzzzl1.contains("-")) && syzqyhj2 != 0) {
+                if(syzqyhj2 != 0) {
                     this.zbbzzzl1 = NumberHelper.format(syzqyhj1 / syzqyhj2 * 100)
                 }
                 hm.put("资本保值增值率", [zbbzzzl3, zbbzzzl2, zbbzzzl1]) //正确
@@ -530,13 +530,13 @@ class ReportInfo {
                 def snzyywlr3 = zyywsr3 - yycb3 - yysjjfj3
                 def snzyywlr2 = zyywsr2 - yycb2 - yysjjfj2
 
-                if((!this.xsyylrzzl3 || this.xsyylrzzl3.contains("-")) && snzyywlr4 != 0) {
+                if(snzyywlr4 != 0) {
                     this.xsyylrzzl3 = NumberHelper.format((bnzyywlr3 - snzyywlr4) / snzyywlr4 * 100)
                 }
-                if((!this.xsyylrzzl2 || this.xsyylrzzl2.contains("-")) && snzyywlr3 != 0) {
+                if(snzyywlr3 != 0) {
                     this.xsyylrzzl2 = NumberHelper.format((bnzyywlr2 - snzyywlr3) / snzyywlr3 * 100)
                 }
-                if((!this.xsyylrzzl1 || this.xsyylrzzl1.contains("-")) && snzyywlr2 != 0) {
+                if(snzyywlr2 != 0) {
                     this.xsyylrzzl1 = NumberHelper.format((bnzyywlr1 - snzyywlr2) / snzyywlr2 * 100)
                 }
                 hm.put("销售（营业）利润增长率", [xsyylrzzl3, xsyylrzzl2, xsyylrzzl1]) //正确
@@ -545,24 +545,24 @@ class ReportInfo {
                 def yylr2 = NumberHelper.decodeMoney(lrb.yylr2End)
                 def yylr1 = NumberHelper.decodeMoney(lrb.yylr1End)
 
-                if((!this.zyywlrl3 || this.zyywlrl3.contains("-")) && zyywsr3 != 0) {
+                if(zyywsr3 != 0) {
                     this.zyywlrl3 = NumberHelper.format(yylr3 / zyywsr3 * 100)
                 }
-                if((!this.zyywlrl2 || this.zyywlrl2.contains("-")) && zyywsr2 != 0) {
+                if(zyywsr2 != 0) {
                     this.zyywlrl2 = NumberHelper.format(yylr2 / zyywsr2 * 100)
                 }
-                if((!this.zyywlrl1 || this.zyywlrl1.contains("-")) && zyywsr1 != 0) {
+                if(zyywsr1 != 0) {
                     this.zyywlrl1 = NumberHelper.format(yylr1 / zyywsr1 * 100)
                 }
                 hm.put("主营业务利润率", [zyywlrl3, zyywlrl2, zyywlrl1]) //正确
 
-                if((!this.cbfyzzyywsrdbl3 || this.cbfyzzyywsrdbl3.contains("-")) && zyywsr3 != 0) {
+                if(zyywsr3 != 0) {
                     this.cbfyzzyywsrdbl3 = NumberHelper.format(cbfyze3 / zyywsr3 * 100)
                 }
-                if((!this.cbfyzzyywsrdbl2 || this.cbfyzzyywsrdbl2.contains("-")) && zyywsr2 != 0) {
+                if(zyywsr2 != 0) {
                     this.cbfyzzyywsrdbl2 = NumberHelper.format(cbfyze2 / zyywsr2 * 100)
                 }
-                if((!this.cbfyzzyywsrdbl1 || this.cbfyzzyywsrdbl1.contains("-")) && zyywsr1 != 0) {
+                if(zyywsr1 != 0) {
                     this.cbfyzzyywsrdbl1 = NumberHelper.format(cbfyze1 / zyywsr1 * 100)
                 }
                 hm.put("成本费用占主营业务收入的比率", [cbfyzzyywsrdbl3, cbfyzzyywsrdbl2, cbfyzzyywsrdbl1]) //正确
@@ -571,24 +571,24 @@ class ReportInfo {
                 def shgxze2 = jlr2 + NumberHelper.decodeMoney(xjllb.zfdgxsf2End) + NumberHelper.decodeMoney(xjllb.zfgzgyjwzgzfdxj2End)
                 def shgxze1 = jlr1 + NumberHelper.decodeMoney(xjllb.zfdgxsf1End) + NumberHelper.decodeMoney(xjllb.zfgzgyjwzgzfdxj1End)
 
-                if((!this.shgxl3 || this.shgxl3.contains("-")) && pjzcze3 != 0) {
+                if(pjzcze3 != 0) {
                     this.shgxl3 = NumberHelper.format(shgxze3 / pjzcze3 * 100)
                 }
-                if((!this.shgxl2 || this.shgxl2.contains("-")) && pjzcze2 != 0) {
+                if(pjzcze2 != 0) {
                     this.shgxl2 = NumberHelper.format(shgxze2 / pjzcze2 * 100)
                 }
-                if((!this.shgxl1 || this.shgxl1.contains("-")) && pjzcze1 != 0) {
+                if(pjzcze1 != 0) {
                     this.shgxl1 = NumberHelper.format(shgxze1 / pjzcze1 * 100)
                 }
                 hm.put("社会贡献率", [shgxl3, shgxl2, shgxl1]) //正确
 
-                if((!this.zwsx3 || this.zwsx3.contains("-")) && syzqyhj3 != 0) {
+                if(syzqyhj3 != 0) {
                     this.zwsx3 = NumberHelper.format((NumberHelper.decodeMoney(zcb.hbzj3End) + NumberHelper.decodeMoney(zcb.yspj3End) + yszk3 + NumberHelper.decodeMoney(zcb.yfkx3End) + ch3 - NumberHelper.decodeMoney(fzb.dqjk3End) - NumberHelper.decodeMoney(fzb.yfzk3End) - NumberHelper.decodeMoney(fzb.yskx3End)) / syzqyhj3)
                 }
-                if((!this.zwsx2 || this.zwsx2.contains("-")) && syzqyhj2 != 0) {
+                if(syzqyhj2 != 0) {
                     this.zwsx2 = NumberHelper.format((NumberHelper.decodeMoney(zcb.hbzj2End) + NumberHelper.decodeMoney(zcb.yspj2End) + yszk2 + NumberHelper.decodeMoney(zcb.yfkx2End) + ch2 - NumberHelper.decodeMoney(fzb.dqjk2End) - NumberHelper.decodeMoney(fzb.yfzk2End) - NumberHelper.decodeMoney(fzb.yskx2End)) / syzqyhj2)
                 }
-                if((!this.zwsx1 || this.zwsx1.contains("-")) && syzqyhj1 != 0) {
+                if(syzqyhj1 != 0) {
                     this.zwsx1 = NumberHelper.format((NumberHelper.decodeMoney(zcb.hbzj1End) + NumberHelper.decodeMoney(zcb.yspj1End) + yszk1 + NumberHelper.decodeMoney(zcb.yfkx1End) + ch1 - NumberHelper.decodeMoney(fzb.dqjk1End) - NumberHelper.decodeMoney(fzb.yfzk1End) - NumberHelper.decodeMoney(fzb.yskx1End)) / syzqyhj1)
                 }
                 hm.put("债务上限", [zwsx3, zwsx2, zwsx1]) //正确
