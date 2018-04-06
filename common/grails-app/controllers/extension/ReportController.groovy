@@ -122,6 +122,14 @@ class ReportController {
             if(htmlFlag) {
                 bookmark.setText("")
                 builder.moveToBookmark(bookmarkName)
+
+                /**
+                 * 导出图片处理
+                 */
+                if(value.contains("/uploads/Image/")) {
+                    value = value.replaceAll("/uploads/Image/", "${createLink(uri:"/", absolute:true)}uploads/Image/")
+                }
+
                 builder.insertHtml(value)
             } else {
                 bookmark.setText(value)
