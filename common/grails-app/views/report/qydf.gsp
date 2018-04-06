@@ -332,7 +332,7 @@
                         </table>
 
                         <g:submitButton name="submit" value="持久化" class="btn btn-lg btn-warning"/>
-                        （注意：持久化操作后，非""或非"-"的数据，将取消自动更新）
+                        （温馨提示：1.持久化操作后，非"-"数据将取消自动更新。2.以"-"填列，持久化以恢复数据自动更新。3.在确认数据无误后，请进行最终持久化操作。）
                     </g:form>
                 </div>
                 <div class="col-md-12">
