@@ -49,8 +49,10 @@ class Test {
 
 //        println "<div>65.0&nbsp;75.0</div>".find(/(?<=>).*?(?=<)/)
 
-        def k = "B"
-        println "<div>A=94.6&nbsp;100.0<br />B=95.6&nbsp;101.1<br />C=98.5&nbsp;104.8</div>".find(/(?<=${k}=).*?(?=<)/)
+//        def k = "B"
+//        println "<div>A=94.6&nbsp;100.0<br />B=95.6&nbsp;101.1<br />C=98.5&nbsp;104.8</div>".find(/(?<=${k}=).*?(?=<)/)
+
+        println "123.01".matches(/\d+(\.\d+)?/)
     }
 
 }

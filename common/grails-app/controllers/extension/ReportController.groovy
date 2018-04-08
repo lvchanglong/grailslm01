@@ -27,7 +27,7 @@ class ReportController {
     def index(String state, String q, Integer max) {
         def vip = User.get(session.uid)
 
-        params.max = Math.min(max ?: 1, 100)
+        params.max = Math.min(max ?: 10, 100)
         def query = Report.where {
             if(state) {
                 state == state
@@ -504,13 +504,13 @@ class ReportController {
                     if(value) {
                         tdFirst.html("${key}<div style='color:#ff0000;'>${value[2]}</div>")
 
-                        if(value[2]) {
+                        if(value[2] && value[2].matches(/\d+(\.\d+)?/)) {
                             def realValue = value[2].toDouble() //实际值
                             def maxScore = tdList.get(1).text().toDouble() //满分
                             def targetScore = 0 //得分
 
                             def tdTarget = tdList.get(tdSize-2)
-                            def tdTargetHtml = tdTarget.html()
+                            def tdTargetHtml = tdTarget.outerHtml()
                             def tdTargetFind = tdTargetHtml.find(/(?<=${qylxCode}=).*?(?=<)/)
                             if(!tdTargetFind) {
                                 tdTargetFind = tdTargetHtml.find(/(?<=>).*?(?=<)/)

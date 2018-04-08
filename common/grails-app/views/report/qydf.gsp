@@ -73,6 +73,7 @@
                             jQuery(".contenteditable").keyup(function(){
                                 plusAll("data");
                             });
+                            jQuery(".contenteditable").keyup();
                         });
 
                         function plusAll(key) {

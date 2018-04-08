@@ -402,13 +402,13 @@ class ReportInfo {
                 def pjyszkye2 = (yszk3 + yszk2) / 2
                 def pjyszkye1 = (yszk2 + yszk1) / 2
 
-                if(pjzcze3 != 0) {
+                if(pjyszkye1 != 0) {
                     this.yszkzzl3 = NumberHelper.format(zyywsr3 / pjyszkye3)
                 }
-                if(pjzcze2 != 0) {
+                if(pjyszkye1 != 0) {
                     this.yszkzzl2 = NumberHelper.format(zyywsr2 / pjyszkye2)
                 }
-                if(pjzcze1 != 0) {
+                if(pjyszkye1 != 0) {
                     this.yszkzzl1 = NumberHelper.format(zyywsr1 / pjyszkye1)
                 }
                 hm.put("应收账款周转率", [yszkzzl3, yszkzzl2, yszkzzl1]) //非错
