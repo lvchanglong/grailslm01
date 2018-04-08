@@ -7,6 +7,7 @@ import common.CommonHelper
 import common.FileConverter
 import common.FileHelper
 import common.ExcelHelper
+import common.NumberHelper
 import common.User
 import grails.converters.JSON
 import grails.validation.ValidationException
@@ -552,7 +553,7 @@ class ReportController {
 
                             def tdLast = tdList.last()
                             tdLast.attr("contenteditable", "false")
-                            tdLast.html("${targetScore}")
+                            tdLast.html("${NumberHelper.format(targetScore)}")
                         }
                     }
                 }
