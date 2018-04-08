@@ -486,13 +486,78 @@ class ReportController {
         def html = reportInfo.qydf?:file.getText("UTF-8")
 
         if(html && reportInfo.pgzb) {
+            html = html.replaceFirst(">#企业类型#<", ">${reportInfo.qylx}<") //有则替换
+
+            def htmlDocument = Jsoup.parse(html)
             def hm = new JsonSlurper().parseText(reportInfo.pgzb)
-            if(hm) {
-                hm.each {k, v->
-                    html = html.replaceFirst(">${k}.*?<", ">${k}<div style='color:#ff0000;'>${v[2]}</div><")
+            def qylxCode = reportInfo.getQylxCode()
+
+            htmlDocument.getElementsByTag("tr").each {tr->
+                def tdList = tr.children()
+                def tdSize = tdList.size()
+
+                if(tdSize >= 3) {
+                    def tdFirst = tdList.first()
+                    def key = tdFirst.outerHtml().find(/(?<=>).*?(?=<)/)
+                    def value = hm[key]
+
+                    if(value) {
+                        tdFirst.html("${key}<div style='color:#ff0000;'>${value[2]}</div>")
+
+                        if(value[2]) {
+                            def realValue = value[2].toDouble() //实际值
+                            def maxScore = tdList.get(1).text().toDouble() //满分
+                            def targetScore = 0 //得分
+
+                            def tdTarget = tdList.get(tdSize-2)
+                            def tdTargetHtml = tdTarget.html()
+                            def tdTargetFind = tdTargetHtml.find(/(?<=${qylxCode}=).*?(?=<)/)
+                            if(!tdTargetFind) {
+                                tdTargetFind = tdTargetHtml.find(/(?<=>).*?(?=<)/)
+                            }
+
+                            if(tdTargetFind.contains("&nbsp;")) {
+                                def splits = tdTargetFind.split("&nbsp;")
+                                def maxValue = splits[0].toDouble() //满分值
+
+                                if(tdList.get(2).text().contains("较高")) {
+                                    def highValue = splits[1].toDouble() //较高值
+                                    if(realValue <= maxValue) {
+                                        targetScore = maxScore
+                                    } else if(realValue >= highValue) {
+                                        targetScore = 0
+                                    } else {
+                                        targetScore = (highValue - realValue)/(highValue - maxValue) * maxScore
+                                    }
+                                } else {
+                                    def lowValue = splits[1].toDouble() //较低值
+                                    if(realValue >= maxValue) {
+                                        targetScore = maxScore
+                                    } else if(realValue <= lowValue) {
+                                        targetScore = 0
+                                    } else {
+                                        targetScore = (realValue - lowValue)/(maxValue - lowValue) * maxScore
+                                    }
+                                }
+                            } else {
+                                def maxValue = tdTargetFind.toDouble() //满分值
+                                if(realValue >= maxValue) {
+                                    targetScore = maxScore
+                                } else if(realValue <= 0) {
+                                    targetScore = 0
+                                } else {
+                                    targetScore = realValue / maxValue * maxScore
+                                }
+                            }
+
+                            def tdLast = tdList.last()
+                            tdLast.attr("contenteditable", "false")
+                            tdLast.html("${targetScore}")
+                        }
+                    }
                 }
             }
-            html = html.replaceFirst(">企业类型<", ">${reportInfo.qylx}<")
+            html = htmlDocument.outerHtml()
         }
         [report:report, reportInfo:reportInfo, html:html]
     }

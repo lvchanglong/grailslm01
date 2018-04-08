@@ -247,6 +247,24 @@ class ReportInfo {
         return qymc
     }
 
+    /**
+     * 企业类型-编码
+     */
+    String getQylxCode() {
+        switch (this.qylx) {
+            case "大型企业":
+                return "A"
+            case "中型企业":
+                return "B"
+            case "小型企业":
+                return "C"
+        }
+        return null
+    }
+
+    /**
+     * 股东信息-html
+     */
     String getGdxxHtml() {
         StringBuilder sb = new StringBuilder()
         sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
@@ -258,6 +276,9 @@ class ReportInfo {
         return sb.toString()
     }
 
+    /**
+     * 历史沿革-html
+     */
     String getLsygHtml() {
         StringBuilder sb = new StringBuilder()
         sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
@@ -269,6 +290,9 @@ class ReportInfo {
         return sb.toString()
     }
 
+    /**
+     * 分支机构-html
+     */
     String getFzjgHtml() {
         StringBuilder sb = new StringBuilder()
         sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
@@ -280,6 +304,9 @@ class ReportInfo {
         return sb.toString()
     }
 
+    /**
+     * 高管人员素质-html
+     */
     String getGgryszHtml() {
         StringBuilder sb = new StringBuilder()
         sb.append("<table border='1' cellpadding='0' cellspacing='0' style='width:100%;'>")
