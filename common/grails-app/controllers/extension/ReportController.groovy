@@ -125,12 +125,14 @@ class ReportController {
                 bookmark.setText("")
                 builder.moveToBookmark(bookmarkName)
 
+                def htmlDocument = Jsoup.parse(value)
                 /**
                  * 本地图片导出处理
                  */
                 if(value.contains("/uploads/")) {
-                    def htmlDocument = Jsoup.parse(value)
                     htmlDocument.getElementsByTag("img").each {img->
+                        img.attr("style", "width:90%;margin:0 auto;") //图片宽度处理
+
                         def imgPath = img.attr("src")
                         def fileSpace = imgPath.find(/uploads\/(.*?\/)?Image/) // uploads/Image 或 uploads/admin/Image
                         def fileName = FileHelper.getFileNameFromFilePath(imgPath) //有后缀
@@ -138,9 +140,22 @@ class ReportController {
                         def realName = FileHelper.getRealNameFromFileName(fileName) //无后缀
                         img.attr("src", "${createLink(uri:"", absolute:true)}/${fileSpace}/${URLEncoder.encode(realName, "UTF-8")}.${fileType}")
                     }
-                    value = htmlDocument.outerHtml()
                 }
 
+                /**
+                 * 默认文本样式
+                 */
+                htmlDocument.getElementsByTag("body").attr("style", "font-family:宋体;font-size:14px;")
+
+                /**
+                 * 默认表格样式
+                 */
+                htmlDocument.getElementsByTag("table").attr("border", "1").attr("cellspacing", "0")
+                        .attr("class", "Table")
+                        .attr("style", "font-family:宋体;font-size:14px;border-collapse:collapse;border:solid windowtext 1.0pt;width:98%;margin:0 auto;text-align:center;")
+                htmlDocument.getElementsByTag("th").attr("style", "font-family:黑体;font-size:14px;")
+
+                value = htmlDocument.outerHtml()
                 builder.insertHtml(value)
             } else {
                 bookmark.setText(value)
