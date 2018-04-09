@@ -11,11 +11,11 @@
                     <h3 class="modal-title" id="loginModalLabel">用户登录</h3>
                 </div>
                 <div class="modal-body">
-                    <g:textField name="username" value="" placeholder="账号" class="form-control" style="margin-bottom:5px;"/>
-                    <g:passwordField name="password" value="" placeholder="密码" class="form-control"/>
+                    <g:textField name="username" value="" placeholder="账号" class="form-control" style="margin-bottom:5px;" id="loginUsername"/>
+                    <g:passwordField name="password" value="" placeholder="密码" class="form-control" id="loginPassword"/>
                 </div>
                 <div class="modal-footer">
-                    <g:submitButton name="submit" value="登录" class="btn btn-lg btn-primary"/>
+                    <g:submitButton name="loginSubmit" value="登录" class="btn btn-lg btn-primary"/>
                 </div>
             </g:form>
         </div>

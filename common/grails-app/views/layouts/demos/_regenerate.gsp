@@ -16,7 +16,7 @@
                     <g:textField name="nickname" value="${vip.nickname}" placeholder="昵称" class="form-control"/>
                 </div>
                 <div class="modal-footer">
-                    <g:submitButton name="submit" value="确定" class="btn btn-lg btn-primary"/>
+                    <g:submitButton name="regenerateSubmit" value="确定" class="btn btn-lg btn-primary"/>
                 </div>
             </g:form>
         </div>

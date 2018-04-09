@@ -40,7 +40,7 @@
         <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
         %{--<ckeditor:resources/>--}%
-        <script type="text/javascript" src="https://cdn.ckeditor.com/4.9.1/full/ckeditor.js"></script>
+        <script type="text/javascript" src="https://cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
 
         <asset:javascript src="application.js"/>
 
