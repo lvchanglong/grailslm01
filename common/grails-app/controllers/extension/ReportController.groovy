@@ -126,19 +126,20 @@ class ReportController {
                 builder.moveToBookmark(bookmarkName)
 
                 def htmlDocument = Jsoup.parse(value)
+
                 /**
                  * 本地图片导出处理
                  */
                 if(value.contains("/uploads/")) {
                     htmlDocument.getElementsByTag("img").each {img->
-                        img.attr("style", "width:90%;margin:0 auto;") //图片宽度处理
-
                         def imgPath = img.attr("src")
                         def fileSpace = imgPath.find(/uploads\/(.*?\/)?Image/) // uploads/Image 或 uploads/admin/Image
                         def fileName = FileHelper.getFileNameFromFilePath(imgPath) //有后缀
                         def fileType = FileHelper.getFileType(fileName) //后缀
                         def realName = FileHelper.getRealNameFromFileName(fileName) //无后缀
                         img.attr("src", "${createLink(uri:"", absolute:true)}/${fileSpace}/${URLEncoder.encode(realName, "UTF-8")}.${fileType}")
+
+                        img.attr("style", "width:90%;margin:0 auto;") //图片宽度处理
                     }
                 }
 
