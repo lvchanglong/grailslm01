@@ -2,6 +2,11 @@ package extension
 
 import com.aspose.words.Document
 import com.aspose.words.DocumentBuilder
+import com.aspose.words.LineSpacingRule
+import com.aspose.words.LineStyle
+import com.aspose.words.NodeType
+import com.aspose.words.PreferredWidth
+import com.aspose.words.Table
 import common.AsposeLicense
 import common.CommonHelper
 import common.FileConverter
@@ -13,6 +18,8 @@ import grails.converters.JSON
 import grails.validation.ValidationException
 import groovy.json.JsonSlurper
 import org.jsoup.Jsoup
+
+import java.awt.Color
 
 import static org.springframework.http.HttpStatus.*
 
@@ -128,7 +135,7 @@ class ReportController {
                 def htmlDocument = Jsoup.parse(value)
 
                 /**
-                 * 本地图片导出处理
+                 * 图片导出处理
                  */
                 if(value.contains("/uploads/")) {
                     htmlDocument.getElementsByTag("img").each {img->
@@ -137,7 +144,7 @@ class ReportController {
                         def fileName = FileHelper.getFileNameFromFilePath(imgPath) //有后缀
                         def fileType = FileHelper.getFileType(fileName) //后缀
                         def realName = FileHelper.getRealNameFromFileName(fileName) //无后缀
-                        img.attr("src", "${createLink(uri:"", absolute:true)}/${fileSpace}/${URLEncoder.encode(realName, "UTF-8")}.${fileType}")
+                        img.attr("src", "${createLink(uri:"", absolute:true)}/${fileSpace}/${URLEncoder.encode(realName, "UTF-8")}.${fileType}")//中文名处理
 
                         img.attr("style", "width:90%;margin:0 auto;") //图片宽度处理
                     }
@@ -153,13 +160,34 @@ class ReportController {
                  */
                 htmlDocument.getElementsByTag("table").attr("border", "1").attr("cellspacing", "0")
                         .attr("class", "Table")
-                        .attr("style", "font-family:宋体;font-size:14px;border-collapse:collapse;border:solid windowtext 1.0pt;width:98%;margin:0 auto;text-align:center;")
+                        .attr("style", "font-family:宋体;font-size:14px;border-collapse:collapse;border-color:black;width:100%;margin:0 auto;text-align:center;") //border-color:black;失效 && width:100%;失效
                 htmlDocument.getElementsByTag("th").attr("style", "font-family:黑体;font-size:14px;")
 
                 value = htmlDocument.outerHtml()
                 builder.insertHtml(value)
+
+                /**
+                 * 解决表格后存在空行问题
+                 */
+                def paragraphFormat = builder.currentParagraph.paragraphFormat
+                paragraphFormat.lineSpacingRule = LineSpacingRule.EXACTLY
+                paragraphFormat.lineSpacing = 1
             } else {
                 bookmark.setText(value)
+            }
+        }
+
+        /**
+         * 统一表格样式（解决表格样式不统一问题）
+         */
+        document.getChildNodes(NodeType.TABLE, true).each { Table table->
+            def borders = table.getFirstRow().getRowFormat().getBorders()
+            def lineStyle = borders.getLineStyle()
+            if(lineStyle in [LineStyle.INSET, LineStyle.OUTSET]) {
+                def lineWidth = borders.getLineWidth()
+                table.clearBorders()
+                table.setBorders(LineStyle.SINGLE, lineWidth, Color.BLACK) //解决html转word表格后，border-color:black;失效问题
+                table.setPreferredWidth(PreferredWidth.fromPercent(100)) //解决html转word表格后，width:100%;失效问题
             }
         }
 

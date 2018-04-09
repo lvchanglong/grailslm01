@@ -12,7 +12,7 @@
                 </div>
                 <div class="modal-body">
                     <g:textField name="username" value="" placeholder="账号" class="form-control" style="margin-bottom:5px;"/>
-                    <g:textField name="password" value="" placeholder="密码" class="form-control" style="margin-bottom:5px;"/>
+                    <g:textField name="password" value="" placeholder="密码" class="form-control" style="margin-bottom:5px;" autocomplete="off"/>
                     <g:textField name="nickname" value="" placeholder="昵称" class="form-control"/>
                 </div>
                 <div class="modal-footer">
