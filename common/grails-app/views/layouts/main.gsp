@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="https://cdn.bootcss.com/messenger/1.5.0/css/messenger.min.css">
         <link rel="stylesheet" href="https://cdn.bootcss.com/messenger/1.5.0/css/messenger-theme-future.min.css">
         <link rel="stylesheet" href="https://cdn.bootcss.com/jstree/3.3.5/themes/default/style.min.css">
+
+        <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+
         <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="${application.platform.css}"/>
 
@@ -51,5 +54,7 @@
         <g:layoutBody/>
         <g:pageProperty name="page.footer" default="${ render(template:"/layouts/footers/Center/footer") }"/>
         <asset:image src="spinner.gif" id="spinner" style="position:fixed;left:15px;bottom:30px;display:none;"/>
+
+        <script type="text/javascript" src="https://cdn.bootcss.com/AniJS/0.9.3/anijs-min.js"></script>
     </body>
 </html>

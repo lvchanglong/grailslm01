@@ -47,9 +47,9 @@
             </g:else>
 
             <div class="navbar-form navbar-right">
-                <g:form controller="${params.controller}" action="${params.action}">输入检索内容...
+                <g:form controller="${params.controller}" action="${params.action}">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="" name="q" value="${params.q}"/>
+                        <input type="text" class="form-control" placeholder="输入检索内容..." name="q" value="${params.q}"/>
                         <span class="input-group-btn">
                             <g:submitButton name="submit" class="btn btn-default" value="Go!"/>
                         </span>

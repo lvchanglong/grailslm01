@@ -61,7 +61,7 @@
                 <g:else>
                     %{--进入“首页”模式--}%
                     <div class="col-md-12">
-                        <div style="margin-bottom:15px;">
+                        <div style="margin-bottom:15px;" class="zoomInDown animated">
                             <g:render template="index1/slider"/>
                         </div>
                     </div>

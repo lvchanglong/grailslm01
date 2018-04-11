@@ -2,13 +2,13 @@
 
 <div class="container-fluid layout-left-center-right">
     <div class="row">
-        <div class="col-md-2 sidebar-left">
+        <div class="col-md-2 sidebar-left fadeInLeft animated">
             <g:pageProperty name="page.sidebarLeft" default="${ render(template:"/layouts/bars/LeftRight/sidebarLeft") }"/>
         </div>
         <div class="col-md-offset-2 col-md-8 main">
             <g:layoutBody/>
         </div>
-        <div class="col-md-2 sidebar-right">
+        <div class="col-md-2 sidebar-right fadeInRight animated">
             <g:pageProperty name="page.sidebarRight" default="${ render(template:"/layouts/bars/LeftCenterRight/sidebarRight") }"/>
         </div>
     </div>
