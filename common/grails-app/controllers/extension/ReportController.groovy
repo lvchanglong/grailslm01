@@ -18,6 +18,7 @@ import grails.converters.JSON
 import grails.validation.ValidationException
 import groovy.json.JsonSlurper
 import org.jsoup.Jsoup
+import org.jsoup.select.Elements
 
 import java.awt.Color
 
@@ -543,6 +544,11 @@ class ReportController {
 
                 if(tdSize >= 3) {
                     def tdFirst = tdList.first()
+                    def offsetIdx = 0
+                    if(tdFirst.attr("rowspan")) {
+                        tdFirst = tdList[2] //偏差
+                        offsetIdx = 2
+                    }
                     def key = tdFirst.outerHtml().find(/(?<=>).*?(?=<)/)
                     def value = hm[key]
 
@@ -551,7 +557,7 @@ class ReportController {
 
                         if(value[2] && value[2].matches(/\d+(\.\d+)?/)) {
                             def realValue = value[2].toDouble() //实际值
-                            def maxScore = tdList.get(1).text().toDouble() //满分
+                            def maxScore = tdList.get(offsetIdx+1).text().toDouble() //满分
                             def targetScore = 0 //得分
 
                             def tdTarget = tdList.get(tdSize-2)
@@ -565,7 +571,7 @@ class ReportController {
                                 def splits = tdTargetFind.split("&nbsp;")
                                 def maxValue = splits[0].toDouble() //满分值
 
-                                if(tdList.get(2).text().contains("较高")) {
+                                if(tdList.get(offsetIdx+2).text().contains("较高")) {
                                     def highValue = splits[1].toDouble() //较高值
                                     if(realValue <= maxValue) {
                                         targetScore = maxScore

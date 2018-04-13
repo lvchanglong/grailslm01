@@ -467,20 +467,29 @@ class ReportInfo {
                 def lrze2 = NumberHelper.decodeMoney(lrb.lrze2End)
                 def lrze1 = NumberHelper.decodeMoney(lrb.lrze1End)
 
+                def zyywcb3 = NumberHelper.decodeMoney(lrb.zyywcb3End) //主营业务成本
+                def zyywcb2 = NumberHelper.decodeMoney(lrb.zyywcb2End)
+                def zyywcb1 = NumberHelper.decodeMoney(lrb.zyywcb1End)
+
+                def yysjjfj4 = NumberHelper.decodeMoney(lrb.yysjjfj3Begin) //营业税金及附加
+                def yysjjfj3 = NumberHelper.decodeMoney(lrb.yysjjfj3End)
+                def yysjjfj2 = NumberHelper.decodeMoney(lrb.yysjjfj2End)
+                def yysjjfj1 = NumberHelper.decodeMoney(lrb.yysjjfj1End)
+
                 def yysr3 = NumberHelper.decodeMoney(lrb.yysr3End) //营业收入
                 def yysr2 = NumberHelper.decodeMoney(lrb.yysr2End)
                 def yysr1 = NumberHelper.decodeMoney(lrb.yysr1End)
 
                 if(yysr3 != 0) {
-                    this.xsyylrl3 = NumberHelper.format(lrze3 / yysr3 * 100)
+                    this.xsyylrl3 = NumberHelper.format((zyywsr3 - zyywcb3 - yysjjfj3) / zyywsr3 * 100)
                 }
                 if(yysr2 != 0) {
-                    this.xsyylrl2 = NumberHelper.format(lrze2 / yysr2 * 100)
+                    this.xsyylrl2 = NumberHelper.format((zyywsr2 - zyywcb2 - yysjjfj2) / zyywsr2 * 100)
                 }
                 if(yysr1 != 0) {
-                    this.xsyylrl1 = NumberHelper.format(lrze1 / yysr1 * 100)
+                    this.xsyylrl1 = NumberHelper.format((zyywsr1 - zyywcb1 - yysjjfj1) / zyywsr1 * 100)
                 }
-                hm.put("销售（营业）利润率", [xsyylrl3, xsyylrl2, xsyylrl1]) //正确
+                hm.put("销售（营业）利润率", [xsyylrl3, xsyylrl2, xsyylrl1]) //非错
 
                 def cbfyze3 = NumberHelper.decodeMoney(lrb.zyywcb3End) + NumberHelper.decodeMoney(lrb.yysjjfj3End) + NumberHelper.decodeMoney(lrb.xsfy3End) + NumberHelper.decodeMoney(lrb.glfy3End) + NumberHelper.decodeMoney(lrb.cwfy3End) //成本费用总额
                 def cbfyze2 = NumberHelper.decodeMoney(lrb.zyywcb2End) + NumberHelper.decodeMoney(lrb.yysjjfj2End) + NumberHelper.decodeMoney(lrb.xsfy2End) + NumberHelper.decodeMoney(lrb.glfy2End) + NumberHelper.decodeMoney(lrb.cwfy2End)
@@ -537,11 +546,6 @@ class ReportInfo {
                     this.zbbzzzl1 = NumberHelper.format(syzqyhj1 / syzqyhj2 * 100)
                 }
                 hm.put("资本保值增值率", [zbbzzzl3, zbbzzzl2, zbbzzzl1]) //正确
-
-                def yysjjfj4 = NumberHelper.decodeMoney(lrb.yysjjfj3Begin) //营业税金及附加
-                def yysjjfj3 = NumberHelper.decodeMoney(lrb.yysjjfj3End)
-                def yysjjfj2 = NumberHelper.decodeMoney(lrb.yysjjfj2End)
-                def yysjjfj1 = NumberHelper.decodeMoney(lrb.yysjjfj1End)
 
                 //营业成本
                 def yycb4 = NumberHelper.decodeMoney(lrb.yycb3Begin) //营业成本
