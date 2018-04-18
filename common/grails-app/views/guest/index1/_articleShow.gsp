@@ -10,7 +10,7 @@
                 <h3 class="modal-title" id="showArticleModal${instance.id}Title">信息查看</h3>
             </div>
             <div class="modal-body">
-                <h1 style="text-align:center;font-size:20px;font-weight:bold;">${instance.title}</h1>
+                <h1 style="text-align:center;font-weight:bold;">${instance.title}</h1>
                 <p>
                     ${instance.content}
                 </p>

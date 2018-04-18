@@ -11,9 +11,15 @@
 *= require_self
 */
 html, body {
-    font: 12px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font: 12px/1.6 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
     height:100%;
 }
+h1{font-size:29px;}
+h2{font-size:21px;}
+h3{font-size:18px;}
+h4{font-size:14px;}
+h5{font-size:12px;}
+h6{font-size:12px;}
 .navbar-layout-header {
     z-index:7000;
 }
